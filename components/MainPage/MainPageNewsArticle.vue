@@ -70,10 +70,12 @@ const seed = Math.random();
 
 .main-page-news-article--vertical .main-page-news-article-title {
   margin-top: 10px;
-  margin-right: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .main-page-news-article--vertical .main-page-news-article-text {
-  margin-right: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 </style>
