@@ -26,40 +26,40 @@ onMounted(() => {
       class="header"
   >
     <MaxWidthContainer class="header-inner">
-    <img src="~/assets/TopBarLogo.svg" alt="Redot logo" class="header-logo"/>
+      <img src="~/assets/TopBarLogo.svg" alt="Redot logo" class="header-logo"/>
 
-    <div class="header-links">
-      <a href="#" class="header-link header-link-with-menu">
-        Overview
-        <Icon name="chevron-down" />
+      <div class="header-links">
+        <a href="#" class="header-link header-link-with-menu">
+          Overview
+          <Icon name="chevron-down"/>
 
-        <div class="header-menu">
-          <a href="#" class="header-menu-link">Menu item</a>
-          <a href="#" class="header-menu-link">Menu item</a>
-          <a href="#" class="header-menu-link">Menu item</a>
-          <a href="#" class="header-menu-link">Menu item</a>
-          <a href="#" class="header-menu-link">Menu item</a>
-        </div>
-      </a>
-      <a href="#" class="header-link">Documentation</a>
-      <a href="#" class="header-link">News</a>
-      <a href="#" class="header-link">Assets</a>
-    </div>
+          <div class="header-menu">
+            <a href="#" class="header-menu-link">Menu item</a>
+            <a href="#" class="header-menu-link">Menu item</a>
+            <a href="#" class="header-menu-link">Menu item</a>
+            <a href="#" class="header-menu-link">Menu item</a>
+            <a href="#" class="header-menu-link">Menu item</a>
+          </div>
+        </a>
+        <a href="#" class="header-link">Documentation</a>
+        <a href="#" class="header-link">News</a>
+        <a href="#" class="header-link">Assets</a>
+      </div>
 
-    <div class="header-buttons">
-      <LinkButton href="#">
-        Contribute
-        <Icon name="code"/>
-      </LinkButton>
-      <LinkButton href="#">
-        Donate
-        <Icon name="heart"/>
-      </LinkButton>
-      <LinkButton href="#" type="red">
-        Download
-        <Icon name="arrow"/>
-      </LinkButton>
-    </div>
+      <div class="header-buttons">
+        <LinkButton href="#">
+          Contribute
+          <Icon name="code"/>
+        </LinkButton>
+        <LinkButton href="#">
+          Donate
+          <Icon name="heart"/>
+        </LinkButton>
+        <LinkButton href="#" type="red">
+          Download
+          <Icon name="arrow"/>
+        </LinkButton>
+      </div>
     </MaxWidthContainer>
   </header>
 </template>
