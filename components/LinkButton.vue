@@ -10,9 +10,9 @@ const typeClass = computed(() => `link-button--${type}`);
 </script>
 
 <template>
-  <a :href :class="typeClass" class="link-button">
+  <NuxtLink :href :class="typeClass" class="link-button">
     <slot/>
-  </a>
+  </NuxtLink>
 </template>
 
 <style scoped>

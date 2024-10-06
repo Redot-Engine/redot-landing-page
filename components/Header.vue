@@ -29,21 +29,21 @@ onMounted(() => {
       <img src="~/assets/TopBarLogo.svg" alt="Redot logo" class="header-logo"/>
 
       <div class="header-links">
-        <a href="#" class="header-link header-link-with-menu">
+        <NuxtLink href="#" class="header-link header-link-with-menu">
           Overview
           <Icon name="chevron-down"/>
 
           <div class="header-menu">
-            <a href="#" class="header-menu-link">Menu item</a>
-            <a href="#" class="header-menu-link">Menu item</a>
-            <a href="#" class="header-menu-link">Menu item</a>
-            <a href="#" class="header-menu-link">Menu item</a>
-            <a href="#" class="header-menu-link">Menu item</a>
+            <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+            <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+            <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+            <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+            <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
           </div>
-        </a>
-        <a href="#" class="header-link">Documentation</a>
-        <a href="#" class="header-link">News</a>
-        <a href="#" class="header-link">Assets</a>
+        </NuxtLink>
+        <NuxtLink key="documentation" href="#" class="header-link">Documentation</NuxtLink>
+        <NuxtLink key="news" href="#" class="header-link">News</NuxtLink>
+        <NuxtLink key="assets" href="#" class="header-link">Assets</NuxtLink>
       </div>
 
       <div class="header-buttons">
