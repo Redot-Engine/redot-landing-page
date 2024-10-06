@@ -42,7 +42,7 @@ defineProps<{
   left: 0;
   right: 0;
   height: 10px;
-  background-color: #ed0042;
+  background-color: #fe3f02;
   z-index: -1;
 }
 </style>
