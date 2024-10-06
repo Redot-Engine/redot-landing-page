@@ -3,7 +3,7 @@ const hero = ref<HTMLElement | null>(null);
 
 function scroll() {
   const element: HTMLElement = hero.value!;
-  element.nextElementSibling.scrollIntoView({block: "start", behavior: "smooth"});
+  element.nextElementSibling?.scrollIntoView({block: "start", behavior: "smooth"});
 }
 </script>
 
