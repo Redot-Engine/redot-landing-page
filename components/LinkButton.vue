@@ -28,6 +28,7 @@ const typeClass = computed(() => `link-button--${type}`);
   justify-content: space-between;
   align-items: center;
   transition: color 0.1s, background-color 0.1s, border-color 0.1s;
+  font-size: 13px;
 }
 
 .link-button :deep(.icon) {

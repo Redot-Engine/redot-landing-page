@@ -74,6 +74,7 @@ onMounted(() => {
   backdrop-filter: blur(0px);
   background-color: #0000;
   transition: background-color 0.3s, backdrop-filter 0.3s;
+  font-size: 13px;
 }
 
 .header--scrolled {
@@ -103,7 +104,6 @@ onMounted(() => {
 .header-link {
   color: #fff9;
   text-decoration: none;
-  font-size: 13px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
