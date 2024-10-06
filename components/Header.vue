@@ -73,13 +73,15 @@ onMounted(() => {
   z-index: 100;
   backdrop-filter: blur(0px);
   background-color: #0000;
-  transition: background-color 0.3s, backdrop-filter 0.3s;
+  transition: background-color 0.3s, backdrop-filter 0.3s, border-bottom-color 0.3s;
   font-size: 13px;
+  border-bottom: 1px solid #fff0;
 }
 
 .header--scrolled {
   background-color: #000000e6;
   backdrop-filter: blur(20px);
+  border-bottom-color: #ffffff19;
 }
 
 .header-inner {
