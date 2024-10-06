@@ -55,7 +55,7 @@ function scroll() {
   max-width: 400px;
   padding: 40px;
   background-color: #0009;
-  border: 1px solid #747372;
+  border: 1px solid #FFFFFF19;
   border-radius: 16px;
   backdrop-filter: blur(20px);
   text-align: center;
