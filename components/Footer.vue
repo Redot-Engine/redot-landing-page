@@ -90,8 +90,14 @@
 }
 
 .footer-link {
-  color: #fff9;
+  color: #fff;
   font-size: 16px;
   text-decoration: none;
+  opacity: 60%;
+  transition: opacity 0.1s;
+}
+
+.footer-link:hover {
+  opacity: 100%;
 }
 </style>

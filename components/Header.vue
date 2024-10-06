@@ -102,15 +102,17 @@ onMounted(() => {
 }
 
 .header-link {
-  color: #fff9;
+  color: #fff;
+  opacity: 60%;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  transition: opacity 0.1s;
 }
 
-.header-link :deep(.icon) {
-  opacity: 60%;
+.header-link:hover {
+  opacity: 100%;
 }
 
 .header-link-with-menu {
