@@ -1,11 +1,13 @@
 <script setup lang="ts">
-const scrolled = ref(import.meta.client && window.scrollY > 0);
+const scrolled = ref(false);
 
 function updateScrollPosition(): void {
   scrolled.value = window.scrollY > 0;
 }
 
 onMounted(() => {
+  updateScrollPosition();
+
   window.addEventListener(
       "scroll",
       updateScrollPosition,
@@ -29,7 +31,7 @@ onMounted(() => {
       <img src="~/assets/images/TopBarLogo.svg" alt="Redot logo" class="header-logo"/>
 
       <div class="header-links">
-        <NuxtLink href="#" class="header-link header-link-with-menu">
+        <div class="header-link header-link-with-menu">
           Overview
           <Icon name="chevron-down"/>
 
@@ -40,7 +42,7 @@ onMounted(() => {
             <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
             <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
           </div>
-        </NuxtLink>
+        </div>
         <NuxtLink key="documentation" href="#" class="header-link">Documentation</NuxtLink>
         <NuxtLink key="news" href="#" class="header-link">News</NuxtLink>
         <NuxtLink key="assets" href="#" class="header-link">Assets</NuxtLink>
