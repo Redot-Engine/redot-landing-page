@@ -26,7 +26,7 @@ onMounted(() => {
       class="header"
   >
     <MaxWidthContainer class="header-inner">
-      <img src="~/assets/TopBarLogo.svg" alt="Redot logo" class="header-logo"/>
+      <img src="~/assets/images/TopBarLogo.svg" alt="Redot logo" class="header-logo"/>
 
       <div class="header-links">
         <NuxtLink href="#" class="header-link header-link-with-menu">

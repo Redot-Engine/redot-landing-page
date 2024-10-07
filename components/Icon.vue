@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import IconCode from "~/assets/icon-code.svg";
-import IconHeart from "~/assets/icon-heart.svg";
-import IconArrow from "~/assets/icon-arrow.svg";
-import IconChevronDown from "~/assets/chevron-down.svg";
+import IconCode from "~/assets/images/icon-code.svg";
+import IconHeart from "~/assets/images/icon-heart.svg";
+import IconArrow from "~/assets/images/icon-arrow.svg";
+import IconChevronDown from "~/assets/images/chevron-down.svg";
 
 export type Icons = "code" | "heart" | "arrow" | "chevron-down";
 

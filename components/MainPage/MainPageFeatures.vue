@@ -12,7 +12,7 @@
     </template>
 
     <div class="features-grid">
-      <img src="~/assets/feature-scene.svg" alt="" class="feature-image"/>
+      <img src="~/assets/images/feature-scene.svg" alt="" class="feature-image"/>
       <div>
         <SectionTitle>Scene-driven design</SectionTitle>
         <SectionDescription big>
@@ -20,7 +20,7 @@
         </SectionDescription>
       </div>
 
-      <img src="~/assets/feature-2d-3d.svg" alt="" class="feature-image"/>
+      <img src="~/assets/images/feature-2d-3d.svg" alt="" class="feature-image"/>
       <div>
         <SectionTitle>Dedicated 2D and 3D engines</SectionTitle>
         <SectionDescription big>
@@ -28,7 +28,7 @@
         </SectionDescription>
       </div>
 
-      <img src="~/assets/feature-crossplatform.svg" alt="" class="feature-image"/>
+      <img src="~/assets/images/feature-crossplatform.svg" alt="" class="feature-image"/>
       <div>
         <SectionTitle>Cross platform</SectionTitle>
         <SectionDescription big>

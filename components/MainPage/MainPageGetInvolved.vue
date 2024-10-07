@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import DiscordLogo from "~/assets/discord-logo.svg";
-import ForumLogo from "~/assets/forum-logo.svg";
-import TwitterLogo from "~/assets/twitter-logo.svg";
+import DiscordLogo from "~/assets/images/discord-logo.svg";
+import ForumLogo from "~/assets/images/forum-logo.svg";
+import TwitterLogo from "~/assets/images/twitter-logo.svg";
 </script>
 
 <template>

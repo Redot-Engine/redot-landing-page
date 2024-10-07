@@ -6,12 +6,12 @@
   <footer class="footer">
     <MaxWidthContainer class="footer-inner">
       <div class="footer-socials">
-        <img src="~/assets/TopBarLogo.svg" alt="Redot logo" class="footer-logo" />
+        <img src="~/assets/images/TopBarLogo.svg" alt="Redot logo" class="footer-logo" />
         <div class="footer-spacer" />
-        <img src="~/assets/social-github.svg" alt="GitHub" class="footer-social" />
-        <img src="~/assets/social-discord.svg" alt="Discord" class="footer-social" />
-        <img src="~/assets/social-twitter.svg" alt="Twitter" class="footer-social" />
-        <img src="~/assets/social-reddit.svg" alt="Reddit" class="footer-social" />
+        <img src="~/assets/images/social-github.svg" alt="GitHub" class="footer-social" />
+        <img src="~/assets/images/social-discord.svg" alt="Discord" class="footer-social" />
+        <img src="~/assets/images/social-twitter.svg" alt="Twitter" class="footer-social" />
+        <img src="~/assets/images/social-reddit.svg" alt="Reddit" class="footer-social" />
       </div>
 
       <div class="footer-columns">

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HeartLogo from "~/assets/heart-logo.svg";
+import HeartLogo from "~/assets/images/heart-logo.svg";
 </script>
 
 <template>

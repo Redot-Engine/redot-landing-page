@@ -12,7 +12,7 @@ function scroll() {
     <Header />
 
     <div class="hero-center">
-      <img src="~/assets/redot-logo-white.svg" alt="" class="hero-center-logo" />
+      <img src="~/assets/images/redot-logo-white.svg" alt="" class="hero-center-logo" />
 
       <SectionTitle small>
         Open‑source game engine for&nbsp;everyone.
@@ -29,7 +29,7 @@ function scroll() {
     </div>
 
     <button class="hero-scroll-button" @click="scroll">
-      <img src="~/assets/chevron-down.svg" alt="" />
+      <img src="~/assets/images/chevron-down.svg" alt="" />
     </button>
 
     <div class="hero-game-name">
