@@ -23,31 +23,31 @@ const {buttonText = "Join"} = defineProps<{
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .get-involved-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
-}
 
-.get-involved-item-image {
-  height: 198px;
-  width: 198px;
-  object-fit: contain;
-}
+  &-image {
+    height: 198px;
+    width: 198px;
+    object-fit: contain;
+  }
 
-.get-involved-item-title,
-.get-involved-item-description {
-  text-align: center;
-  padding: 0 5px;
-}
+  &-title,
+  &-description {
+    text-align: center;
+    padding: 0 5px;
+  }
 
-.get-involved-item-title {
-  margin-top: 10px;
-}
+  &-title {
+    margin-top: 10px;
+  }
 
-.get-involved-item-description {
-  margin-bottom: 10px;
+  &-description {
+    margin-bottom: 10px;
+  }
 }
 </style>

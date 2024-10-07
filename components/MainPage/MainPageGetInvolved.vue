@@ -31,11 +31,18 @@ import TwitterLogo from "~/assets/images/twitter-logo.svg";
   </MainPageSection>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@use "@/assets/styles/mixins";
+
 .get-involved-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   text-align: center;
+
+  @include mixins.mobile-and-smaller {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 </style>

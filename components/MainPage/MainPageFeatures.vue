@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+const isMobile = useIsMobile();
 </script>
 
 <template>
@@ -14,7 +14,7 @@
     <div class="features-grid">
       <img src="~/assets/images/feature-scene.svg" alt="" class="feature-image"/>
       <div>
-        <SectionTitle>Scene-driven design</SectionTitle>
+        <SectionTitle :small="isMobile">Scene-driven design</SectionTitle>
         <SectionDescription big>
           Use building blocks called nodes to create more complex and reusable scenes. Add scripts to your scenes and customize built-in behavior to implement your unique game mechanics. Rely on composition and node hierarchy to make game logic clear at a glance.
         </SectionDescription>
@@ -22,7 +22,7 @@
 
       <img src="~/assets/images/feature-2d-3d.svg" alt="" class="feature-image"/>
       <div>
-        <SectionTitle>Dedicated 2D and 3D engines</SectionTitle>
+        <SectionTitle :small="isMobile">Dedicated 2D and 3D engines</SectionTitle>
         <SectionDescription big>
           Make crisp and performant 2D games with Redot’s dedicated 2D rendering engine with real 2D pixel coordinates and 2D nodes. Redot's 3D nodes give you everything you need to build, animate, and render your 3D worlds and characters.
         </SectionDescription>
@@ -30,7 +30,7 @@
 
       <img src="~/assets/images/feature-crossplatform.svg" alt="" class="feature-image"/>
       <div>
-        <SectionTitle>Cross platform</SectionTitle>
+        <SectionTitle :small="isMobile">Cross platform</SectionTitle>
         <SectionDescription big>
           Develop on a wide range of supported platforms. Deploy your game on desktop, mobile, and the web in seconds.
         </SectionDescription>
@@ -39,17 +39,31 @@
   </MainPageSection>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@use "@/assets/styles/mixins";
+
 .features-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px 20px;
   align-items: center;
+
+  @include mixins.mobile-and-smaller {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    gap: 15px;
+  }
 }
 
 .feature-image {
-  height: 280px;
+  height: 300px;
   width: 100%;
   object-fit: contain;
+
+  @include mixins.mobile-and-smaller {
+    div + & {
+      margin-top: 30px;
+    }
+  }
 }
 </style>

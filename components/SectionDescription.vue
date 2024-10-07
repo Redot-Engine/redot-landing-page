@@ -12,17 +12,17 @@ const classBig = computed(() => big ? 'section-description--big' : '');
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .section-description {
   font-size: 14px;
   color: #fff9;
-}
 
-.section-description--big {
-  font-size: 16px;
-}
+  &--big {
+    font-size: 16px;
+  }
 
-.section-title + .section-description {
-  margin-top: 5px;
+  .section-title + & {
+    margin-top: 5px;
+  }
 }
 </style>

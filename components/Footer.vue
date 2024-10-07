@@ -40,64 +40,87 @@
         </div>
       </div>
 
-      <SectionDescription>© 2024</SectionDescription>
+      <SectionDescription class="footer-copyright">© 2024</SectionDescription>
     </MaxWidthContainer>
   </footer>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@use "@/assets/styles/mixins";
+
 .footer {
   border-top: 1px solid #191919;
   padding: 40px 0;
-}
 
-.footer-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
 
-.footer-socials {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+  &-socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
 
-.footer-logo {
-  width: 178px;
-  height: 40px;
-}
+    @include mixins.mobile-and-smaller {
+      justify-content: center;
+    }
+  }
 
-.footer-spacer {
-  flex: 1;
-}
+  &-logo {
+    width: 178px;
+    height: 40px;
+  }
 
-.footer-social {
-  width: 32px;
-  height: 32px;
-}
+  &-spacer {
+    flex: 1;
 
-.footer-columns {
-  display: flex;
-  gap: 20px;
-}
+    @include mixins.mobile-and-smaller {
+      flex: none;
+      width: 100%;
+    }
+  }
 
-.footer-column {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px;
-}
+  &-social {
+    width: 32px;
+    height: 32px;
+  }
 
-.footer-link {
-  color: #fff;
-  font-size: 16px;
-  text-decoration: none;
-  opacity: 60%;
-  transition: opacity 0.1s;
-}
+  &-columns {
+    display: flex;
+    gap: 20px;
 
-.footer-link:hover {
-  opacity: 100%;
+    @include mixins.mobile-and-smaller {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  &-link {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    opacity: 60%;
+    transition: opacity 0.1s;
+
+    &:hover {
+      opacity: 100%;
+    }
+  }
+
+  &-copyright {
+    @include mixins.mobile-and-smaller {
+      padding: 0 10px;
+    }
+  }
 }
 </style>

@@ -12,13 +12,13 @@ const classSmall = computed(() => small ? 'section-title--small' : '');
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .section-title {
   font-weight: 900;
   font-size: 32px;
-}
 
-.section-title--small {
-  font-size: 24px;
+  &--small {
+    font-size: 24px;
+  }
 }
 </style>

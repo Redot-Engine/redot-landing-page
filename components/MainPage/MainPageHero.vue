@@ -38,7 +38,7 @@ function scroll() {
   </section>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .hero {
   height: 100dvh;
   background:
@@ -48,6 +48,10 @@ function scroll() {
   display: grid;
   place-items: center;
   position: relative;
+
+  @media (max-width: 410px) {
+    padding: 0 10px;
+  }
 }
 
 .hero-center {

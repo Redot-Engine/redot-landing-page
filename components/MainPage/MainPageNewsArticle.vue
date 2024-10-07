@@ -1,14 +1,27 @@
 <script setup lang="ts">
-const {vertical} = defineProps<{ vertical?: boolean; }>();
+const {
+  vertical,
+  alternateHorizontalLayout
+} = defineProps<{
+  vertical?: boolean;
+  alternateHorizontalLayout?: boolean;
+}>();
 
-const verticalClass = computed(() => vertical ? "main-page-news-article--vertical" : "");
+const classes = computed(() => ({
+  "main-page-news-article--vertical": vertical,
+  "main-page-news-article--alternate-horizontal-layout": alternateHorizontalLayout,
+}));
 
-const seed = Math.random();
+const seed = useId();
 </script>
 
 <template>
-  <article :class="verticalClass" class="main-page-news-article">
-    <img :src="`https://picsum.photos/seed/${seed}/1280/720`" alt="News article image" class="main-page-news-article-image"/>
+  <article :class="classes" class="main-page-news-article">
+    <img
+        :src="`https://picsum.photos/seed/${seed}/1280/720`"
+        alt="News article image"
+        class="main-page-news-article-image"
+    />
     <SectionTitle
         :small="vertical"
         class="main-page-news-article-title"
@@ -25,7 +38,7 @@ const seed = Math.random();
   </article>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .main-page-news-article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -33,49 +46,57 @@ const seed = Math.random();
   border: 1px solid #191919;
   border-radius: 16px;
   padding: 10px;
-}
 
-.main-page-news-article-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 8px;
-  overflow: hidden;
-  grid-row: 1 / span 3;
-}
+  &-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+    overflow: hidden;
+    grid-row: 1 / span 3;
+  }
 
-.main-page-news-article-title {
-  margin: 5px 5px 5px 15px;
-}
+  &-title {
+    margin: 5px 5px 5px 15px;
+  }
 
-.main-page-news-article-text {
-  justify-self: start;
-  margin-left: 15px;
-}
+  &-text {
+    justify-self: start;
+    margin-left: 15px;
+  }
 
-.main-page-news-article-button {
-  justify-self: end;
-  align-self: end;
-  margin-top: 10px;
-}
+  &-button {
+    justify-self: end;
+    align-self: end;
+    margin-top: 10px;
+  }
 
-.main-page-news-article--vertical {
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, auto);
-}
+  &--vertical {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+  }
 
-.main-page-news-article--vertical .main-page-news-article-image {
-  grid-row: 1;
-}
+  &--vertical &-image {
+    grid-row: 1;
+  }
 
-.main-page-news-article--vertical .main-page-news-article-title {
-  margin-top: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
+  &--vertical &-title {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 
-.main-page-news-article--vertical .main-page-news-article-text {
-  margin-left: 5px;
-  margin-right: 5px;
+  &--vertical &-text {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  &--alternate-horizontal-layout {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  &--alternate-horizontal-layout &-title {
+    font-size: 20px;
+  }
 }
 </style>

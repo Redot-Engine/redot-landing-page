@@ -15,7 +15,7 @@ const typeClass = computed(() => `link-button--${type}`);
   </NuxtLink>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .link-button {
   color: #fff;
   text-decoration: none;
@@ -29,45 +29,45 @@ const typeClass = computed(() => `link-button--${type}`);
   align-items: center;
   transition: color 0.1s, background-color 0.1s, border-color 0.1s;
   font-size: 13px;
-}
 
-.link-button :deep(.icon) {
-  filter: invert(0);
-  transition: filter 0.1s;
-}
+  :deep(.icon) {
+    filter: invert(0);
+    transition: filter 0.1s;
+  }
 
-.link-button:hover {
-  color: #000;
-  background-color: #fff;
-  border-color: #e6e6e6;
-}
+  &:hover {
+    color: #000;
+    background-color: #fff;
+    border-color: #e6e6e6;
 
-.link-button:hover :deep(.icon) {
-  filter: invert(1);
-}
+    :deep(.icon) {
+      filter: invert(1);
+    }
+  }
 
-.link-button:active {
-  border-color: #c2c2c2;
-  background-color: #d7d7d7;
-}
+  &:active {
+    border-color: #c2c2c2;
+    background-color: #d7d7d7;
+  }
 
-.link-button--red {
-  background-color: #fe3f02;
-  border-color: #fe521b;
-}
+  &--red {
+    background-color: #fe3f02;
+    border-color: #fe521b;
 
-.link-button--red:hover {
-  color: #fff;
-  background-color: #ff6534;
-  border-color: #ff7448;
-}
+    &:hover {
+      color: #fff;
+      background-color: #ff6534;
+      border-color: #ff7448;
 
-.link-button--red:hover :deep(.icon) {
-  filter: invert(0);
-}
+      :deep(.icon) {
+        filter: invert(0);
+      }
+    }
 
-.link-button--red:active {
-  background-color: #ce3200;
-  border-color: #d34619;
+    &:active {
+      background-color: #ce3200;
+      border-color: #d34619;
+    }
+  }
 }
 </style>

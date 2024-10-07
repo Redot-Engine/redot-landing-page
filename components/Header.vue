@@ -66,7 +66,7 @@ onMounted(() => {
   </header>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .header {
   position: fixed;
   top: 0;
@@ -78,98 +78,98 @@ onMounted(() => {
   transition: background-color 0.3s, backdrop-filter 0.3s, border-bottom-color 0.3s;
   font-size: 13px;
   border-bottom: 1px solid #fff0;
-}
 
-.header--scrolled {
-  background-color: #000000e6;
-  backdrop-filter: blur(20px);
-  border-bottom-color: #ffffff19;
-}
+  &--scrolled {
+    background-color: #000000e6;
+    backdrop-filter: blur(20px);
+    border-bottom-color: #ffffff19;
+  }
 
-.header-inner {
-  display: flex;
-  gap: 40px;
-  height: 56px;
-  align-items: center;
-}
+  &-inner {
+    display: flex;
+    gap: 40px;
+    height: 56px;
+    align-items: center;
+  }
 
-.header-logo {
-  width: 124px;
-  height: 28px;
-}
+  &-logo {
+    width: 124px;
+    height: 28px;
+  }
 
-.header-links {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  flex: 1;
-}
+  &-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex: 1;
+  }
 
-.header-link {
-  color: #fff;
-  opacity: 60%;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: opacity 0.1s;
-}
+  &-link {
+    color: #fff;
+    opacity: 60%;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.1s;
 
-.header-link:hover {
-  opacity: 100%;
-}
+    &:hover {
+      opacity: 100%;
+    }
+  }
 
-.header-link-with-menu {
-  position: relative;
-}
+  &-link-with-menu {
+    position: relative;
 
-.header-menu {
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
-  background-color: #000;
-  border: 1px solid #191919;
-  border-radius: 16px;
-  padding: 10px;
-  display: flex;
-  opacity: 0;
-  pointer-events: none;
-  flex-direction: column;
-  min-width: 200px;
-  transform: translateX(-50%);
-  transition: opacity 0.3s;
-}
+    &:hover .header-menu {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
 
-.header-menu::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: 0;
-  right: 0;
-  height: 40px;
-  background-color: #00000001;
-}
+  &-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    background-color: #000;
+    border: 1px solid #191919;
+    border-radius: 16px;
+    padding: 10px;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    flex-direction: column;
+    min-width: 200px;
+    transform: translateX(-50%);
+    transition: opacity 0.3s;
 
-.header-link-with-menu:hover .header-menu {
-  pointer-events: auto;
-  opacity: 1;
-}
+    &::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background-color: #00000001;
+    }
+  }
 
-.header-menu-link {
-  color: #999;
-  padding: 10px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.1s, color 0.1s;
-}
+  &-menu-link {
+    color: #999;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.1s, color 0.1s;
 
-.header-menu-link:hover {
-  color: #fff;
-  background-color: #191919;
-}
+    &:hover {
+      color: #fff;
+      background-color: #191919;
+    }
+  }
 
-.header-buttons {
-  display: flex;
-  gap: 10px;
+  &-buttons {
+    display: flex;
+    gap: 10px;
+  }
 }
 </style>
