@@ -22,7 +22,7 @@ const typeClass = computed(() => `link-button--${type}`);
   background-color: #000;
   border: 1px solid #191919;
   border-radius: 8px;
-  padding: 8px 15px;
+  padding: 7px 15px;
   display: inline-flex;
   gap: 8px;
   justify-content: space-between;
