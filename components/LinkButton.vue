@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type {ButtonType} from "~/types/ButtonType";
+import type { ButtonType } from "~/types/ButtonType";
 
-const {type = "default"} = defineProps<{
+const { type = "default" } = defineProps<{
   href: string;
   type?: ButtonType;
 }>();
@@ -10,8 +10,12 @@ const typeClass = computed(() => `link-button--${type}`);
 </script>
 
 <template>
-  <NuxtLink :href :class="typeClass" class="link-button">
-    <slot/>
+  <NuxtLink
+    :href
+    :class="typeClass"
+    class="link-button"
+  >
+    <slot />
   </NuxtLink>
 </template>
 

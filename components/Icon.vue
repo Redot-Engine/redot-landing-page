@@ -14,12 +14,16 @@ const icons: Record<Icons, string> = {
   code: IconCode,
   heart: IconHeart,
   arrow: IconArrow,
-  'chevron-down': IconChevronDown,
+  "chevron-down": IconChevronDown,
 };
 </script>
 
 <template>
-  <img :src="icons[name]" alt="" class="icon" />
+  <img
+    :src="icons[name]"
+    alt=""
+    class="icon"
+  >
 </template>
 
 <style scoped>

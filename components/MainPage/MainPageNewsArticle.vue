@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const {
   vertical,
-  alternateHorizontalLayout
+  alternateHorizontalLayout,
 } = defineProps<{
   vertical?: boolean;
   alternateHorizontalLayout?: boolean;
@@ -16,24 +16,30 @@ const seed = useId();
 </script>
 
 <template>
-  <article :class="classes" class="main-page-news-article">
+  <article
+    :class="classes"
+    class="main-page-news-article"
+  >
     <img
-        :src="`https://picsum.photos/seed/${seed}/1280/720`"
-        alt="News article image"
-        class="main-page-news-article-image"
-    />
+      :src="`https://picsum.photos/seed/${seed}/1280/720`"
+      alt="News article image"
+      class="main-page-news-article-image"
+    >
     <SectionTitle
-        :small="vertical"
-        class="main-page-news-article-title"
+      :small="vertical"
+      class="main-page-news-article-title"
     >
       Redot achieves a big milestone!
     </SectionTitle>
     <SectionDescription class="main-page-news-article-text">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
     </SectionDescription>
-    <LinkButton href="#" class="main-page-news-article-button">
+    <LinkButton
+      href="#"
+      class="main-page-news-article-button"
+    >
       Read post
-      <Icon name="arrow"/>
+      <Icon name="arrow" />
     </LinkButton>
   </article>
 </template>

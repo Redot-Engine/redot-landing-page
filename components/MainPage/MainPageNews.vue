@@ -5,18 +5,33 @@ const isMobile = useIsMobile();
 <template>
   <MainPageSection title="Recent news">
     <template #button>
-      <LinkButton href="#" type="red">
+      <LinkButton
+        href="#"
+        type="red"
+      >
         More news
-        <Icon name="arrow"/>
+        <Icon name="arrow" />
       </LinkButton>
     </template>
 
     <div class="news-grid">
-      <MainPageNewsArticle :vertical="isMobile"  />
-      <MainPageNewsArticle :vertical="!isMobile" :alternate-horizontal-layout="isMobile" />
-      <MainPageNewsArticle :vertical="!isMobile" :alternate-horizontal-layout="isMobile" />
-      <MainPageNewsArticle :vertical="!isMobile" :alternate-horizontal-layout="isMobile" />
-      <MainPageNewsArticle :vertical="!isMobile" :alternate-horizontal-layout="isMobile" />
+      <MainPageNewsArticle :vertical="isMobile" />
+      <MainPageNewsArticle
+        :vertical="!isMobile"
+        :alternate-horizontal-layout="isMobile"
+      />
+      <MainPageNewsArticle
+        :vertical="!isMobile"
+        :alternate-horizontal-layout="isMobile"
+      />
+      <MainPageNewsArticle
+        :vertical="!isMobile"
+        :alternate-horizontal-layout="isMobile"
+      />
+      <MainPageNewsArticle
+        :vertical="!isMobile"
+        :alternate-horizontal-layout="isMobile"
+      />
     </div>
   </MainPageSection>
 </template>

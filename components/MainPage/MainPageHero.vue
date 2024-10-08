@@ -3,16 +3,23 @@ const hero = ref<HTMLElement | null>(null);
 
 function scroll() {
   const element: HTMLElement = hero.value!;
-  element.nextElementSibling?.scrollIntoView({block: "start", behavior: "smooth"});
+  element.nextElementSibling?.scrollIntoView({ block: "start", behavior: "smooth" });
 }
 </script>
 
 <template>
-  <section ref="hero" class="hero">
+  <section
+    ref="hero"
+    class="hero"
+  >
     <Header />
 
     <div class="hero-center">
-      <img src="~/assets/images/redot-logo-white.svg" alt="" class="hero-center-logo" />
+      <img
+        src="~/assets/images/redot-logo-white.svg"
+        alt=""
+        class="hero-center-logo"
+      >
 
       <SectionTitle small>
         Open‑source game engine for&nbsp;everyone.
@@ -22,14 +29,24 @@ function scroll() {
         No strings attached.
       </SectionDescription>
 
-      <LinkButton href="#" type="red" class="hero-center-button">
+      <LinkButton
+        href="#"
+        type="red"
+        class="hero-center-button"
+      >
         Download
         <Icon name="arrow" />
       </LinkButton>
     </div>
 
-    <button class="hero-scroll-button" @click="scroll">
-      <img src="~/assets/images/chevron-down.svg" alt="" />
+    <button
+      class="hero-scroll-button"
+      @click="scroll"
+    >
+      <img
+        src="~/assets/images/chevron-down.svg"
+        alt=""
+      >
     </button>
 
     <div class="hero-game-name">
