@@ -1,8 +1,13 @@
 <script setup lang="ts">
 const scrolled = ref(false);
+const menuOpen = ref(false);
 
 function updateScrollPosition(): void {
   scrolled.value = window.scrollY > 0;
+}
+
+function toggleMenu(): void {
+  menuOpen.value = !menuOpen.value;
 }
 
 onMounted(() => {
@@ -27,12 +32,22 @@ onMounted(() => {
       }"
       class="header"
   >
-    <MaxWidthContainer class="header-inner">
+    <MaxWidthContainer
+        :class="{
+          'header-inner--opened': menuOpen,
+        }"
+        class="header-inner"
+    >
       <img src="~/assets/images/TopBarLogo.svg" alt="Redot logo" class="header-logo"/>
-      <button class="header-mobile-menu-btn">
-        <Icon name="menu" />
+      <button @click="toggleMenu" class="header-mobile-menu-btn">
+        <Icon :name="menuOpen ? 'close' : 'menu'" />
       </button>
-      <div class="header-navigation">
+      <div
+          :class="{
+            'header-navigation--opened': menuOpen,
+          }"
+          class="header-navigation"
+      >
         <div class="header-links">
           <div class="header-link-with-menu">
             <span class="header-link">Overview <Icon name="chevron-down"/></span>
@@ -96,7 +111,7 @@ onMounted(() => {
     @include mixins.mobile-and-smaller {
       display: flex;
       align-items: center;
-      padding: 4px;
+      padding: 5px;
       cursor: pointer;
       background-color: #000000e6;
       border: unset;
@@ -110,16 +125,27 @@ onMounted(() => {
 
     @include mixins.mobile-and-smaller {
       position: absolute;
+      opacity: 0;
       gap: 24px;
       top: 56px;
       left: 0;
       flex-direction: column;
       align-items: start;
       background-color: #000000e6;
-      width: 100%;
-      padding: 16px;
+      height: 75vh;
+      padding: 20px;
       border-bottom-left-radius: 20px;
+      backdrop-filter: blur(4px);
       border-bottom-right-radius: 20px;
+      transform: translateY(-10px);
+      pointer-events: none;
+    }
+
+    &--opened {
+      transition: opacity 0.5s, transform 0.5s;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
     }
   }
 
@@ -133,8 +159,11 @@ onMounted(() => {
       gap: 0;
       flex-direction: row;
       align-items: center;
-      background-color: #000000e6;
       justify-content: space-between;
+    }
+
+    &--opened {
+      background-color: #000000e6;
     }
   }
 
@@ -165,6 +194,10 @@ onMounted(() => {
     transition: opacity 0.1s;
 
     &:hover {
+      opacity: 100%;
+    }
+
+    @include mixins.mobile-and-smaller {
       opacity: 100%;
     }
   }
@@ -203,6 +236,7 @@ onMounted(() => {
       opacity: 1;
       transform: unset;
       border: unset;
+      background-color: unset;
     }
 
     &::before {
