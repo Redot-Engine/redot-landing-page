@@ -29,6 +29,9 @@ onMounted(() => {
   >
     <MaxWidthContainer class="header-inner">
       <img src="~/assets/images/TopBarLogo.svg" alt="Redot logo" class="header-logo"/>
+      <button class="header-mobile-menu-btn">
+        <Icon name="menu" />
+      </button>
       <div class="header-navigation">
         <div class="header-links">
           <div class="header-link-with-menu">
@@ -87,6 +90,19 @@ onMounted(() => {
     border-bottom-color: #ffffff19;
   }
 
+  &-mobile-menu-btn {
+    display: none;
+
+    @include mixins.mobile-and-smaller {
+      display: flex;
+      align-items: center;
+      padding: 4px;
+      cursor: pointer;
+      background-color: #000000e6;
+      border: unset;
+    }
+  }
+
   &-navigation {
     display: flex;
     justify-content: space-between;
@@ -115,10 +131,10 @@ onMounted(() => {
 
     @include mixins.mobile-and-smaller {
       gap: 0;
-      flex-direction: column;
-      align-items: start;
+      flex-direction: row;
+      align-items: center;
       background-color: #000000e6;
-      justify-content: center;
+      justify-content: space-between;
     }
   }
 

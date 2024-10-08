@@ -4,8 +4,9 @@ import IconHeart from "~/assets/images/icon-heart.svg";
 import IconArrow from "~/assets/images/icon-arrow.svg";
 import IconMenu from "~/assets/images/icon-menu.svg";
 import IconChevronDown from "~/assets/images/chevron-down.svg";
+import IconClose from "~/assets/images/icon-close.svg";
 
-export type Icons = "code" | "heart" | "arrow" | "chevron-down" | "menu";
+export type Icons = "code" | "heart" | "arrow" | "chevron-down" | "menu" | "close";
 
 defineProps<{
   name: Icons;
@@ -17,6 +18,7 @@ const icons: Record<Icons, string> = {
   arrow: IconArrow,
   'chevron-down': IconChevronDown,
   menu: IconMenu,
+  close: IconClose
 };
 </script>
 
