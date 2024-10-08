@@ -147,7 +147,7 @@ onMounted(() => {
       opacity: 1;
       transform: translateY(0);
       pointer-events: auto;
-      background-color: #0009;
+      background-color: #000000e6;
       backdrop-filter: blur(20px);
     }
   }
