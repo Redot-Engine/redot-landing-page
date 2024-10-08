@@ -93,7 +93,6 @@ onMounted(() => {
   left: 0;
   right: 0;
   z-index: 100;
-  backdrop-filter: blur(0px);
   background-color: #0000;
   transition: background-color 0.3s, backdrop-filter 0.3s, border-bottom-color 0.3s;
   font-size: 13px;
@@ -103,6 +102,10 @@ onMounted(() => {
     background-color: #000000e6;
     backdrop-filter: blur(20px);
     border-bottom-color: #ffffff19;
+
+    @include mixins.mobile-and-smaller {
+      backdrop-filter: unset;
+    }
   }
 
   &-mobile-menu-btn {
@@ -144,7 +147,7 @@ onMounted(() => {
       opacity: 1;
       transform: translateY(0);
       pointer-events: auto;
-      background-color: #000000e6;
+      background-color: #0009;
       backdrop-filter: blur(20px);
     }
   }
