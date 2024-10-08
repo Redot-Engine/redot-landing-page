@@ -105,6 +105,7 @@ onMounted(() => {
 
     @include mixins.mobile-and-smaller {
       backdrop-filter: unset;
+      background-color: #000;
     }
   }
 
@@ -125,6 +126,7 @@ onMounted(() => {
   &-navigation {
     display: flex;
     justify-content: space-between;
+    transition: opacity 0.3s, transform 0.3s;
     width: 100%;
 
     @include mixins.mobile-and-smaller {
@@ -139,12 +141,12 @@ onMounted(() => {
       padding: 20px;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
+      border-bottom: 1px solid #ffffff1a;
       transform: translateY(-10px);
       pointer-events: none;
     }
 
     &--opened {
-      transition: opacity 0.5s, transform 0.5s;
       opacity: 1;
       transform: translateY(0);
       pointer-events: auto;
