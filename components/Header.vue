@@ -31,9 +31,8 @@ onMounted(() => {
       <img src="~/assets/images/TopBarLogo.svg" alt="Redot logo" class="header-logo"/>
       <div class="header-navigation">
         <div class="header-links">
-          <div class="header-link header-link-with-menu">
-            Overview
-            <Icon name="chevron-down"/>
+          <div class="header-link-with-menu">
+            <span class="header-link">Overview <Icon name="chevron-down"/></span>
 
             <div class="header-menu">
               <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
@@ -161,6 +160,10 @@ onMounted(() => {
       opacity: 1;
       pointer-events: auto;
     }
+
+    @include mixins.mobile-and-smaller {
+      display: block;
+    }
   }
 
   &-menu {
@@ -178,6 +181,13 @@ onMounted(() => {
     min-width: 200px;
     transform: translateX(-50%);
     transition: opacity 0.3s;
+
+    @include mixins.mobile-and-smaller {
+      position: unset;
+      opacity: 1;
+      transform: unset;
+      border: unset;
+    }
 
     &::before {
       content: "";
