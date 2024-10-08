@@ -114,10 +114,11 @@ onMounted(() => {
     @include mixins.mobile-and-smaller {
       display: flex;
       align-items: center;
-      padding: 5px;
+      padding: 8px;
       cursor: pointer;
       background-color: #000000e6;
-      border: unset;
+      border: 1px solid #ffffff1a;
+      border-radius: 8px;
     }
   }
 
