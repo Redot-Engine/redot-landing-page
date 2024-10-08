@@ -131,11 +131,9 @@ onMounted(() => {
       left: 0;
       flex-direction: column;
       align-items: start;
-      background-color: #000000e6;
       height: 75vh;
       padding: 20px;
       border-bottom-left-radius: 20px;
-      backdrop-filter: blur(4px);
       border-bottom-right-radius: 20px;
       transform: translateY(-10px);
       pointer-events: none;
@@ -146,6 +144,8 @@ onMounted(() => {
       opacity: 1;
       transform: translateY(0);
       pointer-events: auto;
+      background-color: #000000e6;
+      backdrop-filter: blur(20px);
     }
   }
 
