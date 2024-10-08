@@ -29,44 +29,47 @@ onMounted(() => {
   >
     <MaxWidthContainer class="header-inner">
       <img src="~/assets/images/TopBarLogo.svg" alt="Redot logo" class="header-logo"/>
+      <div class="header-navigation">
+        <div class="header-links">
+          <div class="header-link header-link-with-menu">
+            Overview
+            <Icon name="chevron-down"/>
 
-      <div class="header-links">
-        <div class="header-link header-link-with-menu">
-          Overview
-          <Icon name="chevron-down"/>
-
-          <div class="header-menu">
-            <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
-            <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
-            <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
-            <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
-            <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+            <div class="header-menu">
+              <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+              <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+              <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+              <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+              <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+            </div>
           </div>
+          <NuxtLink key="documentation" href="#" class="header-link">Documentation</NuxtLink>
+          <NuxtLink key="news" href="#" class="header-link">News</NuxtLink>
+          <NuxtLink key="assets" href="#" class="header-link">Assets</NuxtLink>
         </div>
-        <NuxtLink key="documentation" href="#" class="header-link">Documentation</NuxtLink>
-        <NuxtLink key="news" href="#" class="header-link">News</NuxtLink>
-        <NuxtLink key="assets" href="#" class="header-link">Assets</NuxtLink>
-      </div>
 
-      <div class="header-buttons">
-        <LinkButton href="#">
-          Contribute
-          <Icon name="code"/>
-        </LinkButton>
-        <LinkButton href="#">
-          Donate
-          <Icon name="heart"/>
-        </LinkButton>
-        <LinkButton href="#" type="red">
-          Download
-          <Icon name="arrow"/>
-        </LinkButton>
+        <div class="header-buttons">
+          <LinkButton href="#">
+            Contribute
+            <Icon name="code"/>
+          </LinkButton>
+          <LinkButton href="#">
+            Donate
+            <Icon name="heart"/>
+          </LinkButton>
+          <LinkButton href="#" type="red">
+            Download
+            <Icon name="arrow"/>
+          </LinkButton>
+        </div>
       </div>
     </MaxWidthContainer>
   </header>
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/styles/mixins";
+
 .header {
   position: fixed;
   top: 0;
@@ -85,11 +88,39 @@ onMounted(() => {
     border-bottom-color: #ffffff19;
   }
 
+  &-navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @include mixins.mobile-and-smaller {
+      position: absolute;
+      gap: 24px;
+      top: 56px;
+      left: 0;
+      flex-direction: column;
+      align-items: start;
+      background-color: #000000e6;
+      width: 100%;
+      padding: 16px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+  }
+
   &-inner {
     display: flex;
     gap: 40px;
     height: 56px;
     align-items: center;
+
+    @include mixins.mobile-and-smaller {
+      gap: 0;
+      flex-direction: column;
+      align-items: start;
+      background-color: #000000e6;
+      justify-content: center;
+    }
   }
 
   &-logo {
@@ -102,6 +133,11 @@ onMounted(() => {
     gap: 20px;
     align-items: center;
     flex: 1;
+
+    @include mixins.mobile-and-smaller {
+      flex-direction: column;
+      align-items: start;
+    }
   }
 
   &-link {
@@ -170,6 +206,11 @@ onMounted(() => {
   &-buttons {
     display: flex;
     gap: 10px;
+
+    @include mixins.mobile-and-smaller {
+      justify-content: center;
+      width: 100%;
+    }
   }
 }
 </style>
