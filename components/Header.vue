@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const featureFlags = useFeatureFlags();
 const scrolled = ref(false);
 const menuOpen = ref(false);
 
@@ -45,10 +46,12 @@ onMounted(() => {
       <div
         :class="{
           'header-navigation--opened': menuOpen,
+          'header-navigation--minimal': featureFlags.minimal
         }"
         class="header-navigation"
       >
-        <div class="header-links">
+        <div v-if="featureFlags.minimal" />
+        <div v-else class="header-links">
           <div class="header-link-with-menu">
             <span class="header-link">Overview <Icon name="chevron-down" /></span>
 
@@ -65,12 +68,17 @@ onMounted(() => {
           <NuxtLink key="assets" class="header-link" href="#">Assets</NuxtLink>
         </div>
 
-        <div class="header-buttons">
-          <LinkButton href="#">
+        <div
+          :class="{
+            'header-buttons--minimal': featureFlags.minimal
+          }"
+          class="header-buttons"
+        >
+          <LinkButton href="https://github.com/Redot-Engine/redot-engine">
             Contribute
             <Icon name="code" />
           </LinkButton>
-          <LinkButton href="#">
+          <LinkButton v-show="!featureFlags.minimal" href="#">
             Donate
             <Icon name="heart" />
           </LinkButton>
@@ -152,6 +160,11 @@ onMounted(() => {
       pointer-events: auto;
       background-color: #000000e6;
       backdrop-filter: blur(20px);
+    }
+
+    &--minimal {
+      height: unset;
+      gap: unset;
     }
   }
 
@@ -276,6 +289,10 @@ onMounted(() => {
     @include mixins.mobile-and-smaller {
       justify-content: center;
       width: 100%;
+    }
+
+    &--minimal {
+      justify-content: start;
     }
   }
 }
