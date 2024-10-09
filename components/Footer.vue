@@ -27,7 +27,7 @@ const featureFlags = useFeatureFlags();
           <SectionTitle small>Project</SectionTitle>
 
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">News</NuxtLink>
-          <NuxtLink class="footer-link" href="#">Code of Conduct</NuxtLink>
+          <NuxtLink class="footer-link" href="#">Contribution Guidelines</NuxtLink>
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Teams</NuxtLink>
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Communities</NuxtLink>
         </div>
