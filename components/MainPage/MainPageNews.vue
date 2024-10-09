@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { computed } from "vue";
-
 const isMobile = useIsMobile();
 
 const { data: posts } = await useAsyncData("recent-posts", () =>
@@ -10,11 +8,6 @@ const { data: posts } = await useAsyncData("recent-posts", () =>
     .limit(5)
     .find()
 );
-
-const recentPosts = computed(() => {
-  useContentHead(posts.value);
-  return posts.value;
-});
 </script>
 
 <template>
@@ -28,12 +21,11 @@ const recentPosts = computed(() => {
 
     <div class="news-grid">
       <MainPageNewsArticle
-        v-for="(post, index) in recentPosts"
-        :key="index"
-        :title="post.title"
+        v-for="(post, index) in (posts ?? [])"
+        :title="post.title ?? ''"
         :description="post.description"
         :image="post.image"
-        :url="post._path"
+        :url="post._path ?? ''"
         :vertical="index === 0 ? isMobile : !isMobile"
         :alternate-horizontal-layout="index === 0 ? !isMobile : isMobile"
       />
