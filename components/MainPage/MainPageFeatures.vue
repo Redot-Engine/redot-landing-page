@@ -1,11 +1,12 @@
 <script setup lang="ts">
 const isMobile = useIsMobile();
+const featureFlags = useFeatureFlags();
 </script>
 
 <template>
   <MainPageSection title="Redot features">
     <template #button>
-      <LinkButton href="#" type="red">
+      <LinkButton v-show="!featureFlags.minimal" href="#" type="red">
         More features
         <Icon name="arrow" />
       </LinkButton>
