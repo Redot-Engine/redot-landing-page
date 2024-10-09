@@ -3,10 +3,10 @@ const isMobile = useIsMobile();
 
 const { data: posts } = await useAsyncData("recent-posts", () =>
   queryContent("/blog")
-    .where({ type: { $eq: "post" } })
+    .where({ type: { $eq: "post" }, published: { $eq: true } })
     .sort({ date: 1 })
     .limit(5)
-    .find(),
+    .find()
 );
 </script>
 
@@ -21,7 +21,7 @@ const { data: posts } = await useAsyncData("recent-posts", () =>
 
     <div class="news-grid">
       <MainPageNewsArticle
-        v-for="(post, index) in (posts ?? [])"
+        v-for="(post, index) in posts ?? []"
         :key="post._path"
         :alternate-horizontal-layout="index === 0 ? !isMobile : isMobile"
         :description="post.description"
