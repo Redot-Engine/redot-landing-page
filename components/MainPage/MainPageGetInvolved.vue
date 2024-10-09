@@ -10,22 +10,22 @@ import TwitterLogo from "~/assets/images/twitter-logo.svg";
       <MainPageGetInvolvedItem
         :image="DiscordLogo"
         description="A space to socialize with other community members."
-        link="#"
+        link="https://discord.gg/redot"
         title="Discord server"
-      />
-
-      <MainPageGetInvolvedItem
-        :image="ForumLogo"
-        description="A place for the Redot community to meet, ask questions, share their work, and provide help to other users."
-        link="#"
-        title="Forum"
       />
 
       <MainPageGetInvolvedItem
         :image="TwitterLogo"
         description="Get official development news."
-        link="#"
+        link="https://x.com/redotengine"
         title="X/Twitter feed"
+      />
+
+      <MainPageGetInvolvedItem
+        :image="ForumLogo"
+        description="A place for the Redot community to meet, ask questions, share their work, and provide help to other users."
+        link="https://www.reddit.com/r/RedotGameEngineMain/"
+        title="Reddit forum"
       />
     </div>
   </MainPageSection>
