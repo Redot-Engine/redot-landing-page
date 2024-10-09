@@ -1,36 +1,33 @@
 <script setup lang="ts">
 const isMobile = useIsMobile();
+
+const { data: posts } = await useAsyncData("recent-posts", () =>
+  queryContent("/blog")
+    .where({ type: { $eq: "post" } })
+    .sort({ date: 1 })
+    .limit(5)
+    .find()
+);
 </script>
 
 <template>
   <MainPageSection title="Recent news">
     <template #button>
-      <LinkButton
-        href="#"
-        type="red"
-      >
+      <LinkButton href="#" type="red">
         More news
-        <Icon name="arrow" />
+        <Icon name="arrow"/>
       </LinkButton>
     </template>
 
     <div class="news-grid">
-      <MainPageNewsArticle :vertical="isMobile" />
       <MainPageNewsArticle
-        :vertical="!isMobile"
-        :alternate-horizontal-layout="isMobile"
-      />
-      <MainPageNewsArticle
-        :vertical="!isMobile"
-        :alternate-horizontal-layout="isMobile"
-      />
-      <MainPageNewsArticle
-        :vertical="!isMobile"
-        :alternate-horizontal-layout="isMobile"
-      />
-      <MainPageNewsArticle
-        :vertical="!isMobile"
-        :alternate-horizontal-layout="isMobile"
+        v-for="(post, index) in (posts ?? [])"
+        :title="post.title ?? ''"
+        :description="post.description"
+        :image="post.image"
+        :url="post._path ?? ''"
+        :vertical="index === 0 ? isMobile : !isMobile"
+        :alternate-horizontal-layout="index === 0 ? !isMobile : isMobile"
       />
     </div>
   </MainPageSection>

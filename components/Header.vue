@@ -1,8 +1,13 @@
 <script setup lang="ts">
 const scrolled = ref(false);
+const menuOpen = ref(false);
 
 function updateScrollPosition(): void {
   scrolled.value = window.scrollY > 0;
+}
+
+function toggleMenu(): void {
+  menuOpen.value = !menuOpen.value;
 }
 
 onMounted(() => {
@@ -11,7 +16,7 @@ onMounted(() => {
   window.addEventListener(
       "scroll",
       updateScrollPosition,
-      { passive: true },
+      {passive: true},
   );
 
   return () => {
@@ -22,108 +27,72 @@ onMounted(() => {
 
 <template>
   <header
-    :class="{
-      'header--scrolled': scrolled,
-    }"
-    class="header"
+      :class="{
+        'header--scrolled': scrolled,
+      }"
+      class="header"
   >
-    <MaxWidthContainer class="header-inner">
-      <img
-        src="~/assets/images/TopBarLogo.svg"
-        alt="Redot logo"
-        class="header-logo"
+    <MaxWidthContainer
+        :class="{
+          'header-inner--opened': menuOpen,
+        }"
+        class="header-inner"
+    >
+      <img src="~/assets/images/TopBarLogo.svg" alt="Redot logo" class="header-logo"/>
+      <button @click="toggleMenu" class="header-mobile-menu-btn">
+        <Icon :name="menuOpen ? 'close' : 'menu'" />
+      </button>
+      <div
+          :class="{
+            'header-navigation--opened': menuOpen,
+          }"
+          class="header-navigation"
       >
+        <div class="header-links">
+          <div class="header-link-with-menu">
+            <span class="header-link">Overview <Icon name="chevron-down"/></span>
 
-      <div class="header-links">
-        <div class="header-link header-link-with-menu">
-          Overview
-          <Icon name="chevron-down" />
-
-          <div class="header-menu">
-            <NuxtLink
-              href="#"
-              class="header-menu-link"
-            >
-              Menu item
-            </NuxtLink>
-            <NuxtLink
-              href="#"
-              class="header-menu-link"
-            >
-              Menu item
-            </NuxtLink>
-            <NuxtLink
-              href="#"
-              class="header-menu-link"
-            >
-              Menu item
-            </NuxtLink>
-            <NuxtLink
-              href="#"
-              class="header-menu-link"
-            >
-              Menu item
-            </NuxtLink>
-            <NuxtLink
-              href="#"
-              class="header-menu-link"
-            >
-              Menu item
-            </NuxtLink>
+            <div class="header-menu">
+              <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+              <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+              <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+              <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+              <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+            </div>
           </div>
+          <NuxtLink key="documentation" href="#" class="header-link">Documentation</NuxtLink>
+          <NuxtLink key="news" href="#" class="header-link">News</NuxtLink>
+          <NuxtLink key="assets" href="#" class="header-link">Assets</NuxtLink>
         </div>
-        <NuxtLink
-          key="documentation"
-          href="#"
-          class="header-link"
-        >
-          Documentation
-        </NuxtLink>
-        <NuxtLink
-          key="news"
-          href="#"
-          class="header-link"
-        >
-          News
-        </NuxtLink>
-        <NuxtLink
-          key="assets"
-          href="#"
-          class="header-link"
-        >
-          Assets
-        </NuxtLink>
-      </div>
 
-      <div class="header-buttons">
-        <LinkButton href="#">
-          Contribute
-          <Icon name="code" />
-        </LinkButton>
-        <LinkButton href="#">
-          Donate
-          <Icon name="heart" />
-        </LinkButton>
-        <LinkButton
-          href="#"
-          type="red"
-        >
-          Download
-          <Icon name="arrow" />
-        </LinkButton>
+        <div class="header-buttons">
+          <LinkButton href="#">
+            Contribute
+            <Icon name="code"/>
+          </LinkButton>
+          <LinkButton href="#">
+            Donate
+            <Icon name="heart"/>
+          </LinkButton>
+          <LinkButton href="#" type="red">
+            Download
+            <Icon name="arrow"/>
+          </LinkButton>
+        </div>
       </div>
     </MaxWidthContainer>
   </header>
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/styles/mixins";
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  backdrop-filter: blur(0px);
   background-color: #0000;
   transition: background-color 0.3s, backdrop-filter 0.3s, border-bottom-color 0.3s;
   font-size: 13px;
@@ -133,6 +102,57 @@ onMounted(() => {
     background-color: #000000e6;
     backdrop-filter: blur(20px);
     border-bottom-color: #ffffff19;
+
+    @include mixins.mobile-and-smaller {
+      backdrop-filter: unset;
+      background-color: #000;
+    }
+  }
+
+  &-mobile-menu-btn {
+    display: none;
+
+    @include mixins.mobile-and-smaller {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      cursor: pointer;
+      background-color: #000000e6;
+      border: 1px solid #ffffff1a;
+      border-radius: 8px;
+    }
+  }
+
+  &-navigation {
+    display: flex;
+    justify-content: space-between;
+    transition: opacity 0.3s, transform 0.3s;
+    width: 100%;
+
+    @include mixins.mobile-and-smaller {
+      position: absolute;
+      opacity: 0;
+      gap: 24px;
+      top: 56px;
+      left: 0;
+      flex-direction: column;
+      align-items: start;
+      height: 75vh;
+      padding: 20px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      border-bottom: 1px solid #ffffff1a;
+      transform: translateY(-10px);
+      pointer-events: none;
+    }
+
+    &--opened {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      background-color: #000000e6;
+      backdrop-filter: blur(20px);
+    }
   }
 
   &-inner {
@@ -140,6 +160,17 @@ onMounted(() => {
     gap: 40px;
     height: 56px;
     align-items: center;
+
+    @include mixins.mobile-and-smaller {
+      gap: 0;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &--opened {
+      background-color: #000000e6;
+    }
   }
 
   &-logo {
@@ -152,6 +183,11 @@ onMounted(() => {
     gap: 20px;
     align-items: center;
     flex: 1;
+
+    @include mixins.mobile-and-smaller {
+      flex-direction: column;
+      align-items: start;
+    }
   }
 
   &-link {
@@ -166,6 +202,10 @@ onMounted(() => {
     &:hover {
       opacity: 100%;
     }
+
+    @include mixins.mobile-and-smaller {
+      opacity: 100%;
+    }
   }
 
   &-link-with-menu {
@@ -174,6 +214,10 @@ onMounted(() => {
     &:hover .header-menu {
       opacity: 1;
       pointer-events: auto;
+    }
+
+    @include mixins.mobile-and-smaller {
+      display: block;
     }
   }
 
@@ -192,6 +236,14 @@ onMounted(() => {
     min-width: 200px;
     transform: translateX(-50%);
     transition: opacity 0.3s;
+
+    @include mixins.mobile-and-smaller {
+      position: unset;
+      opacity: 1;
+      transform: unset;
+      border: unset;
+      background-color: unset;
+    }
 
     &::before {
       content: "";
@@ -220,6 +272,11 @@ onMounted(() => {
   &-buttons {
     display: flex;
     gap: 10px;
+
+    @include mixins.mobile-and-smaller {
+      justify-content: center;
+      width: 100%;
+    }
   }
 }
 </style>

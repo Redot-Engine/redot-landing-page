@@ -1,45 +1,39 @@
 <script setup lang="ts">
-const {
-  vertical,
-  alternateHorizontalLayout,
-} = defineProps<{
-  vertical?: boolean;
-  alternateHorizontalLayout?: boolean;
-}>();
+const { title, description, image, url, vertical, alternateHorizontalLayout } =
+  defineProps<{
+    title: string;
+    description: string;
+    image: string;
+    url: string;
+    vertical?: boolean;
+    alternateHorizontalLayout?: boolean;
+  }>();
 
 const classes = computed(() => ({
   "main-page-news-article--vertical": vertical,
-  "main-page-news-article--alternate-horizontal-layout": alternateHorizontalLayout,
+  "main-page-news-article--alternate-horizontal-layout":
+    alternateHorizontalLayout,
 }));
 
 const seed = useId();
 </script>
 
 <template>
-  <article
-    :class="classes"
-    class="main-page-news-article"
-  >
+  <article :class="classes" class="main-page-news-article">
     <img
       :src="`https://picsum.photos/seed/${seed}/1280/720`"
       alt="News article image"
       class="main-page-news-article-image"
-    >
-    <SectionTitle
-      :small="vertical"
-      class="main-page-news-article-title"
-    >
-      Redot achieves a big milestone!
+    />
+    <SectionTitle :small="vertical" class="main-page-news-article-title">
+      {{ title }}
     </SectionTitle>
     <SectionDescription class="main-page-news-article-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+      {{ description }}
     </SectionDescription>
-    <LinkButton
-      href="#"
-      class="main-page-news-article-button"
-    >
+    <LinkButton :href="url" class="main-page-news-article-button">
       Read post
-      <Icon name="arrow" />
+      <Icon name="arrow"/>
     </LinkButton>
   </article>
 </template>
