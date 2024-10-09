@@ -6,7 +6,7 @@ const { data: posts } = await useAsyncData("recent-posts", () =>
     .where({ type: { $eq: "post" } })
     .sort({ date: 1 })
     .limit(5)
-    .find()
+    .find(),
 );
 </script>
 
@@ -22,12 +22,13 @@ const { data: posts } = await useAsyncData("recent-posts", () =>
     <div class="news-grid">
       <MainPageNewsArticle
         v-for="(post, index) in (posts ?? [])"
-        :title="post.title ?? ''"
+        :key="post._path"
+        :alternate-horizontal-layout="index === 0 ? !isMobile : isMobile"
         :description="post.description"
         :image="post.image"
+        :title="post.title ?? ''"
         :url="post._path ?? ''"
         :vertical="index === 0 ? isMobile : !isMobile"
-        :alternate-horizontal-layout="index === 0 ? !isMobile : isMobile"
       />
     </div>
   </MainPageSection>

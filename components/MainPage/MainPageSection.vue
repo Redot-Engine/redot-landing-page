@@ -7,11 +7,13 @@ defineProps<{
 <template>
   <section class="main-page-section">
     <div class="section-title">
-      <div class="section-title-text">{{ title }}</div>
-      <slot name="button"/>
+      <div class="section-title-text">
+        {{ title }}
+      </div>
+      <slot name="button" />
     </div>
 
-    <slot/>
+    <slot />
   </section>
 </template>
 

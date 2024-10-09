@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type {ButtonType} from "~/types/ButtonType";
+import type { ButtonType } from "~/types/ButtonType";
 
-const {buttonText = "Join"} = defineProps<{
+const { buttonText = "Join" } = defineProps<{
   title: string;
   description: string;
   link: string;
@@ -13,12 +13,12 @@ const {buttonText = "Join"} = defineProps<{
 
 <template>
   <div class="get-involved-item">
-    <img :src="image" alt="" class="get-involved-item-image"/>
-    <SectionTitle class="get-involved-item-title" small>{{title}}</SectionTitle>
-    <SectionDescription class="get-involved-item-description">{{description}}</SectionDescription>
+    <img :src="image" alt="" class="get-involved-item-image">
+    <SectionTitle class="get-involved-item-title" small>{{ title }}</SectionTitle>
+    <SectionDescription class="get-involved-item-description">{{ description }}</SectionDescription>
     <LinkButton :href="link" :type="buttonType">
       {{ buttonText }}
-      <Icon name="arrow"/>
+      <Icon name="arrow" />
     </LinkButton>
   </div>
 </template>

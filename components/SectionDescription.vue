@@ -1,14 +1,14 @@
 <script setup lang="ts">
-const {big} = defineProps<{
+const { big } = defineProps<{
   big?: boolean;
 }>();
 
-const classBig = computed(() => big ? 'section-description--big' : '');
+const classBig = computed(() => big ? "section-description--big" : "");
 </script>
 
 <template>
   <div :class="classBig" class="section-description">
-    <slot/>
+    <slot />
   </div>
 </template>
 
