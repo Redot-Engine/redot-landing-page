@@ -24,7 +24,7 @@ const seed = useId();
       :src="`https://picsum.photos/seed/${seed}/1280/720`"
       alt="News article image"
       class="main-page-news-article-image"
-    />
+    >
     <SectionTitle :small="vertical" class="main-page-news-article-title">
       {{ title }}
     </SectionTitle>
@@ -33,7 +33,7 @@ const seed = useId();
     </SectionDescription>
     <LinkButton :href="url" class="main-page-news-article-button">
       Read post
-      <Icon name="arrow"/>
+      <Icon name="arrow" />
     </LinkButton>
   </article>
 </template>

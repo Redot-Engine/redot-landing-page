@@ -8,50 +8,27 @@ function scroll() {
 </script>
 
 <template>
-  <section
-    ref="hero"
-    class="hero"
-  >
+  <section ref="hero" class="hero">
     <Header />
 
     <div class="hero-center">
-      <img
-        src="~/assets/images/redot-logo-white.svg"
-        alt=""
-        class="hero-center-logo"
-      >
+      <img alt="" class="hero-center-logo" src="~/assets/images/redot-logo-white.svg">
 
-      <SectionTitle small>
-        Open‑source game engine for&nbsp;everyone.
-      </SectionTitle>
+      <SectionTitle small>Open‑source game engine for&nbsp;everyone.</SectionTitle>
 
-      <SectionDescription>
-        No strings attached.
-      </SectionDescription>
+      <SectionDescription>No strings attached.</SectionDescription>
 
-      <LinkButton
-        href="#"
-        type="red"
-        class="hero-center-button"
-      >
+      <LinkButton class="hero-center-button" href="#" type="red">
         Download
         <Icon name="arrow" />
       </LinkButton>
     </div>
 
-    <button
-      class="hero-scroll-button"
-      @click="scroll"
-    >
-      <img
-        src="~/assets/images/chevron-down.svg"
-        alt=""
-      >
+    <button class="hero-scroll-button" @click="scroll">
+      <img alt="" src="~/assets/images/chevron-down.svg">
     </button>
 
-    <div class="hero-game-name">
-      Game name
-    </div>
+    <div class="hero-game-name">Game name</div>
   </section>
 </template>
 

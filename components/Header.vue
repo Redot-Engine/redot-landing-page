@@ -16,7 +16,7 @@ onMounted(() => {
   window.addEventListener(
       "scroll",
       updateScrollPosition,
-      {passive: true},
+      { passive: true },
   );
 
   return () => {
@@ -27,56 +27,56 @@ onMounted(() => {
 
 <template>
   <header
-      :class="{
-        'header--scrolled': scrolled,
-      }"
-      class="header"
+    :class="{
+      'header--scrolled': scrolled,
+    }"
+    class="header"
   >
     <MaxWidthContainer
-        :class="{
-          'header-inner--opened': menuOpen,
-        }"
-        class="header-inner"
+      :class="{
+        'header-inner--opened': menuOpen,
+      }"
+      class="header-inner"
     >
-      <img src="~/assets/images/TopBarLogo.svg" alt="Redot logo" class="header-logo"/>
-      <button @click="toggleMenu" class="header-mobile-menu-btn">
+      <img alt="Redot logo" class="header-logo" src="~/assets/images/TopBarLogo.svg">
+      <button class="header-mobile-menu-btn" @click="toggleMenu">
         <Icon :name="menuOpen ? 'close' : 'menu'" />
       </button>
       <div
-          :class="{
-            'header-navigation--opened': menuOpen,
-          }"
-          class="header-navigation"
+        :class="{
+          'header-navigation--opened': menuOpen,
+        }"
+        class="header-navigation"
       >
         <div class="header-links">
           <div class="header-link-with-menu">
-            <span class="header-link">Overview <Icon name="chevron-down"/></span>
+            <span class="header-link">Overview <Icon name="chevron-down" /></span>
 
             <div class="header-menu">
-              <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
-              <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
-              <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
-              <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
-              <NuxtLink href="#" class="header-menu-link">Menu item</NuxtLink>
+              <NuxtLink class="header-menu-link" href="#">Menu item</NuxtLink>
+              <NuxtLink class="header-menu-link" href="#">Menu item</NuxtLink>
+              <NuxtLink class="header-menu-link" href="#">Menu item</NuxtLink>
+              <NuxtLink class="header-menu-link" href="#">Menu item</NuxtLink>
+              <NuxtLink class="header-menu-link" href="#">Menu item</NuxtLink>
             </div>
           </div>
-          <NuxtLink key="documentation" href="#" class="header-link">Documentation</NuxtLink>
-          <NuxtLink key="news" href="#" class="header-link">News</NuxtLink>
-          <NuxtLink key="assets" href="#" class="header-link">Assets</NuxtLink>
+          <NuxtLink key="documentation" class="header-link" href="#">Documentation</NuxtLink>
+          <NuxtLink key="news" class="header-link" href="#">News</NuxtLink>
+          <NuxtLink key="assets" class="header-link" href="#">Assets</NuxtLink>
         </div>
 
         <div class="header-buttons">
           <LinkButton href="#">
             Contribute
-            <Icon name="code"/>
+            <Icon name="code" />
           </LinkButton>
           <LinkButton href="#">
             Donate
-            <Icon name="heart"/>
+            <Icon name="heart" />
           </LinkButton>
           <LinkButton href="#" type="red">
             Download
-            <Icon name="arrow"/>
+            <Icon name="arrow" />
           </LinkButton>
         </div>
       </div>

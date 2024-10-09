@@ -7,10 +7,7 @@ const classSmall = computed(() => small ? "section-title--small" : "");
 </script>
 
 <template>
-  <div
-    :class="classSmall"
-    class="section-title"
-  >
+  <div :class="classSmall" class="section-title">
     <slot />
   </div>
 </template>

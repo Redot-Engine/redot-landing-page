@@ -7,10 +7,7 @@ const classBig = computed(() => big ? "section-description--big" : "");
 </script>
 
 <template>
-  <div
-    :class="classBig"
-    class="section-description"
-  >
+  <div :class="classBig" class="section-description">
     <slot />
   </div>
 </template>
