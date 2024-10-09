@@ -27,15 +27,6 @@ We value any kind of contribution, including (but not limited to):
     ```bash
     # npm
     npm install
-
-    # pnpm
-    pnpm install
-
-    # yarn
-    yarn install
-
-    # bun
-    bun installnpm install
     ```
 
 3. Start the development server:
@@ -43,16 +34,8 @@ Run the following command to start a local development environment:
     ```bash
     # npm
     npm run dev
-
-    # pnpm
-    pnpm run dev
-
-    # yarn
-    yarn dev
-
-    # bun
-    bun run dev
     ```
+    
     This will start a server at http://localhost:3000, where you can preview your changes live.
 
 4. Create a new branch:
