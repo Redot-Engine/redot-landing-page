@@ -165,6 +165,7 @@ onMounted(() => {
     &--minimal {
       height: unset;
       gap: unset;
+      padding-top: 0;
     }
   }
 
