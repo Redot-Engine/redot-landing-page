@@ -6,11 +6,11 @@ import HeartLogo from "~/assets/images/heart-logo.svg";
   <MainPageSection title="Improve Redot">
     <MainPageGetInvolvedItem
       :image="HeartLogo"
-      button-text="Learn more"
+      button-text="Contribute"
       button-type="red"
       class="improve-card"
       description="Whether you are a developer or not, you can speed up the development by contributing to the codebase, reporting bugs, keeping the documentation up to date and donating."
-      link="#"
+      link="https://github.com/Redot-Engine/redot-engine"
       title="You can help us in a lot of ways!"
     />
   </MainPageSection>
