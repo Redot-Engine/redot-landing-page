@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const featureFlags = useFeatureFlags();
+const links = useLinks();
 const scrolled = ref(false);
 const menuOpen = ref(false);
 
@@ -39,7 +40,9 @@ onMounted(() => {
       }"
       class="header-inner"
     >
-      <img alt="Redot logo" class="header-logo" src="~/assets/images/TopBarLogo.svg">
+      <NuxtLink href="/">
+        <img alt="Redot logo" class="header-logo" src="~/assets/images/TopBarLogo.svg">
+      </NuxtLink>
       <button class="header-mobile-menu-btn" @click="toggleMenu">
         <Icon :name="menuOpen ? 'close' : 'menu'" />
       </button>
@@ -74,7 +77,7 @@ onMounted(() => {
           }"
           class="header-buttons"
         >
-          <LinkButton href="https://github.com/Redot-Engine/redot-engine">
+          <LinkButton :href="links.githubUrl">
             Contribute
             <Icon name="code" />
           </LinkButton>
@@ -82,7 +85,7 @@ onMounted(() => {
             Donate
             <Icon name="heart" />
           </LinkButton>
-          <LinkButton href="#" type="red">
+          <LinkButton :href="links.releasePage" type="red">
             Download
             <Icon name="arrow" />
           </LinkButton>

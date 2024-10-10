@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const featureFlags = useFeatureFlags();
+const links = useLinks();
 </script>
 
 <template>
@@ -8,19 +9,19 @@ const featureFlags = useFeatureFlags();
       <div class="footer-socials">
         <img alt="Redot logo" class="footer-logo" src="~/assets/images/TopBarLogo.svg">
         <div class="footer-spacer" />
-        <img alt="GitHub" class="footer-social" src="~/assets/images/social-github.svg">
-        <img alt="Discord" class="footer-social" src="~/assets/images/social-discord.svg">
-        <img alt="Twitter" class="footer-social" src="~/assets/images/social-twitter.svg">
-        <img alt="Reddit" class="footer-social" src="~/assets/images/social-reddit.svg">
+        <NuxtLink :href="links.githubUrl"><img alt="GitHub" class="footer-social" src="~/assets/images/social-github.svg"></NuxtLink>
+        <NuxtLink :href="links.discordUrl"><img alt="Discord" class="footer-social" src="~/assets/images/social-discord.svg"></NuxtLink>
+        <NuxtLink :href="links.twitterUrl"><img alt="Twitter" class="footer-social" src="~/assets/images/social-twitter.svg"></NuxtLink>
+        <NuxtLink :href="links.redditUrl"><img alt="Reddit" class="footer-social" src="~/assets/images/social-reddit.svg"></NuxtLink>
       </div>
 
       <div class="footer-columns">
         <div class="footer-column">
           <SectionTitle small>Redot Engine</SectionTitle>
 
-          <NuxtLink class="footer-link" href="#">Download</NuxtLink>
+          <NuxtLink :href="links.releasePage" class="footer-link">Download</NuxtLink>
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Documentation</NuxtLink>
-          <NuxtLink class="footer-link" href="https://github.com/Redot-Engine/redot-engine">Source Code</NuxtLink>
+          <NuxtLink :href="links.githubUrl" class="footer-link">Source Code</NuxtLink>
         </div>
 
         <div class="footer-column">

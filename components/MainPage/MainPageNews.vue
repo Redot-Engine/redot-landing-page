@@ -7,7 +7,7 @@ const { data: posts } = await useAsyncData("recent-posts", () =>
     .where({ type: { $eq: "post" }, published: { $eq: true } })
     .sort({ date: 1 })
     .limit(5)
-    .find()
+    .find(),
 );
 </script>
 

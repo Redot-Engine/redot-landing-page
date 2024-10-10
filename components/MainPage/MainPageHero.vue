@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const hero = ref<HTMLElement | null>(null);
+const links = useLinks();
 
 function scroll() {
   const element: HTMLElement = hero.value!;
@@ -18,7 +19,7 @@ function scroll() {
 
       <SectionDescription>No strings attached.</SectionDescription>
 
-      <LinkButton class="hero-center-button" href="#" type="red">
+      <LinkButton :href="links.releasePage" class="hero-center-button" type="red">
         Download
         <Icon name="arrow" />
       </LinkButton>
