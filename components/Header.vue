@@ -40,7 +40,9 @@ onMounted(() => {
       }"
       class="header-inner"
     >
-      <img alt="Redot logo" class="header-logo" src="~/assets/images/TopBarLogo.svg">
+      <NuxtLink href="/">
+        <img alt="Redot logo" class="header-logo" src="~/assets/images/TopBarLogo.svg">
+      </NuxtLink>
       <button class="header-mobile-menu-btn" @click="toggleMenu">
         <Icon :name="menuOpen ? 'close' : 'menu'" />
       </button>
