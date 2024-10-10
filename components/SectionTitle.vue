@@ -14,7 +14,7 @@ const classSmall = computed(() => small ? "section-title--small" : "");
 
 <style scoped lang="scss">
 .section-title {
-  font-weight: 900;
+  font-weight: 800;
   font-size: 32px;
 
   &--small {

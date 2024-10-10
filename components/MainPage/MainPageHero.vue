@@ -64,8 +64,7 @@ function scroll() {
 }
 
 .hero-center-logo {
-  width: 140px;
-  height: 115px;
+  height: 140px;
   margin-bottom: 20px;
 }
 

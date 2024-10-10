@@ -39,7 +39,7 @@ defineProps<{
 .section-title-text {
   display: inline-block;
   font-size: 36px;
-  font-weight: 900;
+  font-weight: 800;
   position: relative;
 
   &::before {

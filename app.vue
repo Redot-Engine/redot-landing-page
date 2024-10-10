@@ -16,7 +16,7 @@
 body {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
-  line-height: 1.21;
+  line-height: 1.2;
   color: #fff;
   background: #000;
 }
