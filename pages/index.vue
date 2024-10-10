@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import MainPageFeatures from "~/components/MainPage/MainPageFeatures.vue";
 
-useSeoMeta({
-  title: "Redot Game Engine",
-});
+useSeoMeta({});
 </script>
 
 <template>
