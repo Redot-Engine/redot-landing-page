@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { title, description, image, url, vertical, alternateHorizontalLayout } =
+const { title, description, url, vertical, alternateHorizontalLayout } =
   defineProps<{
     title: string;
     description: string;

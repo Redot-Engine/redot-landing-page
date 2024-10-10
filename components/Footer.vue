@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+const featureFlags = useFeatureFlags();
 </script>
 
 <template>
@@ -19,23 +19,23 @@
           <SectionTitle small>Redot Engine</SectionTitle>
 
           <NuxtLink class="footer-link" href="#">Download</NuxtLink>
-          <NuxtLink class="footer-link" href="#">Documentation</NuxtLink>
-          <NuxtLink class="footer-link" href="#">Source Code</NuxtLink>
+          <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Documentation</NuxtLink>
+          <NuxtLink class="footer-link" href="https://github.com/Redot-Engine/redot-engine">Source Code</NuxtLink>
         </div>
 
         <div class="footer-column">
           <SectionTitle small>Project</SectionTitle>
 
-          <NuxtLink class="footer-link" href="#">News</NuxtLink>
-          <NuxtLink class="footer-link" href="#">Code of Conduct</NuxtLink>
-          <NuxtLink class="footer-link" href="#">Teams</NuxtLink>
-          <NuxtLink class="footer-link" href="#">Communities</NuxtLink>
+          <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">News</NuxtLink>
+          <NuxtLink class="footer-link" href="#">Contribution Guidelines</NuxtLink>
+          <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Teams</NuxtLink>
+          <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Communities</NuxtLink>
         </div>
 
         <div class="footer-column">
           <SectionTitle small>Resources</SectionTitle>
 
-          <NuxtLink class="footer-link" href="#">Assets</NuxtLink>
+          <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Assets</NuxtLink>
           <NuxtLink class="footer-link" href="#">Press Kit</NuxtLink>
         </div>
       </div>
