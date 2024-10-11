@@ -37,7 +37,7 @@ const links = useLinks();
           <SectionTitle small>Resources</SectionTitle>
 
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Assets</NuxtLink>
-          <NuxtLink class="footer-link" href="#">Press Kit</NuxtLink>
+          <NuxtLink :href="links.pressKit" class="footer-link">Press Kit</NuxtLink>
         </div>
       </div>
 
