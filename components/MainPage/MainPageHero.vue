@@ -50,7 +50,7 @@ function scroll() {
 }
 .hero {
   position: relative;
-  height: 100dvh;
+  height: 70dvh;
   display: grid;
   place-items: center;
   background-size: cover;

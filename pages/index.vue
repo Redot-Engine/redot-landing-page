@@ -19,7 +19,7 @@ import MainPageFeatures from "~/components/MainPage/MainPageFeatures.vue";
 .main-page-sections {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 30px;
   padding: 80px 0;
 }
 </style>
