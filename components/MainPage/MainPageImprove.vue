@@ -11,7 +11,7 @@ const links = useLinks();
       button-text="Contribute"
       button-type="red"
       class="improve-card"
-      description="Whether you are a developer or not, you can speed up the development by contributing to the codebase, reporting bugs, keeping the documentation up to date and donating."
+      description="Whether you are a developer or not, you can speed up the development by contributing to the codebase, reporting bugs and keeping the documentation up to date."
       title="You can help us in a lot of ways!"
     />
   </MainPageSection>
