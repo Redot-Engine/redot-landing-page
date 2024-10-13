@@ -3,7 +3,7 @@ const isMobile = useIsMobile();
 const featureFlags = useFeatureFlags();
 
 const { data: posts } = await useAsyncData("recent-posts", () =>
-  queryContent("/blog")
+  queryContent("/news")
     .where({ type: { $eq: "post" }, published: { $eq: true } })
     .sort({ date: 1 })
     .limit(5)
@@ -27,6 +27,7 @@ const { data: posts } = await useAsyncData("recent-posts", () =>
         :alternate-horizontal-layout="index === 0 ? !isMobile : isMobile"
         :description="post.description"
         :image="post.image"
+        :small-layout="isMobile"
         :title="post.title ?? ''"
         :url="post._path ?? ''"
         :vertical="index === 0 ? isMobile : !isMobile"

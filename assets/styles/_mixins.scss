@@ -3,3 +3,9 @@
         @content;
     }
 }
+
+@mixin tablet-and-smaller {
+    @media (max-width: 1279px) {
+        @content;
+    }
+}
