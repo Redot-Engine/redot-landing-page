@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { title, description, url, vertical, alternateHorizontalLayout } =
+const { title, description, url, vertical, image, alternateHorizontalLayout, smallLayout } =
   defineProps<{
     title: string;
     description: string;
@@ -7,21 +7,21 @@ const { title, description, url, vertical, alternateHorizontalLayout } =
     url: string;
     vertical?: boolean;
     alternateHorizontalLayout?: boolean;
+    smallLayout?: boolean;
   }>();
 
 const classes = computed(() => ({
   "main-page-news-article--vertical": vertical,
   "main-page-news-article--alternate-horizontal-layout":
     alternateHorizontalLayout,
+  "main-page-news-article--small-layout": smallLayout,
 }));
-
-const seed = useId();
 </script>
 
 <template>
   <article :class="classes" class="main-page-news-article">
     <img
-      :src="`https://picsum.photos/seed/${seed}/1280/720`"
+      :src="image"
       alt="News article image"
       class="main-page-news-article-image"
     >
@@ -95,7 +95,7 @@ const seed = useId();
     grid-template-columns: 1fr 2fr;
   }
 
-  &--alternate-horizontal-layout &-title {
+  &--small-layout &-title {
     font-size: 20px;
   }
 }

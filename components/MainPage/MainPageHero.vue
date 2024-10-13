@@ -34,15 +34,45 @@ function scroll() {
 </template>
 
 <style scoped lang="scss">
+@keyframes slideshow {
+  0%, 28% {
+    background-image: url(~/assets/images/game_preview/game_preview_01.avif);
+  }
+  33%, 61% {
+    background-image: url(~/assets/images/game_preview/game_preview_02.avif);
+  }
+  66%, 94% {
+    background-image: url(~/assets/images/game_preview/game_preview_03.avif);
+  }
+  100% {
+    background-image: url(~/assets/images/game_preview/game_preview_01.avif);
+  }
+}
 .hero {
+  position: relative;
   height: 100dvh;
-  background:
-      linear-gradient(to bottom, #000f, #0000 100px, #0000 calc(100% - 100px), #000f),
-      url(https://picsum.photos/seed/videogame8/1920/1080) no-repeat center;
-  background-size: cover, cover;
   display: grid;
   place-items: center;
-  position: relative;
+  background-size: cover;
+  background-position: center;
+  animation: slideshow 15s infinite;
+  transition: background-image 1s ease-in-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom,
+        #000f 0%,
+        #0000 100px,
+        #0000 calc(100% - 100px),
+        #000f 100%
+    );
+  }
+
 
   @media (max-width: 410px) {
     padding: 0 10px;
@@ -84,6 +114,7 @@ function scroll() {
 }
 
 .hero-game-name {
+  visibility: hidden; /* Set visible, once we have real games to show */
   border: 1px solid #1d1c1b;
   border-radius: 36px;
   padding: 5px 10px;

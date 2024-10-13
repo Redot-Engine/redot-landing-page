@@ -4,6 +4,10 @@ const links = useLinks();
 const scrolled = ref(false);
 const menuOpen = ref(false);
 
+const { alwaysOpaque = false } = defineProps<{
+  alwaysOpaque?: boolean;
+}>();
+
 function updateScrollPosition(): void {
   scrolled.value = window.scrollY > 0;
 }
@@ -13,12 +17,16 @@ function toggleMenu(): void {
 }
 
 onMounted(() => {
+  if (alwaysOpaque) {
+    return;
+  }
+
   updateScrollPosition();
 
   window.addEventListener(
-      "scroll",
-      updateScrollPosition,
-      { passive: true },
+    "scroll",
+    updateScrollPosition,
+    { passive: true },
   );
 
   return () => {
@@ -30,7 +38,7 @@ onMounted(() => {
 <template>
   <header
     :class="{
-      'header--scrolled': scrolled,
+      'header--scrolled': scrolled || alwaysOpaque,
     }"
     class="header"
   >
@@ -53,9 +61,8 @@ onMounted(() => {
         }"
         class="header-navigation"
       >
-        <div v-if="featureFlags.minimal" />
-        <div v-else class="header-links">
-          <div class="header-link-with-menu">
+        <div class="header-links">
+          <div v-if="!featureFlags.minimal" class="header-link-with-menu">
             <span class="header-link">Overview <Icon name="chevron-down" /></span>
 
             <div class="header-menu">
@@ -66,9 +73,14 @@ onMounted(() => {
               <NuxtLink class="header-menu-link" href="#">Menu item</NuxtLink>
             </div>
           </div>
-          <NuxtLink key="documentation" class="header-link" href="#">Documentation</NuxtLink>
-          <NuxtLink key="news" class="header-link" href="#">News</NuxtLink>
-          <NuxtLink key="assets" class="header-link" href="#">Assets</NuxtLink>
+          <NuxtLink key="documentation" :href="links.documentation" class="header-link">Documentation</NuxtLink>
+          <NuxtLink key="news" class="header-link" href="/news">News</NuxtLink>
+          <NuxtLink
+            v-if="!featureFlags.minimal"
+            key="assets"
+            class="header-link"
+            href="#"
+          >Assets</NuxtLink>
         </div>
 
         <div
@@ -108,6 +120,7 @@ onMounted(() => {
   transition: background-color 0.3s, backdrop-filter 0.3s, border-bottom-color 0.3s;
   font-size: 13px;
   border-bottom: 1px solid #fff0;
+  padding-bottom: -1px;
 
   &--scrolled {
     background-color: #000000e6;
@@ -147,6 +160,7 @@ onMounted(() => {
       top: 56px;
       left: 0;
       flex-direction: column;
+      gap: 20px;
       align-items: start;
       height: 75vh;
       padding: 20px;
@@ -167,8 +181,6 @@ onMounted(() => {
 
     &--minimal {
       height: unset;
-      gap: unset;
-      padding-top: 0;
     }
   }
 
