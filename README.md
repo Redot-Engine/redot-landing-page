@@ -27,5 +27,5 @@ This project uses the following technologies:
 - **Node.js & npm**: For package management and running development tools.
 
 ### 🙌 Contributing:
-We welcome contributions from everyone! To get started, please read our [Contributing information](https://github.com/YanLi-FE/redot-landing-page/blob/main/CONTRIBUTING.md) to learn how to contribute to the project, set up the development environment, and submit pull requests.
-We expect all contributors to uphold our community standards. Please review our [Code of Conduct](https://github.com/YanLi-FE/redot-landing-page/blob/main/CODE_OF_CONDUCT.md) to learn more about our expectations regarding respectful collaboration and behavior.
+We welcome contributions from everyone! To get started, please read our [Contributing information](https://github.com/redot-engine/redot-landing-page/blob/main/CONTRIBUTING.md) to learn how to contribute to the project, set up the development environment, and submit pull requests.
+We expect all contributors to uphold our community standards. Please review our [Code of Conduct](https://github.com/redot-engine/redot-landing-page/blob/main/CODE_OF_CONDUCT.md) to learn more about our expectations regarding respectful collaboration and behavior.
