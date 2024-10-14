@@ -10,7 +10,7 @@ alt: Redot in the news
 ogImage: /img/news/redot-header.jpg
 tags: ["redot", "game"]
 type: "post"
-author: "nicholai"
+author: "Nicholai"
 authorImage: /img/authors/nicholai.jpg
 published: true
 ---
