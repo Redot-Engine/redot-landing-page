@@ -26,15 +26,11 @@ function scroll() {
     </div>
 
     <div class="hero-center hero-center--socials">
-      <NuxtLink :href="links.githubUrl" class="social-icon"><img alt="GitHub" src="~/assets/images/social-github.svg"></NuxtLink>
-      <NuxtLink :href="links.discordUrl" class="social-icon"><img alt="Discord" src="~/assets/images/social-discord.svg"></NuxtLink>
-      <NuxtLink :href="links.twitterUrl" class="social-icon"><img alt="Twitter" src="~/assets/images/social-twitter.svg"></NuxtLink>
-      <NuxtLink :href="links.redditUrl" class="social-icon"><img alt="Reddit" src="~/assets/images/social-reddit.svg"></NuxtLink>
+      <div class="social-info"><NuxtLink :href="links.githubUrl" class="social-icon"><img alt="GitHub" src="~/assets/images/social-github.svg"></NuxtLink>4.1k stars</div>
+      <div class="social-info"><NuxtLink :href="links.discordUrl" class="social-icon"><img alt="Discord" src="~/assets/images/social-discord.svg"></NuxtLink>8.5k members</div>
+      <div class="social-info"><NuxtLink :href="links.twitterUrl" class="social-icon"><img alt="Twitter" src="~/assets/images/social-twitter.svg"></NuxtLink>20.4k followers</div>
+      <div class="social-info"><NuxtLink :href="links.redditUrl" class="social-icon"><img alt="Reddit" src="~/assets/images/social-reddit.svg"></NuxtLink>680 members</div>
     </div>
-
-    <button class="hero-scroll-button" @click="scroll">
-      <img alt="" src="~/assets/images/chevron-down.svg">
-    </button>
 
     <div class="hero-game-name">Game name</div>
   </section>
@@ -104,11 +100,15 @@ function scroll() {
   gap: 5px;
 
   &--socials {
+    max-width: 800px;
+    font-size: 1.5vh;
     padding: 20px;
     flex-direction: row;
     gap: 10px;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    bottom: 5.0vh;
   }
 }
 
@@ -122,6 +122,15 @@ function scroll() {
   }
 }
 
+.social-info {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
 .hero-center-logo {
   height: 140px;
   margin-bottom: 20px;
@@ -129,16 +138,6 @@ function scroll() {
 
 .hero-center-button {
   margin-top: 15px;
-}
-
-.hero-scroll-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  bottom: 11px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .hero-game-name {
