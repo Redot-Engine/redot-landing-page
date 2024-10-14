@@ -101,7 +101,7 @@ function scroll() {
 
   &--socials {
     max-width: 800px;
-    font-size: 1.5vh;
+    font-size: clamp(16px, calc(20px + (36–20) * (100vw - 768px)/(1920–768)), 48px);
     padding: 20px;
     flex-direction: row;
     gap: 10px;
