@@ -115,6 +115,7 @@ onMounted(() => {
   right: 0;
   height: 100%;
   border-radius: 20px;
+  aspect-ratio: 16 / 9;
 
   @include mixins.tablet-and-smaller {
     position: unset;

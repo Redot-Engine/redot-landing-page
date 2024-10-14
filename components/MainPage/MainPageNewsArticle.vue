@@ -68,12 +68,6 @@ const classes = computed(() => ({
     margin-left: 15px;
   }
 
-  &-button {
-    justify-self: end;
-    align-self: end;
-    margin-top: 10px;
-  }
-
   &--vertical {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
