@@ -3,9 +3,9 @@ title: The web side of things
 date: 2024-10-13
 description: A cursory look into some of the technical aspects of this website and related projects.
 
-image: /img/news/spider-web.jpg
+image: /img/news/the-web-side-of-things.jpg
 alt: Redot in the news
-ogImage: /img/news/spider-weg.jpg
+ogImage: /img/news/the-web-side-of-things.jpg
 tags: ["community"]
 type: "post"
 author: "Arjan"
