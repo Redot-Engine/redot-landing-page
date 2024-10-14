@@ -20,7 +20,7 @@ const links = useLinks();
           <SectionTitle small>Redot Engine</SectionTitle>
 
           <NuxtLink :href="links.releasePage" class="footer-link">Download</NuxtLink>
-          <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Documentation</NuxtLink>
+          <NuxtLink :href="links.documentation" class="footer-link">Documentation</NuxtLink>
           <NuxtLink :href="links.githubUrl" class="footer-link">Source Code</NuxtLink>
         </div>
 
@@ -28,7 +28,7 @@ const links = useLinks();
           <SectionTitle small>Project</SectionTitle>
 
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">News</NuxtLink>
-          <NuxtLink class="footer-link" href="#">Contribution Guidelines</NuxtLink>
+          <NuxtLink :href="links.contribute" class="footer-link">Contribution Guidelines</NuxtLink>
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Teams</NuxtLink>
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Communities</NuxtLink>
         </div>
