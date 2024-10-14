@@ -132,11 +132,9 @@ function scroll() {
 }
 
 @media only screen and (max-width: 600px) {
-.social-info {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  .social-info {
+    flex-direction: column;
+  }
 }
 
 .hero-center-logo {
