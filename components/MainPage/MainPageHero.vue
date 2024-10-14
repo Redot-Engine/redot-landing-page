@@ -101,13 +101,13 @@ function scroll() {
 
   &--socials {
     max-width: 800px;
-    padding: 20px;
+    padding: 10px;
     flex-direction: row;
     gap: 10px;
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 5.0vh;
+    bottom: 3.0vh;
   }
 }
 
