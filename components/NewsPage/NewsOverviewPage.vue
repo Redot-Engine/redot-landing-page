@@ -1,6 +1,14 @@
 <script setup lang="ts">
-const tags = ref(["All", "News", "Releases", "Community"]);
+import NewsOverviewPageArticle from "~/components/NewsPage/NewsOverviewPageArticle.vue";
 
+const tags = ref(["All posts", "News", "Releases", "Community"]);
+
+const { data: posts } = await useAsyncData("all-news", () =>
+    queryContent("/news")
+        .where({ type: { $eq: "post" }, published: { $eq: true } })
+        .sort({ date: -1 })
+        .find(),
+);
 </script>
 
 <template>
@@ -13,6 +21,13 @@ const tags = ref(["All", "News", "Releases", "Community"]);
     >
       {{ tag }}
     </Chip>
+  </div>
+  <div>
+    <NewsOverviewPageArticle
+      v-for="(post) in posts ?? []"
+      :key="post._path"
+      :post="{title: post.title, description: post.description, image: post.image }"
+    />
   </div>
 </template>
 

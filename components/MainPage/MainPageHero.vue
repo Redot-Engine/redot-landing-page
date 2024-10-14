@@ -1,11 +1,6 @@
 <script setup lang="ts">
 const hero = ref<HTMLElement | null>(null);
 const links = useLinks();
-
-function scroll() {
-  const element: HTMLElement = hero.value!;
-  element.nextElementSibling?.scrollIntoView({ block: "start", behavior: "smooth" });
-}
 </script>
 
 <template>
