@@ -6,7 +6,7 @@ description: A cursory look into some of the technical aspects of this website a
 image: /img/news/spider-web.jpg
 alt: Redot in the news
 ogImage: /img/news/spider-weg.jpg
-tags: ["redot", "docs", "hosting", "web"]
+tags: ["community"]
 type: "post"
 author: "Arjan"
 authorImage: /img/authors/arjan.jpg
