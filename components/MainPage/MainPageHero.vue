@@ -25,6 +25,13 @@ function scroll() {
       </LinkButton>
     </div>
 
+    <div class="hero-center hero-center--socials">
+      <NuxtLink :href="links.githubUrl" class="social-icon"><img alt="GitHub" src="~/assets/images/social-github.svg"></NuxtLink>
+      <NuxtLink :href="links.discordUrl" class="social-icon"><img alt="Discord" src="~/assets/images/social-discord.svg"></NuxtLink>
+      <NuxtLink :href="links.twitterUrl" class="social-icon"><img alt="Twitter" src="~/assets/images/social-twitter.svg"></NuxtLink>
+      <NuxtLink :href="links.redditUrl" class="social-icon"><img alt="Reddit" src="~/assets/images/social-reddit.svg"></NuxtLink>
+    </div>
+
     <button class="hero-scroll-button" @click="scroll">
       <img alt="" src="~/assets/images/chevron-down.svg">
     </button>
@@ -50,9 +57,12 @@ function scroll() {
 }
 .hero {
   position: relative;
-  height: 70dvh;
-  display: grid;
-  place-items: center;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
   background-size: cover;
   background-position: center;
   animation: slideshow 15s infinite;
@@ -92,6 +102,24 @@ function scroll() {
   flex-direction: column;
   align-items: center;
   gap: 5px;
+
+  &--socials {
+    padding: 20px;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.social-icon {
+  height: 32px;
+  opacity: 0.6;
+  transition: 0.1s;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .hero-center-logo {
