@@ -55,7 +55,7 @@ const { body } = defineProps<{
   }
 
   :deep(a) {
-    color: #0083ff;
+    color: #3388ff;
     font-weight: bold;
     text-decoration: none;
   }
