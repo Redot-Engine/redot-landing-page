@@ -53,6 +53,18 @@ const { body } = defineProps<{
   :deep(p) {
     margin-bottom: 20px;
   }
+
+  :deep(a) {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  :deep(a:hover) {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+  }
 }
 
 </style>
