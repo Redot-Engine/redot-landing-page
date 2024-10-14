@@ -101,7 +101,6 @@ function scroll() {
 
   &--socials {
     max-width: 800px;
-    font-size: clamp(12px, calc(20px + (36–20) * (100vw - 768px)/(1920–768)), 48px);
     padding: 20px;
     flex-direction: row;
     gap: 10px;
@@ -123,12 +122,21 @@ function scroll() {
 }
 
 .social-info {
+  font-size: clamp(12px, calc(20px + (36–20) * (100vw - 768px)/(1920–768)), 48px);
   margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+.social-info {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 }
 
 .hero-center-logo {
