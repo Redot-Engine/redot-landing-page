@@ -33,29 +33,26 @@ const links = useLinks();
 
 <style scoped lang="scss">
 @keyframes slideshow {
-  0%, 12% {
+  0%, 14% {
     background-image: url(~/assets/images/game_preview/game_preview_06.png);
   }
-  14%, 26% {
+  17%, 31% {
     background-image: url(~/assets/images/game_preview/game_preview_01.avif);
   }
-  28%, 40% {
-    background-image: url(~/assets/images/game_preview/game_preview_04.png);
-  }
-  42%, 52% {
+  34%, 47% {
     background-image: url(~/assets/images/game_preview/game_preview_03.avif);
   }
-  56%, 68% {
+  50%, 61% {
     background-image: url(~/assets/images/game_preview/game_preview_05.png);
   }
-  70%, 82% {
+  64%, 75% {
     background-image: url(~/assets/images/game_preview/game_preview_02.avif);
   }
-  84%, 98% {
+  78%, 97% {
     background-image: url(~/assets/images/game_preview/game_preview_07.png);
   }
   100% {
-    background-image: url(~/assets/images/game_preview/game_preview_01.avif);
+    background-image: url(~/assets/images/game_preview/game_preview_06.png);
   }
 }
 .hero {
