@@ -1,15 +1,9 @@
 <script setup lang="ts">
+import type { NewsArticle } from "~/types/NewsArticle";
+
 const { post } =
     defineProps<{
-      post: Partial<{
-        title: string;
-        image: string;
-        url: string;
-        description: string;
-        authorImage: string;
-        author: string;
-        date: string;
-      }>
+      post: Partial<NewsArticle>
     }>();
 </script>
 

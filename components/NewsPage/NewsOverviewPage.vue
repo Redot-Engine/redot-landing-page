@@ -1,36 +1,55 @@
 <script setup lang="ts">
 import NewsOverviewPageArticle from "~/components/NewsPage/NewsOverviewPageArticle.vue";
+import type { NewsArticle } from "~/types/NewsArticle";
 
-const tags = ref(["All posts", "News", "Releases", "Community"]);
+const posts = ref<NewsArticle[]>([]);
 
-const { data: posts } = await useAsyncData("posts", () =>
-    queryContent("/news")
-        .where({ type: { $eq: "post" }, published: { $eq: true } })
-        .sort({ date: -1, index: 1 })
-        .find(),
-);
+async function fetchPostsByTag(tag: string) {
+  const query = queryContent("/news")
+      .where({ type: { $eq: "post" }, published: { $eq: true } })
+      .sort({ date: -1, index: 1 });
+
+  // Filter by the selected tag if it's not "All posts"
+  if (tag !== "All posts") {
+    query.where({ tags: { $in: tag } });
+  }
+
+  const data = await query.find();
+
+  posts.value = data ? data.map(d => ({
+    title: d.title!,
+    image: d.image!,
+    url: d._path!,
+    description: d.description!,
+    authorImage: d.authorImage!,
+    author: d.author!,
+    date: d.date!,
+  })) : [];
+}
+
+const route = useRoute();
+
+onMounted(() => {
+  const tagFromQuery = route.query.tag as string || "All posts";
+  fetchPostsByTag(tagFromQuery);
+});
+
+watch(() => route.query.tag, (newTag) => {
+  const tag = newTag as string || "All posts";
+  fetchPostsByTag(tag);
+});
 </script>
 
 <template>
-  <div class="chips-row">
-    <Chip
-      v-for="tag in tags"
-      :key="tag"
-      :href="`/news?tag=${tag}`"
-      as-button
-    >
-      {{ tag }}
-    </Chip>
-  </div>
   <div class="news-grid">
     <NewsOverviewPageArticle
       v-for="(post) in posts ?? []"
-      :key="post._path"
+      :key="post.url"
       :post="{
         title: post.title,
         description: post.description,
         image: post.image,
-        url: post._path,
+        url: post.url,
         date: post.date,
         author: post.author,
         authorImage: post.authorImage
