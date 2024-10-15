@@ -15,7 +15,14 @@ const { post } =
       class="news-article-image"
     >
     <div class="row">
-      <img :src="post.authorImage" alt="" class="avatar">
+      <NuxtImg
+        :src="authorImage"
+        alt=""
+        class="avatar"
+        format="webp"
+        height="24"
+        width="24"
+      />
       <div class="username">{{ post.author }}</div>
       <div class="date">{{ post.date ? new Date(post.date).toLocaleDateString(): "" }}</div>
     </div>

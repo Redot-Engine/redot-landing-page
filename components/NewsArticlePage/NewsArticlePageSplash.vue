@@ -19,7 +19,13 @@ onMounted(() => {
 
 <template>
   <div class="news-article-page-splash">
-    <img :src="image" alt="" class="banner">
+    <NuxtImg
+      :src="image"
+      alt=""
+      class="banner"
+      format="webp"
+      sizes="640px sm:748px md:1003px lg:1259px xl:712px"
+    />
 
     <div class="info">
       <div class="row">
@@ -31,7 +37,14 @@ onMounted(() => {
       </div>
 
       <div class="row">
-        <img :src="authorImage" alt="" class="avatar">
+        <NuxtImg
+          :src="authorImage"
+          alt=""
+          class="avatar"
+          format="webp"
+          height="24"
+          width="24"
+        />
         <div class="username">{{ author }}</div>
         <div class="date">{{ dateString }}</div>
       </div>
@@ -118,6 +131,7 @@ onMounted(() => {
   aspect-ratio: 16 / 9;
 
   @include mixins.tablet-and-smaller {
+    height: auto;
     position: unset;
   }
 
