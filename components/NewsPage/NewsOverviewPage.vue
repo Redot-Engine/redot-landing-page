@@ -4,7 +4,7 @@ import NewsOverviewPageArticle from "~/components/NewsPage/NewsOverviewPageArtic
 const { data: posts } = await useAsyncData("recent-posts", () =>
     queryContent("/news")
         .where({ type: { $eq: "post" }, published: { $eq: true } })
-        .sort({ date: -1, index: 1 })
+        .sort({ date: -1 })
         .find(),
 );
 </script>
@@ -13,12 +13,12 @@ const { data: posts } = await useAsyncData("recent-posts", () =>
   <div class="news-grid">
     <NewsOverviewPageArticle
       v-for="(post) in posts ?? []"
-      :key="post.url"
+      :key="post._path"
       :post="{
         title: post.title,
         description: post.description,
         image: post.image,
-        url: post.url,
+        url: post._path,
         date: post.date,
         author: post.author,
         authorImage: post.authorImage
