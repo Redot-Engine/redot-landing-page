@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   modules: ["@nuxt/content", "@nuxt/image", "@nuxtjs/sitemap"],
   image: {
     format: ["avif", "webp"],
-    quality: 80,
+    quality: 75,
   },
   site: {
     url: "https://www.redotengine.org/",

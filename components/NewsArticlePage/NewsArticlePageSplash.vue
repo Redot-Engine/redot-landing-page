@@ -8,46 +8,41 @@ const { title, tags, author, authorImage, date, image } = defineProps<{
   image: string;
 }>();
 
-const dateString = ref("");
-
-onMounted(() => {
-  // Doing it this way prevents a hydration mismatch.
-  // TODO: replace with a better way to handle this.
-  dateString.value = new Date(date).toLocaleDateString();
-});
+const formattedDate = new Date(date).toLocaleDateString();
 </script>
-
 <template>
-  <div class="news-article-page-splash">
-    <NuxtPicture
-      :src="image"
-      alt=""
-      class="banner"
-      sizes="640px sm:748px md:1003px lg:1259px xl:712px"
-    />
+  <client-only>
+    <div class="news-article-page-splash">
+      <NuxtPicture
+        :src="image"
+        alt=""
+        class="banner"
+        sizes="640px sm:748px md:1003px lg:1259px xl:712px"
+      />
 
-    <div class="info">
-      <div class="row">
-        <Chip v-for="tag in tags" :key="tag">{{ tag }}</Chip>
-      </div>
+      <div class="info">
+        <div class="row">
+          <Chip v-for="tag in tags" :key="tag">{{ tag }}</Chip>
+        </div>
 
-      <div class="title">
-        {{ title }}
-      </div>
+        <div class="title">
+          {{ title }}
+        </div>
 
-      <div class="row">
-        <NuxtPicture
-          :src="authorImage"
-          alt=""
-          class="avatar"
-          height="24"
-          width="24"
-        />
-        <div class="username">{{ author }}</div>
-        <div class="date">{{ dateString }}</div>
+        <div class="row">
+          <NuxtPicture
+            :src="authorImage"
+            alt=""
+            class="avatar"
+            height="24"
+            width="24"
+          />
+          <div class="username">{{ author }}</div>
+          <div class="date">{{ formattedDate }}</div>
+        </div>
       </div>
     </div>
-  </div>
+  </client-only>
 </template>
 
 <style lang="scss" scoped>
@@ -57,7 +52,7 @@ onMounted(() => {
   height: 400px;
   position: relative;
   margin: 0 40px;
-  
+
   @include mixins.tablet-and-smaller {
     height: auto;
     display: flex;
@@ -121,7 +116,8 @@ onMounted(() => {
   font-size: 14px;
 }
 
-.banner, .banner :deep(img) {
+.banner,
+.banner :deep(img) {
   position: absolute;
   right: 0;
   height: 100%;

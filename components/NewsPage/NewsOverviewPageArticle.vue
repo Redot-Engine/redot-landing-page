@@ -1,37 +1,40 @@
 <script setup lang="ts">
 import type { NewsArticle } from "~/types/NewsArticle";
 
-const { post } =
-    defineProps<{
-      post: Partial<NewsArticle>
-    }>();
+const { post } = defineProps<{
+  post: Partial<NewsArticle>;
+}>();
 </script>
 
 <template>
-  <NuxtLink :href="post.url ?? '#'" class="news-article">
-    <img
-      :src="post.image"
-      alt="News article image"
-      class="news-article-image"
-    >
-    <div class="row">
-      <NuxtPicture
-        :src="authorImage"
-        alt=""
-        class="avatar"
-        height="24"
-        width="24"
+  <client-only>
+    <NuxtLink :href="post.url ?? '#'" class="news-article">
+      <img
+        :src="post.image"
+        alt="News article image"
+        class="news-article-image"
       />
-      <div class="username">{{ post.author }}</div>
-      <div class="date">{{ post.date ? new Date(post.date).toLocaleDateString(): "" }}</div>
-    </div>
-    <SectionTitle class="news-article-title">
-      {{ post.title }}
-    </SectionTitle>
-    <SectionDescription class="news-article-text">
-      {{ post.description }}
-    </SectionDescription>
-  </NuxtLink>
+      <div class="row">
+        <NuxtPicture
+          :src="post.authorImage"
+          alt=""
+          class="avatar"
+          height="24"
+          width="24"
+        />
+        <div class="username">{{ post.author }}</div>
+        <div class="date">
+          {{ post.date ? new Date(post.date).toLocaleDateString() : "" }}
+        </div>
+      </div>
+      <SectionTitle class="news-article-title">
+        {{ post.title }}
+      </SectionTitle>
+      <SectionDescription class="news-article-text">
+        {{ post.description }}
+      </SectionDescription>
+    </NuxtLink>
+  </client-only>
 </template>
 
 <style scoped lang="scss">
