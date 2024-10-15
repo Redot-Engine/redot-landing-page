@@ -1,43 +1,12 @@
 <script setup lang="ts">
 import NewsOverviewPageArticle from "~/components/NewsPage/NewsOverviewPageArticle.vue";
-import type { NewsArticle } from "~/types/NewsArticle";
 
-const posts = ref<NewsArticle[]>([]);
-
-async function fetchPostsByTag(tag: string) {
-  const query = queryContent("/news")
-      .where({ type: { $eq: "post" }, published: { $eq: true } })
-      .sort({ date: -1, index: 1 });
-
-  // Filter by the selected tag if it's not "All posts"
-  if (tag !== "All posts") {
-    query.where({ tags: { $in: tag } });
-  }
-
-  const data = await query.find();
-
-  posts.value = data ? data.map(d => ({
-    title: d.title!,
-    image: d.image!,
-    url: d._path!,
-    description: d.description!,
-    authorImage: d.authorImage!,
-    author: d.author!,
-    date: d.date!,
-  })) : [];
-}
-
-const route = useRoute();
-
-onMounted(() => {
-  const tagFromQuery = route.query.tag as string || "All posts";
-  fetchPostsByTag(tagFromQuery);
-});
-
-watch(() => route.query.tag, (newTag) => {
-  const tag = newTag as string || "All posts";
-  fetchPostsByTag(tag);
-});
+const { data: posts } = await useAsyncData("recent-posts", () =>
+    queryContent("/news")
+        .where({ type: { $eq: "post" }, published: { $eq: true } })
+        .sort({ date: -1, index: 1 })
+        .find(),
+);
 </script>
 
 <template>
