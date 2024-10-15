@@ -42,7 +42,9 @@ const links = useLinks();
       </div>
 
       <SectionDescription class="footer-copyright">
-        © 2024
+        © 2024-present by the Redot community. Website <NuxtLink :href="links.websiteGithubUrl">
+          source code on Github
+        </NuxtLink>
       </SectionDescription>
     </MaxWidthContainer>
   </footer>
@@ -123,6 +125,15 @@ const links = useLinks();
   &-copyright {
     @include mixins.mobile-and-smaller {
       padding: 0 10px;
+    }
+
+    :deep(a) {
+      color: #3388ff;
+      text-decoration: none;
+    }
+
+    :deep(a:hover) {
+      text-decoration: underline;
     }
   }
 }
