@@ -4,7 +4,7 @@ const isMobile = useIsMobile();
 const { data: posts } = await useAsyncData("recent-posts", () =>
   queryContent("/news")
     .where({ type: { $eq: "post" }, published: { $eq: true } })
-    .sort({ date: -1, index: 1 })
+    .sort({ index: 1, date: -1 })
     .limit(5)
     .find(),
 );
