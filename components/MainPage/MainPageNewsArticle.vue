@@ -1,30 +1,39 @@
 <script setup lang="ts">
-const { title, description, url, vertical, image, alternateHorizontalLayout, smallLayout } =
-  defineProps<{
-    title: string;
-    description: string;
-    image: string;
-    url: string;
-    vertical?: boolean;
-    alternateHorizontalLayout?: boolean;
-    smallLayout?: boolean;
-  }>();
+const {
+	title,
+	description,
+	url,
+	vertical,
+	image,
+	alternateHorizontalLayout,
+	smallLayout,
+} = defineProps<{
+	title: string;
+	description: string;
+	image: string;
+	url: string;
+	vertical?: boolean;
+	alternateHorizontalLayout?: boolean;
+	smallLayout?: boolean;
+}>();
 
 const classes = computed(() => ({
-  "main-page-news-article--vertical": vertical,
-  "main-page-news-article--alternate-horizontal-layout":
-    alternateHorizontalLayout,
-  "main-page-news-article--small-layout": smallLayout,
+	"main-page-news-article--vertical": vertical,
+	"main-page-news-article--alternate-horizontal-layout":
+		alternateHorizontalLayout,
+	"main-page-news-article--small-layout": smallLayout,
 }));
 </script>
 
 <template>
   <NuxtLink :class="classes" :href="url" class="main-page-news-article">
-    <img
+    <NuxtPicture
       :src="image"
       alt="News article image"
       class="main-page-news-article-image"
-    >
+      height="160"
+      width="284"
+    />
     <SectionTitle :small="vertical" class="main-page-news-article-title">
       {{ title }}
     </SectionTitle>
@@ -49,8 +58,9 @@ const classes = computed(() => ({
     border-color: rgba(#fff, 20%);
   }
 
-  &-image {
+  &-image, &-image :deep(img) {
     width: 100%;
+    height: auto;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 8px;
