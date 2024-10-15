@@ -1,11 +1,7 @@
 <script setup lang="ts">
 const hero = ref<HTMLElement | null>(null);
 const links = useLinks();
-
-function scroll() {
-  const element: HTMLElement = hero.value!;
-  element.nextElementSibling?.scrollIntoView({ block: "start", behavior: "smooth" });
-}
+const isMobile = useIsMobile();
 </script>
 
 <template>
@@ -25,37 +21,74 @@ function scroll() {
       </LinkButton>
     </div>
 
-    <button class="hero-scroll-button" @click="scroll">
-      <img alt="" src="~/assets/images/chevron-down.svg">
-    </button>
+    <div class="hero-center hero-center--socials">
+      <NuxtLink :href="links.githubUrl" class="social-info">
+        <div class="social-icon">
+          <img alt="GitHub" src="~/assets/images/social-github.svg">
+        </div>
+        4.1k<br v-if="isMobile"> stars
+      </NuxtLink>
+      <NuxtLink :href="links.discordUrl" class="social-info">
+        <div class="social-icon">
+          <img alt="Discord" src="~/assets/images/social-discord.svg">
+        </div>
+        8.5k<br v-if="isMobile"> members
+      </NuxtLink>
+      <NuxtLink :href="links.twitterUrl" class="social-info">
+        <div class="social-icon">
+          <img alt="Twitter" src="~/assets/images/social-twitter.svg">
+        </div>
+        20.4k<br v-if="isMobile"> followers
+      </NuxtLink>
+      <NuxtLink :href="links.redditUrl" class="social-info">
+        <div class="social-icon">
+          <img alt="Reddit" src="~/assets/images/social-reddit.svg">
+        </div>
+        680<br v-if="isMobile"> members
+      </NuxtLink>
+    </div>
 
     <div class="hero-game-name">Game name</div>
   </section>
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/styles/mixins";
+
 @keyframes slideshow {
-  0%, 28% {
+  0%, 15% {
+    background-image: url(~/assets/images/game_preview/game_preview_06.png);
+  }
+  17%, 32% {
     background-image: url(~/assets/images/game_preview/game_preview_01.avif);
   }
-  33%, 61% {
-    background-image: url(~/assets/images/game_preview/game_preview_02.avif);
-  }
-  66%, 94% {
+  34%, 48% {
     background-image: url(~/assets/images/game_preview/game_preview_03.avif);
   }
+  50%, 65% {
+    background-image: url(~/assets/images/game_preview/game_preview_05.png);
+  }
+  67%, 82% {
+    background-image: url(~/assets/images/game_preview/game_preview_02.avif);
+  }
+  84%, 98% {
+    background-image: url(~/assets/images/game_preview/game_preview_07.png);
+  }
   100% {
-    background-image: url(~/assets/images/game_preview/game_preview_01.avif);
+    background-image: url(~/assets/images/game_preview/game_preview_06.png);
   }
 }
 .hero {
   position: relative;
   height: 100dvh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
   background-size: cover;
   background-position: center;
-  animation: slideshow 15s infinite;
+  animation: slideshow 30s infinite;
   transition: background-image 1s ease-in-out;
 
   &::before {
@@ -80,7 +113,7 @@ function scroll() {
 }
 
 .hero-center {
-  width: 100%;
+  width: calc(100% - 20px);
   max-width: 400px;
   padding: 40px;
   background-color: #0009;
@@ -92,6 +125,43 @@ function scroll() {
   flex-direction: column;
   align-items: center;
   gap: 5px;
+
+  &--socials {
+    max-width: 800px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: absolute;
+    bottom: 3.0vh;
+  }
+}
+
+.social-icon {
+  height: 32px;
+}
+
+.social-info {
+  font-size: clamp(12px, calc(20px + (36–20) * (100vw - 768px)/(1920–768)), 48px);
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  opacity: 0.6;
+  transition: 0.1s;
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @include mixins.mobile-and-smaller {
+    flex-direction: column;
+  }
+
 }
 
 .hero-center-logo {
@@ -101,16 +171,6 @@ function scroll() {
 
 .hero-center-button {
   margin-top: 15px;
-}
-
-.hero-scroll-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  bottom: 11px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .hero-game-name {

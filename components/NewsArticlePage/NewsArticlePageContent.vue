@@ -25,5 +25,44 @@ const { body } = defineProps<{
     font-weight: 800;
     margin: 20px 0;
   }
+
+  :deep(h2) {
+    font-size: 25px;
+    font-weight: 800;
+    margin: 20px 0;
+  }
+
+  :deep(h3) {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 20px 0;
+  }
+
+  :deep(h4) {
+    font-size: 17px;
+    font-weight: 800;
+    margin: 20px 0;
+  }
+
+  :deep(h5) {
+    font-size: 15px;
+    font-weight: 800;
+    margin: 20px 0;
+  }
+
+  :deep(p) {
+    margin-bottom: 20px;
+  }
+
+  :deep(a) {
+    color: #3388ff;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  :deep(a:hover) {
+    text-decoration: underline;
+  }
 }
+
 </style>

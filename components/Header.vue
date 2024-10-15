@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { path } = useRoute();
 const featureFlags = useFeatureFlags();
 const links = useLinks();
 const scrolled = ref(false);
@@ -74,7 +75,14 @@ onMounted(() => {
             </div>
           </div>
           <NuxtLink key="documentation" :href="links.documentation" class="header-link">Documentation</NuxtLink>
-          <NuxtLink key="news" class="header-link" href="/news">News</NuxtLink>
+          <NuxtLink
+            key="news"
+            :class="{
+              'header-menu-link--active': path === '/news'
+            }"
+            class="header-link"
+            href="/news"
+          >News</NuxtLink>
           <NuxtLink
             v-if="!featureFlags.minimal"
             key="assets"
@@ -156,7 +164,6 @@ onMounted(() => {
     @include mixins.mobile-and-smaller {
       position: absolute;
       opacity: 0;
-      gap: 24px;
       top: 56px;
       left: 0;
       flex-direction: column;
@@ -295,6 +302,11 @@ onMounted(() => {
     &:hover {
       color: #fff;
       background-color: #191919;
+    }
+
+    &--active {
+      color: #fff;
+      opacity: 1;
     }
   }
 

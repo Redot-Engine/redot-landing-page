@@ -19,7 +19,7 @@ const classes = computed(() => ({
 </script>
 
 <template>
-  <article :class="classes" class="main-page-news-article">
+  <NuxtLink :class="classes" :href="url" class="main-page-news-article">
     <img
       :src="image"
       alt="News article image"
@@ -31,11 +31,7 @@ const classes = computed(() => ({
     <SectionDescription class="main-page-news-article-text">
       {{ description }}
     </SectionDescription>
-    <LinkButton :href="url" class="main-page-news-article-button">
-      Read post
-      <Icon name="arrow" />
-    </LinkButton>
-  </article>
+  </NuxtLink>
 </template>
 
 <style scoped lang="scss">
@@ -43,9 +39,15 @@ const classes = computed(() => ({
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto 1fr auto;
-  border: 1px solid #191919;
+  border: 1px solid rgba(#fff, 10%);
   border-radius: 16px;
+  transition: border 0.1s;
   padding: 10px;
+  text-decoration: none;
+
+  &:hover {
+    border-color: rgba(#fff, 20%);
+  }
 
   &-image {
     width: 100%;
@@ -57,6 +59,7 @@ const classes = computed(() => ({
   }
 
   &-title {
+    color: #fff;
     margin: 5px 5px 5px 15px;
   }
 
@@ -65,15 +68,9 @@ const classes = computed(() => ({
     margin-left: 15px;
   }
 
-  &-button {
-    justify-self: end;
-    align-self: end;
-    margin-top: 10px;
-  }
-
   &--vertical {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, auto);
+    display: flex;
+    flex-direction: column;
   }
 
   &--vertical &-image {

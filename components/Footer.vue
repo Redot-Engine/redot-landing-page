@@ -20,15 +20,15 @@ const links = useLinks();
           <SectionTitle small>Redot Engine</SectionTitle>
 
           <NuxtLink :href="links.releasePage" class="footer-link">Download</NuxtLink>
-          <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Documentation</NuxtLink>
+          <NuxtLink :href="links.documentation" class="footer-link">Documentation</NuxtLink>
           <NuxtLink :href="links.githubUrl" class="footer-link">Source Code</NuxtLink>
         </div>
 
         <div class="footer-column">
           <SectionTitle small>Project</SectionTitle>
 
-          <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">News</NuxtLink>
-          <NuxtLink class="footer-link" href="#">Contribution Guidelines</NuxtLink>
+          <NuxtLink class="footer-link" href="/news">News</NuxtLink>
+          <NuxtLink :href="links.contribute" class="footer-link">Contribution Guidelines</NuxtLink>
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Teams</NuxtLink>
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Communities</NuxtLink>
         </div>
@@ -42,7 +42,9 @@ const links = useLinks();
       </div>
 
       <SectionDescription class="footer-copyright">
-        © 2024
+        © 2024-present by the Redot community. Website <NuxtLink :href="links.websiteGithubUrl">
+          source code on Github
+        </NuxtLink>
       </SectionDescription>
     </MaxWidthContainer>
   </footer>
@@ -123,6 +125,15 @@ const links = useLinks();
   &-copyright {
     @include mixins.mobile-and-smaller {
       padding: 0 10px;
+    }
+
+    :deep(a) {
+      color: #3388ff;
+      text-decoration: none;
+    }
+
+    :deep(a:hover) {
+      text-decoration: underline;
     }
   }
 }
