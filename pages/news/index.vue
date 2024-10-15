@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const tags = ref(["All", "News", "Releases", "Community"]);
+import NewsOverviewPage from "~/components/NewsPage/NewsOverviewPage.vue";
 </script>
 
 <template>
@@ -9,17 +9,7 @@ const tags = ref(["All", "News", "Releases", "Community"]);
     <div class="header">
       <div class="section-title-text">News</div>
     </div>
-
-    <div class="chips-row">
-      <Chip
-        v-for="tag in tags"
-        :key="tag"
-        :href="`/news?tag=${tag}`"
-        as-button
-      >
-        {{ tag }}
-      </Chip>
-    </div>
+    <NewsOverviewPage />
   </MaxWidthContainer>
 
   <Footer />
@@ -67,14 +57,5 @@ const tags = ref(["All", "News", "Releases", "Community"]);
       height: 6px;
     }
   }
-}
-
-.chips-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
 }
 </style>

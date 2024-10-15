@@ -1,6 +1,7 @@
 ---
 title: The journey
 date: 2024-10-14
+index: 3
 description: What began simply as an idea.
 image: /img/news/the-journey.png
 alt: test test test test

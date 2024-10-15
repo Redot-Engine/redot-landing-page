@@ -1,11 +1,10 @@
 <script setup lang="ts">
 const isMobile = useIsMobile();
-const featureFlags = useFeatureFlags();
 
 const { data: posts } = await useAsyncData("recent-posts", () =>
   queryContent("/news")
     .where({ type: { $eq: "post" }, published: { $eq: true } })
-    .sort({ date: -1 })
+    .sort({ date: -1, index: 1 })
     .limit(5)
     .find(),
 );
@@ -14,7 +13,7 @@ const { data: posts } = await useAsyncData("recent-posts", () =>
 <template>
   <MainPageSection title="Recent news">
     <template #button>
-      <LinkButton v-show="!featureFlags.minimal" href="#" type="red">
+      <LinkButton href="/news" type="red">
         More news
         <Icon name="arrow" />
       </LinkButton>

@@ -1,6 +1,7 @@
 ---
 title: Welcome to our site
 date: 2024-10-14
+index: 1
 description: Hello and thank you for coming to our site. There has been not just a lot of media about our project, 
   but a lot of hype. As one of the founders of this website I wanted to give a few words about the goals 
   I wish to achieve with this project.
