@@ -57,7 +57,7 @@ const isMobile = useIsMobile();
 @use "@/assets/styles/mixins";
 
 .hidden-hero { // Run a hidden slideshow quickly to preload the images. I know it's filty. TODO: Implement a proper, dynamic slideshow that doesn't need dirty tricks to work.
-  animation: slideshow 6s;
+  animation: slideshow 12s;
   transition: background-image 1s;
   z-index: -100;
 }
