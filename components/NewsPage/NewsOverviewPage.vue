@@ -41,15 +41,15 @@ const { data: posts } = await useAsyncData("all-posts", () =>
 
 .news-grid {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 
   @include mixins.tablet-and-smaller {
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
   }
 
   @include mixins.mobile-and-smaller {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
 
     & > :first-child {
       grid-column: 1;

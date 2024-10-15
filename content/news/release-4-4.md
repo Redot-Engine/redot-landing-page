@@ -7,7 +7,7 @@ description: We’re thrilled to announce the release of the beta version 4.4 of
 image: /img/news/release-4-4.png
 alt: Screenshot of new feature
 ogImage: /img/news/release-4-4.png
-tags: ["community"]
+tags: ["Community"]
 type: "post"
 author: "Redot"
 authorImage: /img/authors/redot.png

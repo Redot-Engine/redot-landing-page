@@ -7,7 +7,7 @@ description: A cursory look into some of the technical aspects of this website a
 image: /img/news/the-web-side-of-things.png
 alt: Redot in the news
 ogImage: /img/news/the-web-side-of-things.png
-tags: ["community"]
+tags: ["Community"]
 type: "post"
 author: "Arjan"
 authorImage: /img/authors/arjan.png

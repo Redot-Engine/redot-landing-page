@@ -8,7 +8,7 @@ description: In 2017 I forked the very popular game engine Godot with the intent
 image: /img/news/and-then-there-were-many.png
 alt: Redot in the news
 ogImage: /img/news/and-then-there-were-many.png
-tags: ["community"]
+tags: ["Community"]
 type: "post"
 author: "Andevrs"
 authorImage: /img/authors/andevrs.png

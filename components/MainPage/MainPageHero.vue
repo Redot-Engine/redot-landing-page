@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const hero = ref<HTMLElement | null>(null);
 const links = useLinks();
+const isMobile = useIsMobile();
 </script>
 
 <template>
@@ -21,10 +22,30 @@ const links = useLinks();
     </div>
 
     <div class="hero-center hero-center--socials">
-      <div class="social-info"><NuxtLink :href="links.githubUrl" class="social-icon"><img alt="GitHub" src="~/assets/images/social-github.svg"></NuxtLink>4.1k stars</div>
-      <div class="social-info"><NuxtLink :href="links.discordUrl" class="social-icon"><img alt="Discord" src="~/assets/images/social-discord.svg"></NuxtLink>8.5k members</div>
-      <div class="social-info"><NuxtLink :href="links.twitterUrl" class="social-icon"><img alt="Twitter" src="~/assets/images/social-twitter.svg"></NuxtLink>20.4k followers</div>
-      <div class="social-info"><NuxtLink :href="links.redditUrl" class="social-icon"><img alt="Reddit" src="~/assets/images/social-reddit.svg"></NuxtLink>680 members</div>
+      <NuxtLink :href="links.githubUrl" class="social-info">
+        <div class="social-icon">
+          <img alt="GitHub" src="~/assets/images/social-github.svg">
+        </div>
+        4.1k<br v-if="isMobile"> stars
+      </NuxtLink>
+      <NuxtLink :href="links.discordUrl" class="social-info">
+        <div class="social-icon">
+          <img alt="Discord" src="~/assets/images/social-discord.svg">
+        </div>
+        8.5k<br v-if="isMobile"> members
+      </NuxtLink>
+      <NuxtLink :href="links.twitterUrl" class="social-info">
+        <div class="social-icon">
+          <img alt="Twitter" src="~/assets/images/social-twitter.svg">
+        </div>
+        20.4k<br v-if="isMobile"> followers
+      </NuxtLink>
+      <NuxtLink :href="links.redditUrl" class="social-info">
+        <div class="social-icon">
+          <img alt="Reddit" src="~/assets/images/social-reddit.svg">
+        </div>
+        680<br v-if="isMobile"> members
+      </NuxtLink>
     </div>
 
     <div class="hero-game-name">Game name</div>
@@ -92,7 +113,7 @@ const links = useLinks();
 }
 
 .hero-center {
-  width: 100%;
+  width: calc(100% - 20px);
   max-width: 400px;
   padding: 40px;
   background-color: #0009;
@@ -108,10 +129,8 @@ const links = useLinks();
   &--socials {
     max-width: 800px;
     padding: 10px;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     position: absolute;
     bottom: 3.0vh;
   }
@@ -119,12 +138,6 @@ const links = useLinks();
 
 .social-icon {
   height: 32px;
-  opacity: 0.6;
-  transition: 0.1s;
-
-  &:hover {
-    opacity: 1;
-  }
 }
 
 .social-info {
@@ -135,6 +148,15 @@ const links = useLinks();
   justify-content: center;
   align-items: center;
   gap: 5px;
+
+  opacity: 0.6;
+  transition: 0.1s;
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 1;
+  }
 
   @include mixins.mobile-and-smaller {
     flex-direction: column;

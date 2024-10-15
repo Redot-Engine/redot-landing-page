@@ -34,7 +34,7 @@ const { post } =
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  margin: 15px 5px 5px 15px;
+  margin: 15px 5px 5px 5px;
 }
 
 .avatar {
@@ -63,6 +63,10 @@ const { post } =
   text-decoration: none;
   color: #fff;
 
+  &:hover {
+    border-color: rgba(#fff, 20%);
+  }
+
   &-image {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -74,12 +78,13 @@ const { post } =
 
   &-title {
     color: #fff;
-    margin: 5px 5px 5px 15px;
+    margin: 5px 5px 5px 5px;
+    font-size: 24px;
   }
 
   &-text {
     justify-self: start;
-    margin-left: 15px;
+    margin-left: 5px;
     text-overflow: ellipsis;
   }
 

@@ -7,7 +7,7 @@ description: We are pleased to announce that Friday 10/18/2024 will be when our 
 image: /img/news/mascot-contest.png
 alt: Redot mascot contest
 ogImage: /img/news/mascot-contest.png
-tags: ["community"]
+tags: ["Community"]
 type: "post"
 author: "Redot"
 authorImage: /img/authors/redot.png
