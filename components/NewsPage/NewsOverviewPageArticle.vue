@@ -8,7 +8,7 @@ const { post } =
 </script>
 
 <template>
-  <div class="news-article">
+  <NuxtLink :href="post.url ?? '#'" class="news-article">
     <img
       :src="post.image"
       alt="News article image"
@@ -19,21 +19,13 @@ const { post } =
       <div class="username">{{ post.author }}</div>
       <div class="date">{{ post.date ? new Date(post.date).toLocaleDateString(): "" }}</div>
     </div>
-    <NuxtLink :href="post.url ?? '#'" class="news-article-title">
-      <SectionTitle>
-        {{ post.title }}
-      </SectionTitle>
-    </NuxtLink>
+    <SectionTitle class="news-article-title">
+      {{ post.title }}
+    </SectionTitle>
     <SectionDescription class="news-article-text">
       {{ post.description }}
     </SectionDescription>
-    <div class="news-article-actions">
-      <LinkButton :href="post.url ?? '#'">
-        Read Post
-        <Icon name="arrow" />
-      </LinkButton>
-    </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <style scoped lang="scss">
