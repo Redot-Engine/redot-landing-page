@@ -8,7 +8,7 @@ const { post } =
 </script>
 
 <template>
-  <NuxtLink :href="post.url ?? '#'" class="news-article">
+  <div class="news-article">
     <img
       :src="post.image"
       alt="News article image"
@@ -31,7 +31,7 @@ const { post } =
         <Icon name="arrow" />
       </LinkButton>
     </div>
-  </NuxtLink>
+  </div>
 </template>
 
 <style scoped lang="scss">
