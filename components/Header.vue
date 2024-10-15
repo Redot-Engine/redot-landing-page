@@ -164,7 +164,6 @@ onMounted(() => {
     @include mixins.mobile-and-smaller {
       position: absolute;
       opacity: 0;
-      gap: 24px;
       top: 56px;
       left: 0;
       flex-direction: column;
@@ -307,7 +306,6 @@ onMounted(() => {
 
     &--active {
       color: #fff;
-      background-color: #191919;
       opacity: 1;
     }
   }
