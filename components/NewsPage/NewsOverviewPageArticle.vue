@@ -15,11 +15,10 @@ const { post } =
       class="news-article-image"
     >
     <div class="row">
-      <NuxtImg
+      <NuxtPicture
         :src="authorImage"
         alt=""
         class="avatar"
-        format="webp"
         height="24"
         width="24"
       />

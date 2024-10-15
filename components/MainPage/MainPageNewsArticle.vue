@@ -27,11 +27,10 @@ const classes = computed(() => ({
 
 <template>
   <NuxtLink :class="classes" :href="url" class="main-page-news-article">
-    <NuxtImg
+    <NuxtPicture
       :src="image"
       alt="News article image"
       class="main-page-news-article-image"
-      format="webp"
       height="160"
       width="284"
     />
@@ -59,7 +58,7 @@ const classes = computed(() => ({
     border-color: rgba(#fff, 20%);
   }
 
-  &-image {
+  &-image, &-image :deep(img) {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
