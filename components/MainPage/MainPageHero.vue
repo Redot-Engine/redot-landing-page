@@ -1,12 +1,12 @@
 <script setup lang="ts">
-const hero = ref<HTMLElement | null>(null);
+import HeroSlideshow from "~/components/MainPage/HeroSlideshow.vue";
 const links = useLinks();
 const isMobile = useIsMobile();
 </script>
 
 <template>
-  <section ref="hero" class="hero">
-    <Header />
+  <HeroSlideshow class="hero">
+    <Header/>
 
     <div class="hero-center">
       <img alt="" class="hero-center-logo" src="~/assets/images/redot-logo-white.svg">
@@ -17,7 +17,7 @@ const isMobile = useIsMobile();
 
       <LinkButton :href="links.releasePage" class="hero-center-button" type="red">
         Download
-        <Icon name="arrow" />
+        <Icon name="arrow"/>
       </LinkButton>
     </div>
 
@@ -49,35 +49,13 @@ const isMobile = useIsMobile();
     </div>
 
     <div class="hero-game-name">Game name</div>
-  </section>
+  </HeroSlideshow>
 </template>
+
 
 <style scoped lang="scss">
 @use "@/assets/styles/mixins";
 
-@keyframes slideshow {
-  0%, 15% {
-    background-image: url(~/assets/images/game_preview/game_preview_06.png);
-  }
-  17%, 32% {
-    background-image: url(~/assets/images/game_preview/game_preview_01.avif);
-  }
-  34%, 48% {
-    background-image: url(~/assets/images/game_preview/game_preview_03.avif);
-  }
-  50%, 65% {
-    background-image: url(~/assets/images/game_preview/game_preview_05.png);
-  }
-  67%, 82% {
-    background-image: url(~/assets/images/game_preview/game_preview_02.avif);
-  }
-  84%, 98% {
-    background-image: url(~/assets/images/game_preview/game_preview_07.png);
-  }
-  100% {
-    background-image: url(~/assets/images/game_preview/game_preview_06.png);
-  }
-}
 .hero {
   position: relative;
   height: 100dvh;
@@ -86,10 +64,7 @@ const isMobile = useIsMobile();
   gap: 20px;
   align-items: center;
   justify-content: center;
-  background-size: cover;
-  background-position: center;
-  animation: slideshow 30s infinite;
-  transition: background-image 1s ease-in-out;
+
 
   &::before {
     content: "";
