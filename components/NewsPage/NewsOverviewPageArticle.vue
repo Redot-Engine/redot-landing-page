@@ -23,14 +23,20 @@ const { post } =
     <SectionDescription class="news-article-text">
       {{ post.description }}
     </SectionDescription>
+    <div class="news-article-actions">
+      <LinkButton :href="post.url ?? '#'">
+        Read Post
+        <Icon name="arrow" />
+      </LinkButton>
+    </div>
   </NuxtLink>
 </template>
 
 <style scoped lang="scss">
 
 .news-article {
-  display: grid;
-  grid-template-rows: auto auto auto;
+  display: flex;
+  flex-direction: column;
   border: 1px solid rgba(#fff, 10%);
   border-radius: 16px;
   transition: border 0.1s;
@@ -45,6 +51,7 @@ const { post } =
     border-radius: 8px;
     overflow: hidden;
     grid-row: 1 / span 3;
+    height: 50%;
   }
 
   &-title {
@@ -55,6 +62,15 @@ const { post } =
   &-text {
     justify-self: start;
     margin-left: 15px;
+    text-overflow: ellipsis;
+  }
+
+  &-actions {
+    display: flex;
+    flex-grow: 1;
+    padding: 0.75rem;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 }
 </style>
