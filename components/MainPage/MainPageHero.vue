@@ -5,7 +5,6 @@ const isMobile = useIsMobile();
 </script>
 
 <template>
-  <section ref="hidden-hero" class="hidden-hero"></section>
   <section ref="hero" class="hero">
     <Header />
 
@@ -51,15 +50,34 @@ const isMobile = useIsMobile();
 
     <div class="hero-game-name">Game name</div>
   </section>
+  <section class="hidden-hero1"></section>
+  <section class="hidden-hero2"></section>
+  <section class="hidden-hero3"></section>
+  <section class="hidden-hero4"></section>
+  <section class="hidden-hero5"></section>
+  <section class="hidden-hero6"></section>
 </template>
 
 <style scoped lang="scss">
 @use "@/assets/styles/mixins";
 
-.hidden-hero { // Run a hidden slideshow quickly to preload the images. I know it's filty. TODO: Implement a proper, dynamic slideshow that doesn't need dirty tricks to work.
-  animation: slideshow 12s;
-  transition: background-image 1s;
-  z-index: -100;
+.hidden-hero1 { // Dirty trick to preload images outside the viewport
+  background-image: url(~/assets/images/game_preview/game_preview_01.avif);
+}
+.hidden-hero2 {
+  background-image: url(~/assets/images/game_preview/game_preview_02.avif);
+}
+.hidden-hero3 {
+  background-image: url(~/assets/images/game_preview/game_preview_03.avif);
+}
+.hidden-hero4 {
+  background-image: url(~/assets/images/game_preview/game_preview_05.png);
+}
+.hidden-hero5 {
+  background-image: url(~/assets/images/game_preview/game_preview_06.png);
+}
+.hidden-hero6 {
+  background-image: url(~/assets/images/game_preview/game_preview_07.png);
 }
 
 @keyframes slideshow {
