@@ -17,10 +17,10 @@ const { post } =
       alt="News article image"
       class="news-article-image"
     >
-    <SectionTitle>
+    <SectionTitle class="news-article-title">
       {{ post.title }}
     </SectionTitle>
-    <SectionDescription>
+    <SectionDescription class="news-article-text">
       {{ post.description }}
     </SectionDescription>
   </NuxtLink>
@@ -30,7 +30,7 @@ const { post } =
 
 .news-article {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto;
   border: 1px solid rgba(#fff, 10%);
   border-radius: 16px;
   transition: border 0.1s;
@@ -45,6 +45,16 @@ const { post } =
     border-radius: 8px;
     overflow: hidden;
     grid-row: 1 / span 3;
+  }
+
+  &-title {
+    color: #fff;
+    margin: 5px 5px 5px 15px;
+  }
+
+  &-text {
+    justify-self: start;
+    margin-left: 15px;
   }
 }
 </style>

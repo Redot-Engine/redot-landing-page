@@ -6,7 +6,7 @@ const tags = ref(["All posts", "News", "Releases", "Community"]);
 const { data: posts } = await useAsyncData("posts", () =>
     queryContent("/news")
         .where({ type: { $eq: "post" }, published: { $eq: true } })
-        .sort({ date: -1 })
+        .sort({ date: -1, index: 1 })
         .find(),
 );
 </script>
