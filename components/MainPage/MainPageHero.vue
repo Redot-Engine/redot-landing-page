@@ -33,22 +33,22 @@ const links = useLinks();
 
 <style scoped lang="scss">
 @keyframes slideshow {
-  0%, 14% {
+  0%, 15% {
     background-image: url(~/assets/images/game_preview/game_preview_06.png);
   }
-  17%, 31% {
+  17%, 32% {
     background-image: url(~/assets/images/game_preview/game_preview_01.avif);
   }
-  34%, 47% {
+  34%, 48% {
     background-image: url(~/assets/images/game_preview/game_preview_03.avif);
   }
-  50%, 61% {
+  50%, 65% {
     background-image: url(~/assets/images/game_preview/game_preview_05.png);
   }
-  64%, 75% {
+  67%, 82% {
     background-image: url(~/assets/images/game_preview/game_preview_02.avif);
   }
-  78%, 97% {
+  84%, 98% {
     background-image: url(~/assets/images/game_preview/game_preview_07.png);
   }
   100% {
@@ -65,7 +65,7 @@ const links = useLinks();
   justify-content: center;
   background-size: cover;
   background-position: center;
-  animation: slideshow 35s infinite;
+  animation: slideshow 30s infinite;
   transition: background-image 1s ease-in-out;
 
   &::before {
