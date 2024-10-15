@@ -12,7 +12,7 @@ ogImage: /img/news/welcome-to-our-site.png
 tags: ["Community"]
 type: "post"
 author: "Nicholai"
-authorImage: /img/authors/nicholai.jpg
+authorImage: /img/authors/nicholai.png
 published: true
 ---
 

@@ -32,6 +32,8 @@ const links = useLinks();
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/styles/mixins";
+
 @keyframes slideshow {
   0%, 28% {
     background-image: url(~/assets/images/game_preview/game_preview_01.avif);
@@ -124,12 +126,11 @@ const links = useLinks();
   justify-content: center;
   align-items: center;
   gap: 5px;
-}
 
-@media only screen and (max-width: 600px) {
-  .social-info {
+  @include mixins.mobile-and-smaller {
     flex-direction: column;
   }
+
 }
 
 .hero-center-logo {
