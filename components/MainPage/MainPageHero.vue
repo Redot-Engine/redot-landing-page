@@ -1,90 +1,94 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from "vue";
 import HeroSlideshow from "~/components/MainPage/HeroSlideshow.vue";
+
 const links = useLinks();
 const isMobile = useIsMobile();
+
+const heroHeight = ref("100vh");
+
+const updateHeroHeight = () => {
+  heroHeight.value = `${window.innerHeight}px`;
+};
+
+onMounted(() => {
+  updateHeroHeight();
+  window.addEventListener("resize", updateHeroHeight);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", updateHeroHeight);
+});
 </script>
 
 <template>
-  <HeroSlideshow class="hero">
+  <HeroSlideshow :style="{ height: heroHeight }" class="hero">
     <Header/>
 
-    <div class="hero-center">
-      <img alt="" class="hero-center-logo" src="~/assets/images/redot-logo-white.svg">
+    <div class="hero-content">
+      <div class="hero-center">
+        <img alt="" class="hero-center-logo" src="~/assets/images/redot-logo-white.svg">
 
-      <SectionTitle small>Open‑source game engine for&nbsp;everyone.</SectionTitle>
+        <SectionTitle small>Open‑source game engine for&nbsp;everyone.</SectionTitle>
 
-      <SectionDescription>No strings attached.</SectionDescription>
+        <SectionDescription>No strings attached.</SectionDescription>
 
-      <LinkButton :href="links.releasePage" class="hero-center-button" type="red">
-        Download
-        <Icon name="arrow"/>
-      </LinkButton>
+        <LinkButton :href="links.releasePage" class="hero-center-button" type="red">
+          Download
+          <Icon name="arrow"/>
+        </LinkButton>
+      </div>
+
+      <div class="hero-center hero-center--socials">
+        <NuxtLink :href="links.githubUrl" class="social-info">
+          <div class="social-icon">
+            <img alt="GitHub" src="~/assets/images/social-github.svg">
+          </div>
+          4.1k<br v-if="isMobile"> stars
+        </NuxtLink>
+        <NuxtLink :href="links.discordUrl" class="social-info">
+          <div class="social-icon">
+            <img alt="Discord" src="~/assets/images/social-discord.svg">
+          </div>
+          8.5k<br v-if="isMobile"> members
+        </NuxtLink>
+        <NuxtLink :href="links.twitterUrl" class="social-info">
+          <div class="social-icon">
+            <img alt="Twitter" src="~/assets/images/social-twitter.svg">
+          </div>
+          20.4k<br v-if="isMobile"> followers
+        </NuxtLink>
+        <NuxtLink :href="links.redditUrl" class="social-info">
+          <div class="social-icon">
+            <img alt="Reddit" src="~/assets/images/social-reddit.svg">
+          </div>
+          680<br v-if="isMobile"> members
+        </NuxtLink>
+      </div>
+
+      <div class="hero-game-name">Game name</div>
     </div>
-
-    <div class="hero-center hero-center--socials">
-      <NuxtLink :href="links.githubUrl" class="social-info">
-        <div class="social-icon">
-          <img alt="GitHub" src="~/assets/images/social-github.svg">
-        </div>
-        4.1k<br v-if="isMobile"> stars
-      </NuxtLink>
-      <NuxtLink :href="links.discordUrl" class="social-info">
-        <div class="social-icon">
-          <img alt="Discord" src="~/assets/images/social-discord.svg">
-        </div>
-        8.5k<br v-if="isMobile"> members
-      </NuxtLink>
-      <NuxtLink :href="links.twitterUrl" class="social-info">
-        <div class="social-icon">
-          <img alt="Twitter" src="~/assets/images/social-twitter.svg">
-        </div>
-        20.4k<br v-if="isMobile"> followers
-      </NuxtLink>
-      <NuxtLink :href="links.redditUrl" class="social-info">
-        <div class="social-icon">
-          <img alt="Reddit" src="~/assets/images/social-reddit.svg">
-        </div>
-        680<br v-if="isMobile"> members
-      </NuxtLink>
-    </div>
-
-    <div class="hero-game-name">Game name</div>
   </HeroSlideshow>
 </template>
-
 
 <style scoped lang="scss">
 @use "@/assets/styles/mixins";
 
 .hero {
   position: relative;
-  height: 100dvh;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  align-items: center;
+}
+
+.hero-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom,
-        #000f 0%,
-        #0000 100px,
-        #0000 calc(100% - 100px),
-        #000f 100%
-    );
-  }
-
-
-  @media (max-width: 410px) {
-    padding: 0 10px;
-  }
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  position: relative;
 }
 
 .hero-center {
@@ -116,7 +120,7 @@ const isMobile = useIsMobile();
 }
 
 .social-info {
-  font-size: clamp(12px, calc(20px + (36–20) * (100vw - 768px)/(1920–768)), 48px);
+  font-size: clamp(12px, calc(20px + (36–20) * (100vw - 768px) / (1920–768)), 48px);
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -136,7 +140,6 @@ const isMobile = useIsMobile();
   @include mixins.mobile-and-smaller {
     flex-direction: column;
   }
-
 }
 
 .hero-center-logo {
@@ -158,5 +161,11 @@ const isMobile = useIsMobile();
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+
+@media (max-width: 410px) {
+  .hero-content {
+    padding: 10px;
+  }
 }
 </style>
