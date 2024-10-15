@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import NewsOverviewPageArticle from "~/components/NewsPage/NewsOverviewPageArticle.vue";
 
-const { data: posts } = await useAsyncData("recent-posts", () =>
+const { data: posts } = await useAsyncData("all-posts", () =>
     queryContent("/news")
         .where({ type: { $eq: "post" }, published: { $eq: true } })
         .sort({ index: 1, date: -1 })
