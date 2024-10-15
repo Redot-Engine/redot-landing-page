@@ -19,9 +19,11 @@ const { post } =
       <div class="username">{{ post.author }}</div>
       <div class="date">{{ post.date ? new Date(post.date).toLocaleDateString(): "" }}</div>
     </div>
-    <SectionTitle class="news-article-title">
-      {{ post.title }}
-    </SectionTitle>
+    <NuxtLink :href="post.url ?? '#'" class="news-article-title">
+      <SectionTitle>
+        {{ post.title }}
+      </SectionTitle>
+    </NuxtLink>
     <SectionDescription class="news-article-text">
       {{ post.description }}
     </SectionDescription>
@@ -81,6 +83,7 @@ const { post } =
   &-title {
     color: #fff;
     margin: 5px 5px 5px 15px;
+    text-decoration: unset;
   }
 
   &-text {
