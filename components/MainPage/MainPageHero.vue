@@ -5,6 +5,7 @@ const isMobile = useIsMobile();
 </script>
 
 <template>
+  <section ref="hidden-hero" class="hidden-hero"></section>
   <section ref="hero" class="hero">
     <Header />
 
@@ -54,6 +55,12 @@ const isMobile = useIsMobile();
 
 <style scoped lang="scss">
 @use "@/assets/styles/mixins";
+
+.hidden-hero { // Run a hidden slideshow quickly to preload the images. I know it's filty. TODO: Implement a proper, dynamic slideshow that doesn't need dirty tricks to work.
+  animation: slideshow 2s;
+  transition: background-image 0.3s;
+  z-index: -100;
+}
 
 @keyframes slideshow {
   0%, 15% {
