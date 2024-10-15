@@ -75,7 +75,6 @@ const { post } =
   &-title {
     color: #fff;
     margin: 5px 5px 5px 15px;
-    text-decoration: unset;
   }
 
   &-text {
