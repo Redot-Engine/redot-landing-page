@@ -1,6 +1,7 @@
 ---
 title: The web side of things
 date: 2024-10-13
+index: 4
 description: A cursory look into some of the technical aspects of this website and related projects.
 
 image: /img/news/the-web-side-of-things.png
