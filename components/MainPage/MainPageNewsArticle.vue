@@ -69,8 +69,8 @@ const classes = computed(() => ({
   }
 
   &--vertical {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, auto);
+    display: flex;
+    flex-direction: column;
   }
 
   &--vertical &-image {
