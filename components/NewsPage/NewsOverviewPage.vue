@@ -26,7 +26,15 @@ const { data: posts } = await useAsyncData("posts", () =>
     <NewsOverviewPageArticle
       v-for="(post) in posts ?? []"
       :key="post._path"
-      :post="{title: post.title, description: post.description, image: post.image, url: post._path }"
+      :post="{
+        title: post.title,
+        description: post.description,
+        image: post.image,
+        url: post._path,
+        date: post.date,
+        author: post.author,
+        authorImage: post.authorImage
+      }"
     />
   </div>
 </template>

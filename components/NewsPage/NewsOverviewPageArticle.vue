@@ -6,6 +6,9 @@ const { post } =
         image: string;
         url: string;
         description: string;
+        authorImage: string;
+        author: string;
+        date: string;
       }>
     }>();
 </script>
@@ -17,6 +20,11 @@ const { post } =
       alt="News article image"
       class="news-article-image"
     >
+    <div class="row">
+      <img :src="post.authorImage" alt="" class="avatar">
+      <div class="username">{{ post.author }}</div>
+      <div class="date">{{ post.date ? new Date(post.date).toLocaleDateString(): "" }}</div>
+    </div>
     <SectionTitle class="news-article-title">
       {{ post.title }}
     </SectionTitle>
@@ -33,6 +41,29 @@ const { post } =
 </template>
 
 <style scoped lang="scss">
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 5px 5px 15px;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.username {
+  color: rgba(#fff, 60%);
+  font-size: 14px;
+}
+
+.date {
+  color: rgba(#fff, 40%);
+  font-size: 14px;
+}
 
 .news-article {
   display: flex;
@@ -50,7 +81,6 @@ const { post } =
     object-fit: cover;
     border-radius: 8px;
     overflow: hidden;
-    grid-row: 1 / span 3;
     height: 50%;
   }
 
