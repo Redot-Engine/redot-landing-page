@@ -25,12 +25,6 @@ const { post } =
     <SectionDescription class="news-article-text">
       {{ post.description }}
     </SectionDescription>
-    <div class="news-article-actions">
-      <LinkButton :href="post.url ?? '#'">
-        Read Post
-        <Icon name="arrow" />
-      </LinkButton>
-    </div>
   </NuxtLink>
 </template>
 
