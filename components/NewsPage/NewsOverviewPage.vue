@@ -3,7 +3,7 @@ import NewsOverviewPageArticle from "~/components/NewsPage/NewsOverviewPageArtic
 
 const tags = ref(["All posts", "News", "Releases", "Community"]);
 
-const { data: posts } = await useAsyncData("all-news", () =>
+const { data: posts } = await useAsyncData("posts", () =>
     queryContent("/news")
         .where({ type: { $eq: "post" }, published: { $eq: true } })
         .sort({ date: -1 })
@@ -22,16 +22,18 @@ const { data: posts } = await useAsyncData("all-news", () =>
       {{ tag }}
     </Chip>
   </div>
-  <div>
+  <div class="news-grid">
     <NewsOverviewPageArticle
       v-for="(post) in posts ?? []"
       :key="post._path"
-      :post="{title: post.title, description: post.description, image: post.image }"
+      :post="{title: post.title, description: post.description, image: post.image, url: post._path }"
     />
   </div>
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/styles/mixins";
+
 .chips-row {
   display: flex;
   flex-direction: row;
@@ -39,5 +41,23 @@ const { data: posts } = await useAsyncData("all-news", () =>
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+
+  @include mixins.tablet-and-smaller {
+    grid-template-columns: auto auto;
+  }
+
+  @include mixins.mobile-and-smaller {
+    grid-template-columns: auto;
+
+    & > :first-child {
+      grid-column: 1;
+    }
+  }
 }
 </style>

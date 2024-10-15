@@ -11,11 +11,11 @@ const { post } =
 </script>
 
 <template>
-  <NuxtLink>
+  <NuxtLink :href="post.url ?? '#'" class="news-article">
     <img
       :src="post.image"
       alt="News article image"
-      class="main-page-news-article-image"
+      class="news-article-image"
     >
     <SectionTitle>
       {{ post.title }}
@@ -28,4 +28,23 @@ const { post } =
 
 <style scoped lang="scss">
 
+.news-article {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  border: 1px solid rgba(#fff, 10%);
+  border-radius: 16px;
+  transition: border 0.1s;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+
+  &-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+    overflow: hidden;
+    grid-row: 1 / span 3;
+  }
+}
 </style>
