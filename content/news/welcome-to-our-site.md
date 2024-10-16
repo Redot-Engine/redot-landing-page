@@ -5,7 +5,6 @@ description:
   Hello and thank you for coming to our site. There has been not just a lot of media about our project,
   but a lot of hype. As one of the founders of this website I wanted to give a few words about the goals
   I wish to achieve with this project.
-
 image: /img/news/welcome-to-our-site.png
 alt: Redot in the news
 ogImage: /img/news/welcome-to-our-site.png

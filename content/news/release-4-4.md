@@ -1,9 +1,7 @@
 ---
 title: "Public Release 4.4 Beta"
-date: 2024-10-11T00:00:00Z
-index: 1
+date: 2024-10-11T00:01:00Z
 description: We’re thrilled to announce the release of the beta version 4.4 of our game engine, Redot!
-
 image: /img/news/release-4-4.png
 alt: Screenshot of new feature
 ogImage: /img/news/release-4-4.png

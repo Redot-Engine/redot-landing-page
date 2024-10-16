@@ -7,36 +7,32 @@ const { title, tags, author, authorImage, date, image } = defineProps<{
   date: string;
   image: string;
 }>();
-
-const dateString = ref("");
-
-onMounted(() => {
-  // Doing it this way prevents a hydration mismatch.
-  // TODO: replace with a better way to handle this.
-  dateString.value = new Date(date).toLocaleDateString();
-});
 </script>
 
 <template>
-  <div class="news-article-page-splash">
-    <img :src="image" alt="" class="banner">
+  <ClientOnly>
+    <div class="news-article-page-splash">
+      <img :src="image" alt="" class="banner" />
 
-    <div class="info">
-      <div class="row">
-        <Chip v-for="tag in tags" :key="tag">{{ tag }}</Chip>
-      </div>
+      <div class="info">
+        <div class="row">
+          <Chip v-for="tag in tags" :key="tag">{{ tag }}</Chip>
+        </div>
 
-      <div class="title">
-        {{ title }}
-      </div>
+        <div class="title">
+          {{ title }}
+        </div>
 
-      <div class="row">
-        <img :src="authorImage" alt="" class="avatar">
-        <div class="username">{{ author }}</div>
-        <div class="date">{{ dateString }}</div>
+        <div class="row">
+          <img :src="authorImage" alt="" class="avatar" />
+          <div class="username">{{ author }}</div>
+          <div class="date">
+            {{ date ? new Date(date).toLocaleDateString() : "" }}
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </ClientOnly>
 </template>
 
 <style lang="scss" scoped>
@@ -46,7 +42,7 @@ onMounted(() => {
   height: 400px;
   position: relative;
   margin: 0 40px;
-  
+
   @include mixins.tablet-and-smaller {
     height: auto;
     display: flex;
