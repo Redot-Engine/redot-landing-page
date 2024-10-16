@@ -6,7 +6,7 @@ const isMobile = useIsMobile();
 
 <template>
   <HeroSlideshow class="hero">
-    <Header/>
+    <Header />
 
     <div class="hero-center">
       <img alt="" class="hero-center-logo" src="~/assets/images/redot-logo-white.svg">
@@ -15,10 +15,11 @@ const isMobile = useIsMobile();
 
       <SectionDescription>No strings attached.</SectionDescription>
 
-      <LinkButton :href="links.releasePage" class="hero-center-button" type="red">
+      <LinkButton class="hero-center-button" href="/download" type="red">
         Download
         <Icon name="arrow"/>
       </LinkButton>
+
     </div>
 
     <div class="hero-center hero-center--socials">
