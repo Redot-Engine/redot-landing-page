@@ -22,6 +22,7 @@ const typeClass = computed(() => `link-button--${type}`);
 <style scoped lang="scss">
 .link-button {
   color: #fff;
+  text-align: center;
   text-decoration: none;
   background-color: #000;
   border: 1px solid #191919;
@@ -29,7 +30,7 @@ const typeClass = computed(() => `link-button--${type}`);
   padding: 7px 15px;
   display: inline-flex;
   gap: 8px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   transition: color 0.1s, background-color 0.1s, border-color 0.1s;
   font-size: 13px;
@@ -71,6 +72,38 @@ const typeClass = computed(() => `link-button--${type}`);
     &:active {
       background-color: #ce3200;
       border-color: #d34619;
+    }
+  }
+
+  &--white {
+    color: #000;
+    background-color: hsl(0, 0%, 98%);;
+    border-color: #e6e6e6;
+
+    &:hover {
+      background-color: hsl(0, 0%, 98%, 0.9);
+      border-color: #cccccc;
+    }
+
+    &:active {
+      background-color: #e6e6e6;
+      border-color: #b3b3b3;
+    }
+  }
+
+  &--ghost {
+    color: hsl(0, 0%, 100%);
+    background-color: transparent;
+    border: 0 solid transparent;
+
+    &:hover {
+      background-color: hsl(0, 0%, 14.9%);
+      color: hsl(0, 0%, 98%);
+    }
+
+    &:active {
+      background-color: #e6e6e6;
+      border-color: #b3b3b3;
     }
   }
 }
