@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: main
 
@@ -45,7 +45,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'Nightly Sync: Merge develop into main'
           title: 'Nightly Sync: Develop to Main'
-          body: 'This pull request was created automatically bby the nightly workflow to merge the latest changes from develop to main.'
+          body: 'This pull request was created automatically by the nightly workflow to merge the latest changes from develop to main.'
           head: develop
           base: main
           branch: nightly/develop-to-main
