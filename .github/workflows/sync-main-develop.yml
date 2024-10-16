@@ -1,0 +1,14 @@
+name: Sync main to develop
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create pull request
+        run: gh pr create -B main -H develop --title 'Merge main to develop' --body 'Created by Github actions'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
