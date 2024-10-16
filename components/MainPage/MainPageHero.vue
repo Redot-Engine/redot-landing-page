@@ -44,25 +44,25 @@ onUnmounted(() => {
           <div class="social-icon">
             <img alt="GitHub" src="~/assets/images/social-github.svg">
           </div>
-          4.1k<br v-if="isMobile"> stars
+          4.2k<br v-if="isMobile"> stars
         </NuxtLink>
         <NuxtLink :href="links.discordUrl" class="social-info">
           <div class="social-icon">
             <img alt="Discord" src="~/assets/images/social-discord.svg">
           </div>
-          8.5k<br v-if="isMobile"> members
+          9.1k<br v-if="isMobile"> members
         </NuxtLink>
         <NuxtLink :href="links.twitterUrl" class="social-info">
           <div class="social-icon">
             <img alt="Twitter" src="~/assets/images/social-twitter.svg">
           </div>
-          20.4k<br v-if="isMobile"> followers
+          20.6k<br v-if="isMobile"> followers
         </NuxtLink>
         <NuxtLink :href="links.redditUrl" class="social-info">
           <div class="social-icon">
             <img alt="Reddit" src="~/assets/images/social-reddit.svg">
           </div>
-          680<br v-if="isMobile"> members
+          771<br v-if="isMobile"> members
         </NuxtLink>
       </div>
 
