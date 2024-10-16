@@ -40,12 +40,7 @@ jobs:
 
       - name: Create pull request from develop to main if out of sync and no PR exists
         if: steps.check_sync.outputs.out_of_sync == 'true' && steps.check_pr.outputs.number == ''
-        uses: peter-evans/create-pull-request@v7
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: 'Nightly Sync: Merge develop into main'
-          title: 'Nightly Sync: Develop to Main'
-          body: 'This pull request was created automatically by the nightly workflow to merge the latest changes from develop to main.'
-          head: develop
-          base: main
-          branch: nightly/develop-to-main
+        run:
+          gh pr create -B main -H develop --title 'Merge develop into main' --body 'Created by Github action'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

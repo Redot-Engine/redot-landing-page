@@ -12,12 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v7
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: 'Merge main to develop'
-          title: 'Merge main to develop'
-          body: 'Created by Github actions'
-          head: main
-          base: develop
-          branch: main-to-develop
+        run:
+          gh pr create -B develop -H main --title 'Merge main into develop' --body 'Created by Github action'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
