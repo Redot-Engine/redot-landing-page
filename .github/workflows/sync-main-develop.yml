@@ -18,6 +18,5 @@ jobs:
           commit-message: 'Merge main to develop'
           title: 'Merge main to develop'
           body: 'Created by Github actions'
-          head: main
           base: develop
-          branch: main-to-develop
+          branch: main
