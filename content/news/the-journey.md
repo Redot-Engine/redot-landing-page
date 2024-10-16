@@ -1,7 +1,6 @@
 ---
 title: The journey
-date: 2024-10-14
-index: 3
+date: 2024-10-14T00:03:00Z
 description: What began simply as an idea.
 image: /img/news/the-journey.png
 alt: test test test test
@@ -14,7 +13,6 @@ published: true
 ---
 
 # What began simply as an idea.
-
 
 The support we received for the project was astounding.\
 \
