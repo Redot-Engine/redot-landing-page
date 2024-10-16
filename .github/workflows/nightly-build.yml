@@ -1,0 +1,51 @@
+name: Nightly Build
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 12 * * *  # Runs at 12:00 UTC every day
+
+jobs:
+  check-and-create-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Fetch develop branch
+        run: git fetch origin develop
+
+      - name: Check if main and develop are in sync
+        id: check_sync
+        run: |
+          MAIN_HASH=$(git rev-parse origin/main)
+          DEVELOP_HASH=$(git rev-parse origin/develop)
+          
+          echo "Main branch commit hash: $MAIN_HASH"
+          echo "Develop branch commit hash: $DEVELOP_HASH"
+          
+          if [ "$MAIN_HASH" != "$DEVELOP_HASH" ]; then
+            echo "out_of_sync=true" >> $GITHUB_OUTPUT
+          else
+            echo "out_of_sync=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check if pull request already exists from develop to main
+        id: check_pr
+        uses: juliangruber/find-pull-request-action@v1
+        with:
+          branch: develop
+          base: main
+
+      - name: Create pull request from develop to main if out of sync and no PR exists
+        if: steps.check_sync.outputs.out_of_sync == 'true' && steps.check_pr.outputs.number == ''
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'Nightly Sync: Merge develop into main'
+          title: 'Nightly Sync: Develop to Main'
+          body: 'This pull request was created automatically by the nightly workflow to merge the latest changes from develop to main.'
+          head: develop
+          base: main
+          branch: nightly/develop-to-main
