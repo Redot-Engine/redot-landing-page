@@ -1,0 +1,104 @@
+<template>
+  <section class="download-hero">
+    <div class="download-hero__content">
+      <div class="download-hero__header">
+        <span class="download-hero__subtitle">Download Redot</span>
+        <span class="download-hero__title">Ignite Your Imagination</span>
+      </div>
+      <span class="download-hero__description">
+        Download Redot Engine, the powerful platform for building 2D and 3D cross-platform games and interactive <br>
+        experiences.
+      </span>
+      <div class="download-hero__buttons">
+        <LinkButton type="white">
+          Download latest
+        </LinkButton>
+        <LinkButton type="ghost">
+          Other versions &rarr;
+        </LinkButton>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped lang="scss">
+@use "@/assets/styles/mixins";
+
+.download-hero {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    overflow: hidden;
+    padding: 4.5rem 3.5rem;
+    border-radius: 1rem;
+    background-size: cover;
+    background-image: url("/img/download/background-hero.webp");
+  }
+
+  @media (max-width: 768px) {
+    &__content {
+      padding: 4.5rem 1.5rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 2.25rem;
+    letter-spacing: -1px;
+    line-height: 2.5rem;
+  }
+
+  @media (max-width: 768px) {
+    &__title {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      letter-spacing: 0;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 1.5rem;
+    color: rgba(#fff, 80%);
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 768px) {
+    &__subtitle {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+  }
+
+  &__description {
+    font-weight: 200;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    &__buttons {
+      flex-direction: column;
+      row-gap: 1rem;
+    }
+  }
+}
+
+</style>
+<script setup lang="ts">
+</script>
