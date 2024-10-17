@@ -25,7 +25,7 @@ const featureFlags = useFeatureFlags();
 
       <img alt="" class="feature-image" src="~/assets/images/feature-2d-3d.svg">
       <div>
-        <SectionTitle :small="isMobile">Dedicated 2D and 3D engines</SectionTitle>
+        <SectionTitle :small="isMobile">Dedicated 3D and 2D engines</SectionTitle>
         <SectionDescription big>
           Make crisp and performant 2D games with Redot’s dedicated 2D rendering engine with real 2D pixel coordinates
           and 2D nodes. Redot's 3D nodes give you everything you need to build, animate, and render your 3D worlds and
