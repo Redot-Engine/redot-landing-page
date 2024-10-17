@@ -2,24 +2,41 @@
   <section class="download-hero">
     <div class="download-hero__content">
       <div class="download-hero__header">
-        <span class="download-hero__subtitle">Download Redot</span>
+        <span class="download-hero__subtitle">
+          Download Redot for {{ platform }}
+        </span>
         <span class="download-hero__title">Ignite Your Imagination</span>
       </div>
       <span class="download-hero__description">
-        Download Redot Engine, the powerful platform for building 2D and 3D cross-platform games and interactive <br>
+        Download Redot Engine, the powerful platform for building 2D and 3D
+        cross-platform games and interactive <br />
         experiences.
       </span>
       <div class="download-hero__buttons">
-        <LinkButton type="white">
+        <LinkButton :href="downloadLink" type="white">
           Download latest
         </LinkButton>
-        <LinkButton type="ghost">
+        <LinkButton
+          href="https://github.com/Redot-Engine/redot-engine/releases"
+          type="ghost"
+        >
           Other versions &rarr;
         </LinkButton>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { getPlatformDownloadLink } from "~/lib/platformDownloadLink";
+
+const props = defineProps<{
+  platform: string;
+}>();
+
+const downloadLink = computed(() => getPlatformDownloadLink(props.platform));
+console.log(downloadLink);
+</script>
 
 <style scoped lang="scss">
 @use "@/assets/styles/mixins";
@@ -98,7 +115,4 @@
     }
   }
 }
-
 </style>
-<script setup lang="ts">
-</script>
