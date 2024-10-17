@@ -10,11 +10,7 @@ const typeClass = computed(() => `link-button--${type}`);
 </script>
 
 <template>
-  <NuxtLink
-    :class="typeClass"
-    :href
-    class="link-button"
-  >
+  <NuxtLink :class="typeClass" :href class="link-button">
     <slot />
   </NuxtLink>
 </template>
@@ -32,7 +28,10 @@ const typeClass = computed(() => `link-button--${type}`);
   gap: 8px;
   justify-content: center;
   align-items: center;
-  transition: color 0.1s, background-color 0.1s, border-color 0.1s;
+  transition:
+    color 0.1s,
+    background-color 0.1s,
+    border-color 0.1s;
   font-size: 13px;
 
   :deep(.icon) {
@@ -77,7 +76,7 @@ const typeClass = computed(() => `link-button--${type}`);
 
   &--white {
     color: #000;
-    background-color: hsl(0, 0%, 98%);;
+    background-color: hsl(0, 0%, 98%);
     border-color: #e6e6e6;
 
     &:hover {
@@ -103,6 +102,23 @@ const typeClass = computed(() => `link-button--${type}`);
 
     &:active {
       background-color: #e6e6e6;
+      border-color: #b3b3b3;
+    }
+  }
+
+  &--outline {
+    padding: 0.9rem 1rem;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 3.9%);
+    border: 1px solid hsl(0, 0%, 14.9%);
+
+    &:hover {
+      background-color: hsl(0, 0%, 14.9%);
+      color: hsl(0, 0%, 98%);
+    }
+
+    &:active {
+      background-color: rgba(255, 255, 255, 0.1);
       border-color: #b3b3b3;
     }
   }
