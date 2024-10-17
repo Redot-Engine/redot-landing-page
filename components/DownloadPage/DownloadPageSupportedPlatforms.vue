@@ -23,11 +23,6 @@
           label="Windows"
         />
         <DownloadPageSupportedPlatformsItem
-          class="download-supported-platforms__mac"
-          icon="/img/download/apple.svg"
-          label="macOS"
-        />
-        <DownloadPageSupportedPlatformsItem
           class="download-supported-platforms__linux"
           icon="/img/download/linux.svg"
           label="Linux"
@@ -116,7 +111,6 @@ $gap: 20px;
 
   &__grid {
     max-width: 1024px;
-    padding: 0 4rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
