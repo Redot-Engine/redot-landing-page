@@ -19,12 +19,12 @@ useHead({
 useSeoMeta({
   ogType: "website",
   ogTitle: "Redot Engine",
-  ogImage: "https://www.redotengine.org//img/seo/banner.png",
+  ogImage: "https://www.redotengine.org/img/seo/banner.png",
   twitterCard: "summary_large_image",
   twitterTitle: "Redot Engine",
   twitterDescription:
     "Open source game engine for everyone. No strings attached.",
-  twitterImage: "https://www.redotengine.org//img/seo/banner.png",
+  twitterImage: "https://www.redotengine.org/img/seo/banner.png",
 });
 </script>
 
