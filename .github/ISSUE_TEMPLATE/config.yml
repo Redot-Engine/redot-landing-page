@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Redot community channels
+    url: https://discord.gg/redot
+    about: Please ask for technical support on one of the other community channels, not here.
+
+  - name: Redot proposals
+    url: https://github.com/redot-engine/redot-proposals
+    about: Please submit engine feature proposals on the Redot proposals repository, not here.
+
+  - name: Main Redot repository
+    url: https://github.com/Redot-Engine
+    about: Report engine bugs on the main Redot repository
