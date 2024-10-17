@@ -21,19 +21,9 @@ Welcome to the Redot Game Engine Website project! This repository is the front-e
 ### Prerequisites
 Make sure [nodejs](https://nodejs.org/en/download/) is installed.
 
-To check if the install succeeded, try:
-```
-node --version
-npm --version
-```
-
-### To build
+### To build and run
 ```
 npm install
-``` 
-
-### To run
-```
 npm run dev
 ```
 
