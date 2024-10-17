@@ -12,8 +12,8 @@ export default {
 
       if (userAgent.includes("win")) {
         platform = "windows";
-      } else if (userAgent.includes("mac")) {
-        platform = "mac";
+      } else if (userAgent.includes("android")) {
+        platform = "android";
       } else if (userAgent.includes("linux")) {
         platform = "linux";
       } else {

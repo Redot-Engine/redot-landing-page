@@ -6,6 +6,7 @@
       <DownloadPageHero :platform="platform" />
       <DownloadPageThreeSteps />
       <DownloadPageSupportedPlatforms />
+      <DownloadPageSection />
     </section>
   </MaxWidthContainer>
 
