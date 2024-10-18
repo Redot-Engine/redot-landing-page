@@ -1,14 +1,14 @@
 <template>
   <section class="download-three-steps-item">
     <div class="download-three-steps-item__content">
-      <span class="download-three-steps-item__title">{{ title }}</span>
+      <h3 class="download-three-steps-item__title">{{ title }}</h3>
       <div class="download-three-steps-item__details">
         <p class="download-three-steps-item__description">{{ description }}</p>
-        <div>
-          <div v-for="(link, index) in links" :key="index">
+        <ul>
+          <li v-for="(link, index) in links" :key="index">
             <NuxtLink :to="link.url" class="download-three-steps-item__link">{{ link.text }}</NuxtLink>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
   </section>

@@ -4,9 +4,9 @@
 <template>
   <section class="download-supported-platforms">
     <div class="download-supported-platforms__content">
-      <span class="download-supported-platforms__title">
+      <h2 class="download-supported-platforms__title">
         Supported Platforms
-      </span>
+      </h2>
       <div class="download-supported-platforms__grid">
         <DownloadPageSupportedPlatformsItem
           class="download-supported-platforms__android"

@@ -34,7 +34,7 @@ const icons: Record<Icons, string> = {
 </script>
 
 <template>
-  <img :src="icons[name]" alt="" class="icon">
+  <img :alt="`${name} icon`" :src="icons[name]" class="icon">
 </template>
 
 <style scoped>
