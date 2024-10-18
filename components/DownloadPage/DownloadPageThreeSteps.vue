@@ -39,6 +39,12 @@ const links = useLinks();
 <style scoped lang="scss">
 @use "@/assets/styles/mixins";
 
+@mixin mobile-and-smaller {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
 .download-three-steps {
   &__content {
     display: flex;
@@ -55,10 +61,8 @@ const links = useLinks();
     font-size: 2.25rem;
     letter-spacing: -1px;
     line-height: 2.5rem;
-  }
 
-  @media (max-width: 768px) {
-    &__title {
+    @include mobile-and-smaller {
       font-size: 1.5rem;
       line-height: 2rem;
       letter-spacing: 0;
@@ -66,8 +70,7 @@ const links = useLinks();
   }
 
   &__grid {
-    padding-right: 0.75rem;
-    padding-left: 0.75rem;
+    padding: 0 0.75rem;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
