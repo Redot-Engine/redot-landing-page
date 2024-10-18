@@ -16,8 +16,8 @@ const {
   <NuxtLink :class="['link-button', className]" :href="href">
     <img
       v-if="icon"
+      :alt="`${label} icon`"
       :src="icon"
-      alt=""
       class="link-button__icon"
     >
     <span class="link-button__label">{{ label }}</span>

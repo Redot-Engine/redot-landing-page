@@ -6,7 +6,7 @@ const links = useLinks();
 <template>
   <section class="download-three-steps">
     <div class="download-three-steps__content">
-      <span class="download-three-steps__title">Ignite Your Imagination</span>
+      <h2 class="download-three-steps__title">Ignite Your Imagination</h2>
       <div class="download-three-steps__grid">
         <DownloadPageThreeStepsItem
           :links="[
