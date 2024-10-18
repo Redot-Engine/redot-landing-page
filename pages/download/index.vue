@@ -3,25 +3,20 @@
 </template>
 
 <script setup>
+import { detect } from "detect-browser";
+
 const router = useRouter();
+const platform = ref("");
+
 const redirectToPlatform = () => {
-  const userAgent = navigator.userAgent.toLowerCase();
-  let platform;
+  const browser = detect();
+  platform.value = browser.os.toLowerCase().replace(/\d+/g, "").trim().replace(/\s+/g, "");
+  platform.value = platform.value.replace(/[^a-z]/g, "");
 
-  if (userAgent.includes("win")) {
-    platform = "windows";
-  } else if (userAgent.includes("android")) {
-    platform = "android";
-  } else if (userAgent.includes("linux")) {
-    platform = "linux";
-  } else {
-    platform = "linux";
-  }
-
-  router.push(`/download/${platform}`);
+  router.push(`/download/${platform.value}`);
 };
 
-onBeforeRouteUpdate(redirectToPlatform);
+onMounted(redirectToPlatform);
 </script>
 
 <style scoped lang="scss">

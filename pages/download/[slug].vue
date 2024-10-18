@@ -17,10 +17,8 @@
 const { path } = useRoute();
 
 const platform = computed(() => {
-  if (path.startsWith("/download/")) {
-    return path.split("/")[2];
-  }
-  return null;
+  const platformFromPath = path.startsWith("/download/") ? path.split("/")[2] : null;
+  return platformFromPath ? platformFromPath.toLowerCase() : null;
 });
 </script>
 <style scoped lang="scss">
