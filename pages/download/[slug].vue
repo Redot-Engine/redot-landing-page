@@ -25,22 +25,9 @@ const platform = computed(() => {
 @use "@/assets/styles/mixins";
 
 .container {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  padding: 5rem 0.5rem 10rem;
-  background-color: black;
-
-  @media (min-width: 768px) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 5rem;
-  }
-
-  @media (min-width: 1024px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 56px;
 }
 
 .download-section {
