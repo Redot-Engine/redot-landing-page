@@ -74,4 +74,5 @@ const links = useLinks();
     height: 100%;
   }
 }
+
 </style>
