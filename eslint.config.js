@@ -60,4 +60,7 @@ export default [
       "comma-dangle": ["error", "always-multiline"], // Enforce trailing commas in arrays, objects, etc.
     },
   },
+  {
+    ignores: [".nuxt/*", ".output/*"],
+  },
 ];
