@@ -30,6 +30,7 @@ onUnmounted(() => {
         <img
           alt=""
           class="hero-center-logo"
+          fetchpriority="high"
           src="~/assets/images/redot-logo-white.svg"
         />
 
@@ -39,35 +40,40 @@ onUnmounted(() => {
 
         <SectionDescription>No strings attached.</SectionDescription>
 
-        <LinkButton class="hero-center-button" href="/download" type="red">
+        <LinkButton
+          href="/download"
+          aria-label="download"
+          class="hero-center-button"
+          type="red"
+        >
           Download
           <Icon name="arrow" />
         </LinkButton>
       </div>
 
       <div class="hero-center hero-center--socials">
-        <NuxtLink :href="links.githubUrl" class="social-info">
+        <NuxtLink :href="links.githubUrl" aria-label="github-url" class="social-info">
           <div class="social-icon">
             <img alt="GitHub" src="~/assets/images/social-github.svg" />
           </div>
           4.2k<br v-if="isMobile" />
           stars
         </NuxtLink>
-        <NuxtLink :href="links.discordUrl" class="social-info">
+        <NuxtLink :href="links.discordUrl" aria-label="discord-url" class="social-info">
           <div class="social-icon">
             <img alt="Discord" src="~/assets/images/social-discord.svg" />
           </div>
           9.1k<br v-if="isMobile" />
           members
         </NuxtLink>
-        <NuxtLink :href="links.twitterUrl" class="social-info">
+        <NuxtLink :href="links.twitterUrl" aria-label="twitter-url" class="social-info">
           <div class="social-icon">
             <img alt="Twitter" src="~/assets/images/social-twitter.svg" />
           </div>
           20.6k<br v-if="isMobile" />
           followers
         </NuxtLink>
-        <NuxtLink :href="links.redditUrl" class="social-info">
+        <NuxtLink :href="links.redditUrl" aria-label="reddit-url" class="social-info">
           <div class="social-icon">
             <img alt="Reddit" src="~/assets/images/social-reddit.svg" />
           </div>
@@ -76,7 +82,7 @@ onUnmounted(() => {
         </NuxtLink>
       </div>
 
-      <div class="hero-game-name">Game name</div>
+      <div aria-hidden="true" class="hero-game-name">Game name</div>
     </div>
   </HeroSlideshow>
 </template>

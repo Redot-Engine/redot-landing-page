@@ -19,13 +19,18 @@ const classes = computed(() => ({
 </script>
 
 <template>
-  <NuxtLink :class="classes" :href="url" class="main-page-news-article">
+  <NuxtLink
+    :class="classes"
+    :href="url"
+    aria-label="article-link"
+    class="main-page-news-article"
+  >
     <img
       :src="image"
       alt="News article image"
       class="main-page-news-article-image"
     >
-    <SectionTitle :small="vertical" class="main-page-news-article-title">
+    <SectionTitle :small="vertical" class="main-page-news-article-title" variant="h3">
       {{ title }}
     </SectionTitle>
     <SectionDescription class="main-page-news-article-text">

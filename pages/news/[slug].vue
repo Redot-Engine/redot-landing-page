@@ -14,7 +14,7 @@ useHead(data.value?.title ? {
   <Header always-opaque />
 
   <MaxWidthContainer class="news-page-sections">
-    <NuxtLink class="back-button" href="/news">
+    <NuxtLink aria-label="back" class="back-button" href="/news">
       <Icon name="arrow" />
       All news
     </NuxtLink>
