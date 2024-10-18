@@ -80,9 +80,6 @@ onMounted(() => {
           >News</NuxtLink>
           <NuxtLink
             key="proposals"
-            :class="{
-              'header-menu-link--active': path === '/news'
-            }"
             :href="links.proposals"
             aria-label="proposals-link"
             class="header-link"
