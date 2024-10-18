@@ -9,19 +9,19 @@
             alt="Requirements"
             class="download-section__image"
             src="/img/download/requirements.webp"
-          />
+          >
         </div>
 
         <div class="download-section__requirements__container-text">
           <div class="download-section__text">
             <span class="download-section__title">
-              Redot Engine System <br />
+              Redot Engine System <br>
               Requirements
             </span>
             <span class="download-section__description">
               Recommended: Vulkan 1.0 compatible hardware Minimal: OpenGL 3.3 /
               OpenGL ES 3.0 compatible hardware Additional requirements for the
-              .NET version: <br />
+              .NET version: <br>
               <NuxtLink
                 class="download-section__link"
                 href="https://dotnet.microsoft.com/en-us/download"
@@ -38,7 +38,7 @@
             alt="Requirements"
             class="download-section__image"
             src="/img/seo/banner.png"
-          />
+          >
         </div>
         <div class="download-section__redot__container-text">
           <div class="download-section__text">
@@ -51,7 +51,7 @@
             </span>
           </div>
           <div class="download-section__button">
-            <LinkButton type="outline"> Learn More &rarr; </LinkButton>
+            <LinkButton href="https://docs-latest.redotengine.org/about/introduction#about-redot-engine" type="outline"> Learn More &rarr; </LinkButton>
           </div>
         </div>
       </div>
@@ -60,6 +60,8 @@
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/styles/mixins";
+
 .download-section {
   &__content {
     display: flex;
@@ -82,7 +84,7 @@
     place-items: center;
     gap: 1rem;
 
-    @media (min-width: 1024px) {
+    @include mixins.desktop-and-larger {
       grid-auto-flow: column;
     }
 
@@ -94,11 +96,11 @@
       width: 100%;
       align-items: center;
 
-      @media (max-width: 768px) {
+      @include mixins.mobile-and-smaller {
         min-height: 200px;
       }
 
-      @media (min-width: 1024px) {
+      @include mixins.desktop-and-larger {
         align-items: flex-start;
         grid-column: span 6 / span 6;
         grid-column-start: 1;
@@ -111,7 +113,7 @@
       padding: 1.5rem 1.25rem;
       text-align: left;
 
-      @media (min-width: 1024px) {
+      @include mixins.desktop-and-larger {
         grid-column: span 5 / span 5;
         padding-bottom: 0;
         grid-column-start: 8;
@@ -126,7 +128,7 @@
     place-items: center;
     gap: 1rem;
 
-    @media (min-width: 1024px) {
+    @include mixins.desktop-and-larger {
       grid-auto-flow: column;
     }
 
@@ -138,11 +140,11 @@
       width: 100%;
       align-items: center;
 
-      @media (max-width: 768px) {
+      @include mixins.mobile-and-smaller {
         min-height: 200px;
       }
 
-      @media (min-width: 1024px) {
+      @include mixins.desktop-and-larger {
         align-items: flex-start;
         grid-column: span 6 / span 6;
         grid-column-start: 8;
@@ -155,7 +157,7 @@
       padding: 1.5rem 1.25rem;
       text-align: left;
 
-      @media (min-width: 1024px) {
+      @include mixins.desktop-and-larger {
         grid-column: span 5 / span 5;
         padding-bottom: 0;
         grid-column-start: 1;
@@ -170,7 +172,7 @@
     transition: opacity 500ms;
     object-fit: cover;
 
-    @media (max-width: 768px) {
+    @include mixins.mobile-and-smaller {
       height: auto;
     }
   }
@@ -200,7 +202,7 @@
     line-height: 2.5rem;
   }
 
-  @media (max-width: 768px) {
+  @include mixins.mobile-and-smaller {
     &__title {
       font-size: 1.5rem;
       line-height: 2rem;
