@@ -4,13 +4,13 @@ date: 2024-10-13T00:01:00Z
 index: 5
 description: We are pleased to announce that Friday 10/18/2024 will be when our community votes on all the submissions for the Redot mascot contest.
 
-image: /img/news/mascot-contest.png
+image: /img/news/mascot-contest.avif
 alt: Redot mascot contest
-ogImage: /img/news/mascot-contest.png
+ogImage: /img/news/mascot-contest.avif
 tags: ["Community"]
 type: "post"
 author: "Redot"
-authorImage: /img/authors/redot.png
+authorImage: /img/authors/redot.avif
 published: true
 ---
 

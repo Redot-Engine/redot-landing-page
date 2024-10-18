@@ -2,13 +2,13 @@
 title: The journey
 date: 2024-10-14T00:03:00Z
 description: What began simply as an idea.
-image: /img/news/the-journey.png
+image: /img/news/the-journey.avif
 alt: test test test test
-ogImage: /img/news/the-journey.png
+ogImage: /img/news/the-journey.avif
 tags: ["Community"]
 type: "post"
 author: "Red Otter"
-authorImage: /img/authors/red-otter.png
+authorImage: /img/authors/red-otter.avif
 published: true
 ---
 

@@ -4,13 +4,13 @@ date: 2024-10-11T00:00:00Z
 index: 1
 description: We’re thrilled to announce the release of the beta version 4.4 of our game engine, Redot!
 
-image: /img/news/release-4-4.png
+image: /img/news/release-4-4.avif
 alt: Screenshot of new feature
-ogImage: /img/news/release-4-4.png
+ogImage: /img/news/release-4-4.avif
 tags: ["Releases"]
 type: "post"
 author: "Redot"
-authorImage: /img/authors/redot.png
+authorImage: /img/authors/redot.avif
 published: true
 ---
 
