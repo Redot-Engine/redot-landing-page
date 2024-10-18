@@ -7,7 +7,7 @@ import NewsOverviewPage from "~/components/NewsPage/NewsOverviewPage.vue";
 
   <MaxWidthContainer class="news-page-sections">
     <div class="header">
-      <div class="section-title-text">News</div>
+      <h1 class="section-title-text">News</h1>
     </div>
     <NewsOverviewPage />
   </MaxWidthContainer>

@@ -14,15 +14,15 @@ const { buttonText = "Join" } = defineProps<{
 <template>
   <div class="get-involved-item">
     <a :href="link">
-      <img :src="image" alt="" class="get-involved-item-image" />
+      <img :src="image" alt="" class="get-involved-item-image">
     </a>
-    <SectionTitle class="get-involved-item-title" small>
+    <SectionTitle class="get-involved-item-title" variant="h2" small>
       {{ title }}
     </SectionTitle>
     <SectionDescription class="get-involved-item-description">
       {{ description }}
     </SectionDescription>
-    <LinkButton :href="link" :type="buttonType">
+    <LinkButton :aria-label="`${title} link`" :href="link" :type="buttonType">
       {{ buttonText }}
       <Icon name="arrow" />
     </LinkButton>

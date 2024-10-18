@@ -19,7 +19,7 @@ const { post } =
       <div class="username">{{ post.author }}</div>
       <div class="date">{{ post.date ? new Date(post.date).toLocaleDateString(): "" }}</div>
     </div>
-    <SectionTitle class="news-article-title">
+    <SectionTitle class="news-article-title" variant="h2">
       {{ post.title }}
     </SectionTitle>
     <SectionDescription class="news-article-text">
