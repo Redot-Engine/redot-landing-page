@@ -39,6 +39,7 @@ const downloadLink = computed(() => getPlatformDownloadLink(platform));
 
 const platformIcons = {
   windows: "windows",
+  mac: "apple",
   apple: "apple",
   linux: "linux",
   android: "android",

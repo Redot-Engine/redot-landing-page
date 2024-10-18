@@ -4,6 +4,7 @@ export const getPlatformDownloadLink = (platform: string): string => {
       "https://download.redotengine.org/release/4.4/redot-windowsx64.zip",
     linux: "https://download.redotengine.org/release/4.4/redot-linuxbsd.zip",
     android: "https://download.redotengine.org/release/4.4/android-editor.zip",
+    mac: "https://github.com/Redot-Engine/redot-engine/releases",
   };
 
   return (
