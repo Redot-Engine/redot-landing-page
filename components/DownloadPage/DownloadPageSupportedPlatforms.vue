@@ -1,4 +1,5 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <template>
   <section class="download-supported-platforms">
@@ -9,23 +10,34 @@
       <div class="download-supported-platforms__grid">
         <DownloadPageSupportedPlatformsItem
           class="download-supported-platforms__android"
+          href="/download/android"
           icon="/img/download/android.svg"
           label="Android"
         />
         <DownloadPageSupportedPlatformsItem
           class="download-supported-platforms__web-editor"
+          href="https://download.redotengine.org/release/4.4/android-editor.zip"
           icon="/img/download/web-editor.svg"
           label="Web Editor"
         />
         <DownloadPageSupportedPlatformsItem
           class="download-supported-platforms__windows"
+          href="/download/windows"
           icon="/img/download/windows.svg"
           label="Windows"
         />
         <DownloadPageSupportedPlatformsItem
           class="download-supported-platforms__linux"
+          href="/download/linux"
           icon="/img/download/linux.svg"
           label="Linux"
+        />
+        <DownloadPageSupportedPlatformsItem
+          v-if="useFeatureFlags().macSupport"
+          class="download-supported-platforms__mac"
+          href="/download/mac"
+          icon="/img/download/apple.svg"
+          label="macOS"
         />
       </div>
     </div>
@@ -33,6 +45,8 @@
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/styles/mixins";
+
 $grid-columns: 5;
 $gap: 20px;
 
@@ -48,41 +62,33 @@ $gap: 20px;
   }
 }
 
+@mixin platform-background($color) {
+  background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 0%,
+          $color 100%
+  );
+}
+
 .download-supported-platforms {
   &__android {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(23, 254, 2, 0.3) 194%
-    );
+    @include platform-background(rgba(23, 254, 2, 0.15));
   }
+
   &__web-editor {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 0%,
-      rgb(254, 63, 2, 0.3) 200%
-    );
+    @include platform-background(rgb(254, 63, 2, 0.15));
   }
+
   &__windows {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 0%,
-      rgb(2, 178, 254, 0.3) 194%
-    );
+    @include platform-background(rgb(2, 178, 254, 0.15));
   }
+
   &__mac {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(254, 174, 2, 0.3) 194%
-    );
+    @include platform-background(rgba(254, 174, 2, 0.15));
   }
+
   &__linux {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(255, 255, 255, 0.3) 194%
-    );
+    @include platform-background(rgba(255, 255, 255, 0.15));
   }
 
   &__content {
@@ -101,7 +107,7 @@ $gap: 20px;
     line-height: 2.5rem;
   }
 
-  @media (max-width: 768px) {
+  @include mixins.mobile-and-smaller {
     &__title {
       font-size: 1.5rem;
       line-height: 2rem;
@@ -110,7 +116,6 @@ $gap: 20px;
   }
 
   &__grid {
-    max-width: 1024px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -118,13 +123,14 @@ $gap: 20px;
     height: 100%;
     grid-column: span 12 / span 12;
 
-    @media (min-width: 768px) {
+    @include mixins.mobile-and-smaller {
       grid-column: span 6 / span 6;
       gap: 2rem;
       width: 100%;
+      padding: 0 4rem;
     }
 
-    @media (min-width: 1024px) {
+    @include mixins.desktop-and-larger {
       grid-column: span 4 / span 4;
     }
   }

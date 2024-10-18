@@ -14,12 +14,19 @@ const {
 
 <template>
   <NuxtLink :class="['link-button', className]" :href="href">
-    <img v-if="icon" :src="icon" alt="" class="link-button__icon" />
+    <img
+      v-if="icon"
+      :src="icon"
+      alt=""
+      class="link-button__icon"
+    >
     <span class="link-button__label">{{ label }}</span>
   </NuxtLink>
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/styles/mixins";
+
 .link-button {
   display: flex;
   align-items: center;
@@ -29,6 +36,7 @@ const {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   color: #fff;
+  text-decoration: none;
   transition: background-color 0.3s;
 
   &__icon {
@@ -43,7 +51,7 @@ const {
     line-height: 2rem;
   }
 
-  @media (max-width: 768px) {
+  @include mixins.mobile-and-smaller {
     &__label {
       font-size: 1.25rem;
       line-height: 1.75rem;
@@ -55,7 +63,7 @@ const {
   }
 }
 
-@media (max-width: 768px) {
+@include mixins.mobile-and-smaller {
   .link-button {
     width: 100%;
   }
