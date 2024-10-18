@@ -13,9 +13,9 @@ const featureFlags = useFeatureFlags();
     </template>
 
     <div class="features-grid">
-      <img alt="" class="feature-image" src="~/assets/images/feature-scene.svg">
+      <img alt="scene and nodes image" class="feature-image" src="~/assets/images/feature-scene.svg">
       <div>
-        <SectionTitle :small="isMobile" variant="h2">Scene-driven design</SectionTitle>
+        <SectionTitle :small="isMobile" variant="h3">Scene-driven design</SectionTitle>
         <SectionDescription big>
           Use building blocks called nodes to create more complex and reusable scenes.
           Add scripts to your scenes and customize built-in behavior to implement your unique game mechanics.
@@ -23,9 +23,9 @@ const featureFlags = useFeatureFlags();
         </SectionDescription>
       </div>
 
-      <img alt="" class="feature-image" src="~/assets/images/feature-2d-3d.svg">
+      <img alt="cube and square image" class="feature-image" src="~/assets/images/feature-2d-3d.svg">
       <div>
-        <SectionTitle :small="isMobile" variant="h2">Dedicated 3D and 2D engines</SectionTitle>
+        <SectionTitle :small="isMobile" variant="h3">Dedicated 3D and 2D engines</SectionTitle>
         <SectionDescription big>
           Make crisp and performant 2D games with Redot’s dedicated 2D rendering engine with real 2D pixel coordinates
           and 2D nodes. Redot's 3D nodes give you everything you need to build, animate, and render your 3D worlds and
@@ -33,9 +33,9 @@ const featureFlags = useFeatureFlags();
         </SectionDescription>
       </div>
 
-      <img alt="" class="feature-image" src="~/assets/images/feature-crossplatform.svg">
+      <img alt="cross platform image" class="feature-image" src="~/assets/images/feature-crossplatform.svg">
       <div>
-        <SectionTitle :small="isMobile" variant="h2">Cross platform</SectionTitle>
+        <SectionTitle :small="isMobile" variant="h3">Cross platform</SectionTitle>
         <SectionDescription big>
           Develop on a wide range of supported platforms. Deploy your game on desktop, mobile, and the web in seconds.
         </SectionDescription>

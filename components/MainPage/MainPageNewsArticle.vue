@@ -30,7 +30,7 @@ const classes = computed(() => ({
       alt="News article image"
       class="main-page-news-article-image"
     >
-    <SectionTitle :small="vertical" class="main-page-news-article-title" variant="h2">
+    <SectionTitle :small="vertical" class="main-page-news-article-title" variant="h3">
       {{ title }}
     </SectionTitle>
     <SectionDescription class="main-page-news-article-text">
