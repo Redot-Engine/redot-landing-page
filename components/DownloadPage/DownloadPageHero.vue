@@ -5,22 +5,19 @@
         <span class="download-hero__subtitle">
           Download Redot for {{ platform }}
         </span>
-        <span class="download-hero__title">Ignite Your Imagination</span>
+        <h1 class="download-hero__title">Ignite Your Imagination</h1>
       </div>
       <span class="download-hero__description">
         Download Redot Engine, the powerful platform for building 2D and 3D
-        cross-platform games and interactive <br>
+        cross-platform games and interactive <br />
         experiences.
       </span>
       <div class="download-hero__buttons">
         <LinkButton :href="downloadLink" type="white">
           Download latest
-          <Icon :name="platformIcons[platform]" />
+          <Icon :name="platformIcons[platform] ?? 'windows'" />
         </LinkButton>
-        <LinkButton
-          :href="links.releasePage"
-          type="ghost"
-        >
+        <LinkButton :href="links.releasePage" type="ghost">
           Other versions
           <Icon name="arrow" />
         </LinkButton>
@@ -34,20 +31,20 @@ import { getPlatformDownloadLink } from "~/lib/platformDownloadLink";
 
 const links = useLinks();
 
-const props = defineProps<{
+const { platform } = defineProps<{
   platform: string;
 }>();
 
-const downloadLink = computed(() => getPlatformDownloadLink(props.platform));
+const downloadLink = computed(() => getPlatformDownloadLink(platform));
 
 const platformIcons = {
   windows: "windows",
   mac: "apple",
+  apple: "apple",
   linux: "linux",
   android: "android",
   ios: "apple",
 };
-
 </script>
 
 <style scoped lang="scss">
@@ -62,7 +59,7 @@ const platformIcons = {
     padding: 4.5rem 3.5rem;
     border-radius: 1rem;
     background-size: cover;
-    background-image: url("/img/download/background-hero.webp");
+    background-image: url("/img/download/background-hero.avif");
 
     @include mixins.tablet-and-smaller {
       padding: 4.5rem 1.5rem;
