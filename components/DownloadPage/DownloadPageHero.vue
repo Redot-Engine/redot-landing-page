@@ -9,15 +9,16 @@
       </div>
       <span class="download-hero__description">
         Download Redot Engine, the powerful platform for building 2D and 3D
-        cross-platform games and interactive <br />
+        cross-platform games and interactive <br>
         experiences.
       </span>
       <div class="download-hero__buttons">
         <LinkButton :href="downloadLink" type="white">
           Download latest
+          <Icon :name="platformIcons[platform]" />
         </LinkButton>
         <LinkButton
-          href="https://github.com/Redot-Engine/redot-engine/releases"
+          :href="links.releasePage"
           type="ghost"
         >
           Other versions
@@ -31,12 +32,22 @@
 <script setup lang="ts">
 import { getPlatformDownloadLink } from "~/lib/platformDownloadLink";
 
+const links = useLinks();
+
 const props = defineProps<{
   platform: string;
 }>();
 
 const downloadLink = computed(() => getPlatformDownloadLink(props.platform));
-console.log(downloadLink);
+
+const platformIcons = {
+  windows: "windows",
+  macos: "apple",
+  linux: "linux",
+  android: "android",
+  ios: "apple",
+};
+
 </script>
 
 <style scoped lang="scss">

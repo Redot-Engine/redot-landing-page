@@ -88,6 +88,10 @@ const typeClass = computed(() => `link-button--${type}`);
       background-color: #e6e6e6;
       border-color: #b3b3b3;
     }
+
+    :deep(.icon) {
+      filter: invert(1);
+    }
   }
 
   &--ghost {
