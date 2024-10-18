@@ -68,11 +68,11 @@ const links = useLinks();
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-items: center;
     row-gap: 1.5rem;
     justify-content: space-between;
     align-self: stretch;
     height: 100%;
   }
 }
+
 </style>

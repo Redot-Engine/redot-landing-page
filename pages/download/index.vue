@@ -8,13 +8,22 @@ import { detect } from "detect-browser";
 const router = useRouter();
 const platform = ref("");
 
+const platformMapping = {
+  "windows": "windows",
+  "macos": "apple",
+  "linux": "linux",
+  "androidos": "android",
+};
+
 const redirectToPlatform = () => {
   const browser = detect();
-  platform.value = browser.os.toLowerCase().replace(/\d+/g, "").trim().replace(/\s+/g, "");
-  platform.value = platform.value.replace(/[^a-z]/g, "");
+  const rawPlatform = browser.os.toLowerCase().replace(/\d+/g, "").trim().replace(/\s+/g, "");
+
+  platform.value = platformMapping[rawPlatform] || rawPlatform;
 
   router.push(`/download/${platform.value}`);
 };
+
 
 onMounted(redirectToPlatform);
 </script>
