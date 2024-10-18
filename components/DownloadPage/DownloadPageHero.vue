@@ -9,7 +9,7 @@
       </div>
       <span class="download-hero__description">
         Download Redot Engine, the powerful platform for building 2D and 3D
-        cross-platform games and interactive <br />
+        cross-platform games and interactive <br>
         experiences.
       </span>
       <div class="download-hero__buttons">
