@@ -101,7 +101,7 @@ onMounted(() => {
             Donate
             <Icon name="heart" />
           </LinkButton>
-          <LinkButton :href="links.releasePage" aria-label="download" type="red">
+          <LinkButton href="/download" aria-label="download" type="red">
             Download
             <Icon name="arrow" />
           </LinkButton>

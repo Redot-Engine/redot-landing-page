@@ -32,14 +32,16 @@ onUnmounted(() => {
           class="hero-center-logo"
           fetchpriority="high"
           src="~/assets/images/redot-logo-white.svg"
-        >
+        />
 
-        <SectionTitle small>Open‑source game engine for&nbsp;everyone.</SectionTitle>
+        <SectionTitle small
+          >Open‑source game engine for&nbsp;everyone.</SectionTitle
+        >
 
         <SectionDescription>No strings attached.</SectionDescription>
 
         <LinkButton
-          :href="links.releasePage"
+          href="/download"
           aria-label="download"
           class="hero-center-button"
           type="red"
@@ -52,27 +54,31 @@ onUnmounted(() => {
       <div class="hero-center hero-center--socials">
         <NuxtLink :href="links.githubUrl" aria-label="github-url" class="social-info">
           <div class="social-icon">
-            <img alt="GitHub" src="~/assets/images/social-github.svg">
+            <img alt="GitHub" src="~/assets/images/social-github.svg" />
           </div>
-          4.2k<br v-if="isMobile"> stars
+          4.2k<br v-if="isMobile" />
+          stars
         </NuxtLink>
         <NuxtLink :href="links.discordUrl" aria-label="discord-url" class="social-info">
           <div class="social-icon">
-            <img alt="Discord" src="~/assets/images/social-discord.svg">
+            <img alt="Discord" src="~/assets/images/social-discord.svg" />
           </div>
-          9.1k<br v-if="isMobile"> members
+          9.1k<br v-if="isMobile" />
+          members
         </NuxtLink>
         <NuxtLink :href="links.twitterUrl" aria-label="twitter-url" class="social-info">
           <div class="social-icon">
-            <img alt="Twitter" src="~/assets/images/social-twitter.svg">
+            <img alt="Twitter" src="~/assets/images/social-twitter.svg" />
           </div>
-          20.6k<br v-if="isMobile"> followers
+          20.6k<br v-if="isMobile" />
+          followers
         </NuxtLink>
         <NuxtLink :href="links.redditUrl" aria-label="reddit-url" class="social-info">
           <div class="social-icon">
-            <img alt="Reddit" src="~/assets/images/social-reddit.svg">
+            <img alt="Reddit" src="~/assets/images/social-reddit.svg" />
           </div>
-          771<br v-if="isMobile"> members
+          771<br v-if="isMobile" />
+          members
         </NuxtLink>
       </div>
 
@@ -106,7 +112,7 @@ onUnmounted(() => {
   max-width: 400px;
   padding: 40px;
   background-color: #0009;
-  border: 1px solid #FFFFFF19;
+  border: 1px solid #ffffff19;
   border-radius: 16px;
   backdrop-filter: blur(20px);
   text-align: center;
@@ -121,7 +127,7 @@ onUnmounted(() => {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     position: absolute;
-    bottom: 3.0vh;
+    bottom: 3vh;
   }
 }
 
@@ -130,7 +136,11 @@ onUnmounted(() => {
 }
 
 .social-info {
-  font-size: clamp(12px, calc(20px + (36–20) * (100vw - 768px) / (1920–768)), 48px);
+  font-size: clamp(
+    12px,
+    calc(20px + (36–20) * (100vw - 768px) / (1920–768)),
+    48px
+  );
   margin: auto;
   display: flex;
   flex-direction: row;

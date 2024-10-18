@@ -1,1 +1,1 @@
-export type ButtonType = "default" | "red";
+export type ButtonType = "default" | "red" | "white" | "ghost" | "outline";
