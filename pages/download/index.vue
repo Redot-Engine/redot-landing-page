@@ -10,7 +10,8 @@ const platform = ref("");
 
 const platformMapping = {
   "windows": "windows",
-  "macos": "apple",
+  "macos": "mac",
+  "ios": "mac",
   "linux": "linux",
   "androidos": "android",
 };

@@ -42,7 +42,7 @@ const downloadLink = computed(() => getPlatformDownloadLink(props.platform));
 
 const platformIcons = {
   windows: "windows",
-  macos: "apple",
+  mac: "apple",
   linux: "linux",
   android: "android",
   ios: "apple",
