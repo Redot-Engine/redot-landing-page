@@ -1,15 +1,17 @@
 <script setup lang="ts">
-const { small } = defineProps<{
+const { small, variant } = defineProps<{
   small?: boolean;
+  variant?: string;
 }>();
 
 const classSmall = computed(() => small ? "section-title--small" : "");
+const headingTag = computed(() => variant || "h1");
 </script>
 
 <template>
-  <div :class="classSmall" class="section-title">
+  <component :is="headingTag" :class="classSmall" class="section-title">
     <slot />
-  </div>
+  </component>
 </template>
 
 <style scoped lang="scss">

@@ -6,14 +6,14 @@ const { data: posts } = await useAsyncData("recent-posts", () =>
     .where({ type: { $eq: "post" }, published: { $eq: true } })
     .sort({ date: -1 })
     .limit(5)
-    .find()
+    .find(),
 );
 </script>
 
 <template>
   <MainPageSection title="Recent news">
     <template #button>
-      <LinkButton href="/news" type="red">
+      <LinkButton aria-label="more-news-button" href="/news" type="red">
         More news
         <Icon name="arrow" />
       </LinkButton>

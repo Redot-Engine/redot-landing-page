@@ -7,9 +7,9 @@ defineProps<{
 <template>
   <section class="main-page-section">
     <div class="section-title">
-      <div class="section-title-text">
+      <h2 class="section-title-text">
         {{ title }}
-      </div>
+      </h2>
       <slot name="button" />
     </div>
 

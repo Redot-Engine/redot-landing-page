@@ -9,3 +9,9 @@
         @content;
     }
 }
+
+@mixin desktop-and-larger {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}

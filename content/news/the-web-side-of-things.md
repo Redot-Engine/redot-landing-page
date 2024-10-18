@@ -3,13 +3,13 @@ title: The web side of things
 date: 2024-10-13T00:08:00Z
 description: A cursory look into some of the technical aspects of this website and related projects.
 
-image: /img/news/the-web-side-of-things.png
+image: /img/news/the-web-side-of-things.avif
 alt: Redot in the news
-ogImage: /img/news/the-web-side-of-things.png
+ogImage: /img/news/the-web-side-of-things.avif
 tags: ["Community"]
 type: "post"
 author: "Arjan"
-authorImage: /img/authors/arjan.png
+authorImage: /img/authors/arjan.avif
 published: true
 ---
 
