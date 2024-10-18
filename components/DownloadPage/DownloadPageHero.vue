@@ -9,7 +9,7 @@
       </div>
       <span class="download-hero__description">
         Download Redot Engine, the powerful platform for building 2D and 3D
-        cross-platform games and interactive <br>
+        cross-platform games and interactive <br />
         experiences.
       </span>
       <div class="download-hero__buttons">
@@ -17,10 +17,7 @@
           Download latest
           <Icon :name="platformIcons[platform] ?? 'windows'" />
         </LinkButton>
-        <LinkButton
-          :href="links.releasePage"
-          type="ghost"
-        >
+        <LinkButton :href="links.releasePage" type="ghost">
           Other versions
           <Icon name="arrow" />
         </LinkButton>
@@ -47,7 +44,6 @@ const platformIcons = {
   android: "android",
   ios: "apple",
 };
-
 </script>
 
 <style scoped lang="scss">
@@ -62,7 +58,7 @@ const platformIcons = {
     padding: 4.5rem 3.5rem;
     border-radius: 1rem;
     background-size: cover;
-    background-image: url("/img/download/background-hero.webp");
+    background-image: url("/img/download/background-hero.avif");
 
     @include mixins.tablet-and-smaller {
       padding: 4.5rem 1.5rem;

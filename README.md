@@ -8,7 +8,6 @@ Welcome to the Redot Game Engine Website project! This repository is the front-e
   <img src="./assets/images/readme/screenshot.png" width="80%">
 </div>
 
-
 ## 🚀 Features
 
 - 🌟 **Comprehensive Documentation**: Easily browse and search through Redot's game engine documentation.
@@ -19,13 +18,27 @@ Welcome to the Redot Game Engine Website project! This repository is the front-e
 ## Running locally
 
 ### Prerequisites
+
 Make sure [nodejs](https://nodejs.org/en/download/) is installed.
 
 ### To build and run
+
 ```
 npm install
 npm run dev
 ```
+
+### Public images and image compression
+
+Place public images in `public_images` folder.
+
+For compressing image,
+
+```
+npm run compress-image
+```
+
+⚠️ Most of time you wouldn't need to run this. This is going to remove old images and create new compressed images.
 
 ## 🛠️ Technologies Used
 
@@ -37,5 +50,6 @@ This project uses the following technologies:
 - **Node.js & npm**: For package management and running development tools.
 
 ### 🙌 Contributing:
+
 We welcome contributions from everyone! To get started, please read our [Contributing information](https://github.com/redot-engine/redot-landing-page/blob/main/CONTRIBUTING.md) to learn how to contribute to the project, set up the development environment, and submit pull requests.
 We expect all contributors to uphold our community standards. Please review our [Code of Conduct](https://github.com/redot-engine/redot-landing-page/blob/main/CODE_OF_CONDUCT.md) to learn more about our expectations regarding respectful collaboration and behavior.

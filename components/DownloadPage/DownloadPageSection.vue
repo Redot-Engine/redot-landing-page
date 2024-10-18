@@ -8,8 +8,8 @@
           <img
             alt="Requirements"
             class="download-section__image"
-            src="/img/download/requirements.webp"
-          >
+            src="/img/download/requirements.avif"
+          />
         </div>
 
         <div class="download-section__requirements__container-text">
@@ -21,7 +21,7 @@
             <p class="download-section__description">
               Recommended: Vulkan 1.0 compatible hardware Minimal: OpenGL 3.3 /
               OpenGL ES 3.0 compatible hardware Additional requirements for the
-              .NET version: <br>
+              .NET version: <br />
               <NuxtLink
                 aria-label=".net download"
                 class="download-section__link"
@@ -38,8 +38,8 @@
           <img
             alt="Requirements"
             class="download-section__image"
-            src="/img/seo/banner.png"
-          >
+            src="/img/seo/banner.avif"
+          />
         </div>
         <div class="download-section__redot__container-text">
           <div class="download-section__text">

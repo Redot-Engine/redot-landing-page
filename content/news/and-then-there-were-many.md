@@ -5,13 +5,13 @@ description:
   In 2017 I forked the very popular game engine Godot with the intention to submit pull requests
   and just help out. I've used the engine off and on since 2014, and I love the game engine.
 
-image: /img/news/and-then-there-were-many.png
+image: /img/news/and-then-there-were-many.avif
 alt: Redot in the news
-ogImage: /img/news/and-then-there-were-many.png
+ogImage: /img/news/and-then-there-were-many.avif
 tags: ["Community"]
 type: "post"
 author: "Andevrs"
-authorImage: /img/authors/andevrs.png
+authorImage: /img/authors/andevrs.avif
 published: true
 ---
 
