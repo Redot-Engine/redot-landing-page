@@ -13,7 +13,7 @@ const { buttonText = "Join" } = defineProps<{
 
 <template>
   <div class="get-involved-item">
-    <a :href="link">
+    <a :aria-label="title" :href="link">
       <img :src="image" alt="" class="get-involved-item-image">
     </a>
     <SectionTitle class="get-involved-item-title" variant="h2" small>

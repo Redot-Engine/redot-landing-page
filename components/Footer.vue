@@ -50,7 +50,7 @@ const links = useLinks();
       </div>
 
       <SectionDescription class="footer-copyright">
-        © 2024-present by the Redot community. Website <NuxtLink :href="links.websiteGithubUrl">
+        © 2024-present by the Redot community. Website <NuxtLink :href="links.websiteGithubUrl" aria-label="website source" class="source-link">
           source code on Github
         </NuxtLink>
       </SectionDescription>
@@ -137,7 +137,6 @@ const links = useLinks();
 
     :deep(a) {
       color: #3388ff;
-      text-decoration: none;
     }
 
     :deep(a:hover) {
