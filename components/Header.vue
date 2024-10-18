@@ -79,6 +79,12 @@ onMounted(() => {
             href="/news"
           >News</NuxtLink>
           <NuxtLink
+            key="proposals"
+            :href="links.proposals"
+            aria-label="proposals-link"
+            class="header-link"
+          >Proposals</NuxtLink>
+          <NuxtLink
             v-if="!featureFlags.minimal"
             key="assets"
             aria-label="assets-link"
