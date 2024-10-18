@@ -25,16 +25,10 @@ const { title, description, links } = defineProps<{
 <style scoped lang="scss">
 @use "@/assets/styles/mixins";
 
-@mixin mobile-and-smaller {
-  @media (max-width: 768px) {
-    @content;
-  }
-}
-
 .download-three-steps-item {
   padding: 1.5rem 1.5rem;
 
-  @include mobile-and-smaller {
+  @include mixins.mobile-and-smaller {
     padding: 1.5rem 0;
   }
 
@@ -46,7 +40,7 @@ const { title, description, links } = defineProps<{
     overflow: hidden;
     max-width: 18rem;
 
-    @include mobile-and-smaller {
+    @include mixins.mobile-and-smaller {
       max-width: 30rem;
     }
   }

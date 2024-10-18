@@ -53,18 +53,6 @@ const platformIcons = {
 <style scoped lang="scss">
 @use "@/assets/styles/mixins";
 
-@mixin mobile-and-smaller {
-  @media (max-width: 767px) {
-    @content;
-  }
-}
-
-@mixin tablet-and-smaller {
-  @media (max-width: 1279px) {
-    @content;
-  }
-}
-
 .download-hero {
   &__content {
     display: flex;
@@ -76,7 +64,7 @@ const platformIcons = {
     background-size: cover;
     background-image: url("/img/download/background-hero.webp");
 
-    @include tablet-and-smaller {
+    @include mixins.tablet-and-smaller {
       padding: 4.5rem 1.5rem;
     }
   }
@@ -93,7 +81,7 @@ const platformIcons = {
     letter-spacing: -1px;
     line-height: 2.5rem;
 
-    @include mobile-and-smaller {
+    @include mixins.mobile-and-smaller {
       font-size: 1.5rem;
       line-height: 2rem;
       letter-spacing: 0;
@@ -108,7 +96,7 @@ const platformIcons = {
     letter-spacing: 0.15rem;
     text-transform: uppercase;
 
-    @include mobile-and-smaller {
+    @include mixins.mobile-and-smaller {
       font-size: 0.875rem;
       line-height: 1.25rem;
     }
@@ -125,7 +113,7 @@ const platformIcons = {
     flex-direction: row;
     column-gap: 1rem;
 
-    @include mobile-and-smaller {
+    @include mixins.mobile-and-smaller {
       flex-direction: column;
       row-gap: 1rem;
     }
