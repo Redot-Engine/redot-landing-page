@@ -20,7 +20,8 @@
           href="https://github.com/Redot-Engine/redot-engine/releases"
           type="ghost"
         >
-          Other versions &rarr;
+          Other versions
+          <Icon name="arrow" />
         </LinkButton>
       </div>
     </div>
@@ -41,6 +42,18 @@ console.log(downloadLink);
 <style scoped lang="scss">
 @use "@/assets/styles/mixins";
 
+@mixin mobile-and-smaller {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet-and-smaller {
+  @media (max-width: 1279px) {
+    @content;
+  }
+}
+
 .download-hero {
   &__content {
     display: flex;
@@ -51,10 +64,8 @@ console.log(downloadLink);
     border-radius: 1rem;
     background-size: cover;
     background-image: url("/img/download/background-hero.webp");
-  }
 
-  @media (max-width: 768px) {
-    &__content {
+    @include tablet-and-smaller {
       padding: 4.5rem 1.5rem;
     }
   }
@@ -70,10 +81,8 @@ console.log(downloadLink);
     font-size: 2.25rem;
     letter-spacing: -1px;
     line-height: 2.5rem;
-  }
 
-  @media (max-width: 768px) {
-    &__title {
+    @include mobile-and-smaller {
       font-size: 1.5rem;
       line-height: 2rem;
       letter-spacing: 0;
@@ -87,10 +96,8 @@ console.log(downloadLink);
     color: rgba(#fff, 80%);
     letter-spacing: 0.15rem;
     text-transform: uppercase;
-  }
 
-  @media (max-width: 768px) {
-    &__subtitle {
+    @include mobile-and-smaller {
       font-size: 0.875rem;
       line-height: 1.25rem;
     }
@@ -106,10 +113,8 @@ console.log(downloadLink);
     display: flex;
     flex-direction: row;
     column-gap: 1rem;
-  }
 
-  @media (max-width: 768px) {
-    &__buttons {
+    @include mobile-and-smaller {
       flex-direction: column;
       row-gap: 1rem;
     }

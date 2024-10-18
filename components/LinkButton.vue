@@ -98,6 +98,10 @@ const typeClass = computed(() => `link-button--${type}`);
     &:hover {
       background-color: hsl(0, 0%, 14.9%);
       color: hsl(0, 0%, 98%);
+
+      :deep(.icon) {
+        filter: invert(0);
+      }
     }
 
     &:active {
