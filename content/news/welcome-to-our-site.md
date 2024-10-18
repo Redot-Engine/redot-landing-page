@@ -6,13 +6,13 @@ description:
   but a lot of hype. As one of the founders of this website I wanted to give a few words about the goals
   I wish to achieve with this project.
 
-image: /img/news/welcome-to-our-site.png
+image: /img/news/welcome-to-our-site.avif
 alt: Redot in the news
-ogImage: /img/news/welcome-to-our-site.png
+ogImage: /img/news/welcome-to-our-site.avif
 tags: ["Community"]
 type: "post"
 author: "Nicholai"
-authorImage: /img/authors/nicholai.png
+authorImage: /img/authors/nicholai.avif
 published: true
 ---
 

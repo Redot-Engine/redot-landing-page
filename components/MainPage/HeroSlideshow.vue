@@ -7,12 +7,12 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from "vue";
 
-import gamePreview01 from "@/assets/images/game_preview/game_preview_01.avif";
-import gamePreview02 from "@/assets/images/game_preview/game_preview_02.avif";
-import gamePreview03 from "@/assets/images/game_preview/game_preview_03.avif";
-import gamePreview05 from "@/assets/images/game_preview/game_preview_05.png";
-import gamePreview06 from "@/assets/images/game_preview/game_preview_06.png";
-import gamePreview07 from "@/assets/images/game_preview/game_preview_07.png";
+import gamePreview01 from "@/public/img/game_preview/game_preview_01.avif";
+import gamePreview02 from "@/public/img/game_preview/game_preview_02.avif";
+import gamePreview03 from "@/public/img/game_preview/game_preview_03.avif";
+import gamePreview05 from "@/public/img/game_preview/game_preview_05.avif";
+import gamePreview06 from "@/public/img/game_preview/game_preview_06.avif";
+import gamePreview07 from "@/public/img/game_preview/game_preview_07.avif";
 
 const images = [
   gamePreview01,
@@ -88,11 +88,12 @@ onUnmounted(() => {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom,
-        #000f 0%,
-        #0000 100px,
-        #0000 calc(100% - 100px),
-        #000f 100%
+    background: linear-gradient(
+      to bottom,
+      #000f 0%,
+      #0000 100px,
+      #0000 calc(100% - 100px),
+      #000f 100%
     );
     pointer-events: none;
   }

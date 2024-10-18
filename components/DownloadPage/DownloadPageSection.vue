@@ -8,20 +8,20 @@
           <img
             alt="Requirements"
             class="download-section__image"
-            src="/img/download/requirements.webp"
-          >
+            src="/img/download/requirements.avif"
+          />
         </div>
 
         <div class="download-section__requirements__container-text">
           <div class="download-section__text">
             <span class="download-section__title">
-              Redot Engine System <br>
+              Redot Engine System <br />
               Requirements
             </span>
             <span class="download-section__description">
               Recommended: Vulkan 1.0 compatible hardware Minimal: OpenGL 3.3 /
               OpenGL ES 3.0 compatible hardware Additional requirements for the
-              .NET version: <br>
+              .NET version: <br />
               <NuxtLink
                 class="download-section__link"
                 href="https://dotnet.microsoft.com/en-us/download"
@@ -37,8 +37,8 @@
           <img
             alt="Requirements"
             class="download-section__image"
-            src="/img/seo/banner.png"
-          >
+            src="/img/seo/banner.avif"
+          />
         </div>
         <div class="download-section__redot__container-text">
           <div class="download-section__text">
@@ -51,7 +51,12 @@
             </span>
           </div>
           <div class="download-section__button">
-            <LinkButton href="https://docs-latest.redotengine.org/about/introduction#about-redot-engine" type="outline"> Learn More &rarr; </LinkButton>
+            <LinkButton
+              href="https://docs-latest.redotengine.org/about/introduction#about-redot-engine"
+              type="outline"
+            >
+              Learn More &rarr;
+            </LinkButton>
           </div>
         </div>
       </div>
