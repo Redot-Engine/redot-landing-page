@@ -9,40 +9,48 @@ const links = useLinks();
       <div class="footer-socials">
         <img alt="Redot logo" class="footer-logo" src="~/assets/images/TopBarLogo.svg">
         <div class="footer-spacer" />
-        <NuxtLink :href="links.githubUrl"><img alt="GitHub" class="footer-social" src="~/assets/images/social-github.svg"></NuxtLink>
-        <NuxtLink :href="links.discordUrl"><img alt="Discord" class="footer-social" src="~/assets/images/social-discord.svg"></NuxtLink>
-        <NuxtLink :href="links.twitterUrl"><img alt="Twitter" class="footer-social" src="~/assets/images/social-twitter.svg"></NuxtLink>
-        <NuxtLink :href="links.redditUrl"><img alt="Reddit" class="footer-social" src="~/assets/images/social-reddit.svg"></NuxtLink>
+        <NuxtLink :href="links.githubUrl" aria-label="github">
+          <img alt="GitHub" class="footer-social" src="~/assets/images/social-github.svg">
+        </NuxtLink>
+        <NuxtLink :href="links.discordUrl" aria-label="discord">
+          <img alt="Discord" class="footer-social" src="~/assets/images/social-discord.svg">
+        </NuxtLink>
+        <NuxtLink :href="links.twitterUrl" aria-label="twitter">
+          <img alt="Twitter" class="footer-social" src="~/assets/images/social-twitter.svg">
+        </NuxtLink>
+        <NuxtLink :href="links.redditUrl" aria-label="reddit">
+          <img alt="Reddit" class="footer-social" src="~/assets/images/social-reddit.svg">
+        </NuxtLink>
       </div>
 
       <div class="footer-columns">
         <div class="footer-column">
-          <SectionTitle small>Redot Engine</SectionTitle>
+          <SectionTitle variant="h2" small>Redot Engine</SectionTitle>
 
-          <NuxtLink :href="links.releasePage" class="footer-link">Download</NuxtLink>
-          <NuxtLink :href="links.documentation" class="footer-link">Documentation</NuxtLink>
-          <NuxtLink :href="links.githubUrl" class="footer-link">Source Code</NuxtLink>
+          <NuxtLink :href="links.releasePage" aria-label="download" class="footer-link">Download</NuxtLink>
+          <NuxtLink :href="links.documentation" aria-label="documentation" class="footer-link">Documentation</NuxtLink>
+          <NuxtLink :href="links.githubUrl" aria-label="source code" class="footer-link">Source Code</NuxtLink>
         </div>
 
         <div class="footer-column">
-          <SectionTitle small>Project</SectionTitle>
+          <SectionTitle variant="h2"  small>Project</SectionTitle>
 
-          <NuxtLink class="footer-link" href="/news">News</NuxtLink>
-          <NuxtLink :href="links.contribute" class="footer-link">Contribution Guidelines</NuxtLink>
+          <NuxtLink aria-label="news" class="footer-link" href="/news">News</NuxtLink>
+          <NuxtLink :href="links.contribute" aria-label="contribution guidelines" class="footer-link">Contribution Guidelines</NuxtLink>
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Teams</NuxtLink>
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Communities</NuxtLink>
         </div>
 
         <div class="footer-column">
-          <SectionTitle small>Resources</SectionTitle>
+          <SectionTitle variant="h2"  small>Resources</SectionTitle>
 
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Assets</NuxtLink>
-          <NuxtLink :href="links.pressKit" class="footer-link">Press Kit</NuxtLink>
+          <NuxtLink :href="links.pressKit" aria-label="press kit" class="footer-link">Press Kit</NuxtLink>
         </div>
       </div>
 
       <SectionDescription class="footer-copyright">
-        © 2024-present by the Redot community. Website <NuxtLink :href="links.websiteGithubUrl">
+        © 2024-present by the Redot community. Website <NuxtLink :href="links.websiteGithubUrl" aria-label="website source" class="source-link">
           source code on Github
         </NuxtLink>
       </SectionDescription>
@@ -129,7 +137,6 @@ const links = useLinks();
 
     :deep(a) {
       color: #3388ff;
-      text-decoration: none;
     }
 
     :deep(a:hover) {

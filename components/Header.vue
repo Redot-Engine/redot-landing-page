@@ -49,10 +49,10 @@ onMounted(() => {
       }"
       class="header-inner"
     >
-      <NuxtLink href="/">
+      <NuxtLink aria-label="back to home" href="/">
         <img alt="Redot logo" class="header-logo" src="~/assets/images/TopBarLogo.svg">
       </NuxtLink>
-      <button class="header-mobile-menu-btn" @click="toggleMenu">
+      <button aria-label="mobile-menu" class="header-mobile-menu-btn" @click="toggleMenu">
         <Icon :name="menuOpen ? 'close' : 'menu'" />
       </button>
       <div
@@ -63,29 +63,25 @@ onMounted(() => {
         class="header-navigation"
       >
         <div class="header-links">
-          <div v-if="!featureFlags.minimal" class="header-link-with-menu">
-            <span class="header-link">Overview <Icon name="chevron-down" /></span>
-
-            <div class="header-menu">
-              <NuxtLink class="header-menu-link" href="#">Menu item</NuxtLink>
-              <NuxtLink class="header-menu-link" href="#">Menu item</NuxtLink>
-              <NuxtLink class="header-menu-link" href="#">Menu item</NuxtLink>
-              <NuxtLink class="header-menu-link" href="#">Menu item</NuxtLink>
-              <NuxtLink class="header-menu-link" href="#">Menu item</NuxtLink>
-            </div>
-          </div>
-          <NuxtLink key="documentation" :href="links.documentation" class="header-link">Documentation</NuxtLink>
+          <NuxtLink
+            key="documentation"
+            :href="links.documentation"
+            aria-label="documentation-link"
+            class="header-link"
+          >Documentation</NuxtLink>
           <NuxtLink
             key="news"
             :class="{
               'header-menu-link--active': path === '/news'
             }"
+            aria-label="news-link"
             class="header-link"
             href="/news"
           >News</NuxtLink>
           <NuxtLink
             v-if="!featureFlags.minimal"
             key="assets"
+            aria-label="assets-link"
             class="header-link"
             href="#"
           >Assets</NuxtLink>
@@ -97,15 +93,15 @@ onMounted(() => {
           }"
           class="header-buttons"
         >
-          <LinkButton :href="links.githubUrl">
+          <LinkButton :href="links.githubUrl" aria-label="contribute">
             Contribute
             <Icon name="code" />
           </LinkButton>
-          <LinkButton v-show="!featureFlags.minimal" href="#">
+          <LinkButton v-show="!featureFlags.minimal" aria-label="donate" href="#">
             Donate
             <Icon name="heart" />
           </LinkButton>
-          <LinkButton :href="links.releasePage" type="red">
+          <LinkButton :href="links.releasePage" aria-label="download" type="red">
             Download
             <Icon name="arrow" />
           </LinkButton>
