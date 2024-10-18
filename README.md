@@ -16,6 +16,16 @@ Welcome to the Redot Game Engine Website project! This repository is the front-e
 - 🌍 **Community Hub**: Engage with other Redot users through discord, FAQs, and community events.
 - 💻 **Responsive Design**: A fully responsive site that looks great on any device.
 
+## Running locally
+
+### Prerequisites
+Make sure [nodejs](https://nodejs.org/en/download/) is installed.
+
+### To build and run
+```
+npm install
+npm run dev
+```
 
 ## 🛠️ Technologies Used
 
