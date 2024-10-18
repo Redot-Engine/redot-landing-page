@@ -26,7 +26,7 @@ const platform = computed(() => {
 
 .container {
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 84px;
   margin-top: 56px;
 }
 
