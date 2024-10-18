@@ -6,6 +6,7 @@ export const useLinks = () => ({
   redditUrl: "https://www.reddit.com/r/RedotGameEngineMain/",
   pressKit: "https://download.redotengine.org/web/Redot%20Engine%20-%20Brand%20Kit%20(v.1FINAL).zip",
   documentation: "https://docs.redotengine.org/",
+  proposals: "https://proposals.redotengine.org/",
   contribute: "https://docs.redotengine.org/contributing/how_to_contribute",
   websiteGithubUrl: "https://github.com/Redot-Engine/redot-landing-page",
 });
