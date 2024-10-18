@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const links = useLinks();
 </script>
 
 
@@ -9,23 +10,23 @@
       <div class="download-three-steps__grid">
         <DownloadPageThreeStepsItem
           :links="[
-            { text: 'Visit the download archive', url: 'https://github.com/Redot-Engine/redot-engine/releases' },
+            { text: 'Visit the download archive', url: links.releasePage },
           ]"
           description="You can choose the latest Redot Engine, an older release, or try a beta version."
           title="1. Choose Your Redot Version"
         />
         <DownloadPageThreeStepsItem
           :links="[
-            { text: 'Download for Windows', url: 'https://download.redotengine.org/release/4.4/redot-windowsx64.zip' },
-            { text: 'Download for Linux', url: 'https://download.redotengine.org/release/4.4/redot-linuxbsd.zip' },
-            { text: 'Download for Android', url: 'https://download.redotengine.org/release/4.4/android-editor.zip' },
+            { text: 'Download for Windows', url: '/download/windows' },
+            { text: 'Download for Linux', url: '/download/linux' },
+            { text: 'Download for Android', url: '/download/android' },
           ]"
           description="Follow the instructions to complete installation and setup."
           title="2. Download Redot Engine"
         />
         <DownloadPageThreeStepsItem
           :links="[
-            { text: 'Join Our Discord Community', url: 'https://discord.gg/redot' },
+            { text: 'Join Our Discord Community', url: links.discordUrl },
           ]"
           description="Start your project from scratch or choose a template."
           title="3. Start Your Project"
@@ -46,6 +47,7 @@
     flex-direction: column;
     row-gap: 2.25rem;
     overflow: hidden;
+    width: 100%;
   }
 
   &__title {
@@ -64,25 +66,16 @@
   }
 
   &__grid {
-    max-width: 1024px;
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 1rem;
-    justify-items: center;
+    align-items: center;
+    row-gap: 1.5rem;
+    justify-content: space-between;
+    align-self: stretch;
     height: 100%;
-    grid-column: span 12 / span 12;
-
-    @media (min-width: 768px) {
-      grid-column: span 6 / span 6;
-      gap: 2rem
-    }
-
-    @media (min-width: 1024px) {
-      grid-column: span 4 / span 4;
-    }
   }
 }
 </style>

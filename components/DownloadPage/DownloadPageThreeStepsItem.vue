@@ -25,17 +25,28 @@ const { title, description, links } = defineProps<{
 <style scoped lang="scss">
 @use "@/assets/styles/mixins";
 
+@mixin mobile-and-smaller {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
 .download-three-steps-item {
+  padding: 1.5rem 1.5rem;
+
+  @include mobile-and-smaller {
+    padding: 1.5rem 0;
+  }
+
+
   &__content {
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
     overflow: hidden;
     max-width: 18rem;
-  }
 
-  @media (max-width: 768px) {
-    &__content {
+    @include mobile-and-smaller {
       max-width: 30rem;
     }
   }
@@ -65,11 +76,10 @@ const { title, description, links } = defineProps<{
     line-height: 1.5rem;
     color: #3388ff;
     text-decoration: none;
-  }
 
-  &__link:hover {
-    text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
-
 </style>
