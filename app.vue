@@ -10,6 +10,10 @@ useHead({
       name: "description",
       content: "Open source game engine for everyone. No strings attached.",
     },
+    {
+      name: "google-site-verification",
+      content: "Gsmu73HojIdCvaz-xl2dv8faF4tzOrti6gZMNqigOyM",
+    },
   ],
   htmlAttrs: {
     lang: "en",
