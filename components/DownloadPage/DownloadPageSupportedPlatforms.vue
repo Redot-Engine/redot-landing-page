@@ -15,6 +15,7 @@
           label="Android"
         />
         <DownloadPageSupportedPlatformsItem
+          v-if="useFeatureFlags().webEditorSupport"
           class="download-supported-platforms__web-editor"
           href="https://download.redotengine.org/release/4.4/android-editor.zip"
           icon="/img/download/web-editor.svg"
