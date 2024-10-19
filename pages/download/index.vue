@@ -9,22 +9,31 @@ const router = useRouter();
 const platform = ref("");
 
 const platformMapping = {
-  "windows": "windows",
-  "macos": "mac",
-  "ios": "mac",
-  "linux": "linux",
-  "androidos": "android",
+  windows: "windows",
+  macos: "mac",
+  ios: "mac",
+  linux: "linux",
+  androidos: "android",
 };
 
 const redirectToPlatform = () => {
   const browser = detect();
-  const rawPlatform = browser.os.toLowerCase().replace(/\d+/g, "").trim().replace(/\s+/g, "");
+  if (!browser) {
+    console.error("Unable to detect browser");
+    return;
+  }
 
+  const rawPlatform =
+      browser.os?.toLowerCase().replace(/\d+/g, "").trim().replace(/\s+/g, "") ||
+      "";
   platform.value = platformMapping[rawPlatform] || rawPlatform;
 
-  router.push(`/download/${platform.value}`);
+  if (platform.value) {
+    router.push(`/download/${platform.value}`);
+  } else {
+    console.error("Unable to determine platform");
+  }
 };
-
 
 onMounted(redirectToPlatform);
 </script>
