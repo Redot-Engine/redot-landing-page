@@ -33,7 +33,7 @@ const links = useLinks();
         </div>
 
         <div class="footer-column">
-          <SectionTitle variant="h2"  small>Project</SectionTitle>
+          <SectionTitle variant="h2" small>Project</SectionTitle>
 
           <NuxtLink aria-label="news" class="footer-link" href="/news">News</NuxtLink>
           <NuxtLink :href="links.contribute" aria-label="contribution guidelines" class="footer-link">Contribution Guidelines</NuxtLink>
@@ -42,7 +42,7 @@ const links = useLinks();
         </div>
 
         <div class="footer-column">
-          <SectionTitle variant="h2"  small>Resources</SectionTitle>
+          <SectionTitle variant="h2" small>Resources</SectionTitle>
 
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Assets</NuxtLink>
           <NuxtLink :href="links.pressKit" aria-label="press kit" class="footer-link">Press Kit</NuxtLink>

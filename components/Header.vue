@@ -79,6 +79,12 @@ onMounted(() => {
             href="/news"
           >News</NuxtLink>
           <NuxtLink
+            key="proposals"
+            :href="links.proposals"
+            aria-label="proposals-link"
+            class="header-link"
+          >Proposals</NuxtLink>
+          <NuxtLink
             v-if="!featureFlags.minimal"
             key="assets"
             aria-label="assets-link"
@@ -101,7 +107,7 @@ onMounted(() => {
             Donate
             <Icon name="heart" />
           </LinkButton>
-          <LinkButton href="/download" aria-label="download" type="red">
+          <LinkButton aria-label="download" href="/download" type="red">
             Download
             <Icon name="arrow" />
           </LinkButton>
