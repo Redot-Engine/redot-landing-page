@@ -107,7 +107,12 @@ onMounted(() => {
             Donate
             <Icon name="heart" />
           </LinkButton>
-          <LinkButton aria-label="download" href="/download" type="red">
+          <LinkButton
+            v-show="scrolled"
+            aria-label="download"
+            href="/download"
+            type="red"
+          >
             Download
             <Icon name="arrow" />
           </LinkButton>
