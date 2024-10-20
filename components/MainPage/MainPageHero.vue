@@ -167,6 +167,8 @@ onUnmounted(() => {
 
 .hero-center-button {
   margin-top: 15px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
 }
 
 .hero-game-name {
