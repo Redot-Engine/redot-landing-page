@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { getPlatformDownloadLink } from "~/lib/platformDownloadLink";
+
 const links = useLinks();
 </script>
 
@@ -17,13 +19,14 @@ const links = useLinks();
         />
         <DownloadPageThreeStepsItem
           :links="[
-            { text: 'Download for Windows', url: '/download/windows' },
-            { text: 'Download for Linux', url: '/download/linux' },
-            { text: 'Download for Android', url: '/download/android' },
+            { text: 'Download for Windows', url: getPlatformDownloadLink('windows') },
+            { text: 'Download for Linux', url: getPlatformDownloadLink('linux') },
+            { text: 'Download for Android', url: getPlatformDownloadLink('android') },
           ]"
           description="Follow the instructions to complete installation and setup."
           title="2. Download Redot Engine"
         />
+
         <DownloadPageThreeStepsItem
           :links="[
             { text: 'Join Our Discord Community', url: links.discordUrl },
