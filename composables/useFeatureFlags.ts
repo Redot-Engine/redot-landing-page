@@ -1,6 +1,6 @@
 const flags = {
   minimal: true,
-  macSupport: false,
+  macSupport: true,
   webEditorSupport: false,
 };
 
