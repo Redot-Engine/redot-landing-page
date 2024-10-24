@@ -19,7 +19,7 @@ onMounted(() => {
 
 <template>
   <div class="news-article-page-splash">
-    <img :src="image" alt="" class="banner">
+    <img :src="image" alt="" class="banner" />
 
     <div class="info">
       <div class="row">
@@ -31,7 +31,7 @@ onMounted(() => {
       </h1>
 
       <div class="row">
-        <img :src="authorImage" alt="" class="avatar">
+        <img :src="authorImage" alt="" class="avatar" />
         <div class="username">{{ author }}</div>
         <div class="date">{{ dateString }}</div>
       </div>
@@ -46,7 +46,7 @@ onMounted(() => {
   height: 400px;
   position: relative;
   margin: 0 40px;
-  
+
   @include mixins.tablet-and-smaller {
     height: auto;
     display: flex;
@@ -113,7 +113,7 @@ onMounted(() => {
 .banner {
   position: absolute;
   right: 0;
-  height: 100%;
+  width: 100%;
   border-radius: 20px;
   aspect-ratio: 16 / 9;
 
