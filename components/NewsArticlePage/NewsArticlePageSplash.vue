@@ -19,7 +19,7 @@ onMounted(() => {
 
 <template>
   <div class="news-article-page-splash">
-    <img :src="image" alt="" class="banner" />
+    <img :src="image" alt="" class="banner">
 
     <div class="info">
       <div class="row">
@@ -31,7 +31,7 @@ onMounted(() => {
       </h1>
 
       <div class="row">
-        <img :src="authorImage" alt="" class="avatar" />
+        <img :alt="`${author} avatar`" :src="authorImage" class="avatar">
         <div class="username">{{ author }}</div>
         <div class="date">{{ dateString }}</div>
       </div>

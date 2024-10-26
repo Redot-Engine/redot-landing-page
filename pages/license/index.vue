@@ -1,5 +1,11 @@
 <script setup lang="ts">
+const { data } = await useAsyncData("license", () => (
+    queryContent("/license").where({ type: { $eq: "license" } }).findOne()
+));
 
+useHead(data.value?.title ? {
+  title: data.value?.title,
+}: {});
 </script>
 
 <template>
@@ -8,6 +14,7 @@
     <div class="header">
       <h1 class="section-title-text">License</h1>
     </div>
+    <LicensePageContent :body="data?.body!" />
   </MaxWidthContainer>
   <Footer />
 </template>
