@@ -6,9 +6,9 @@ description:
   discord our X account was hacked and is being used to message other prominent
   users who are tangently related to us.
 
-image: /img/news/x-account-hacked.avif
+image: /img/news/x-account-hacked.png
 alt: X account hacked
-ogImage: /img/news/x-account-hacked.avif
+ogImage: /img/news/x-account-hacked.png
 tags: ["Community"]
 type: "post"
 author: "Nicholai"
