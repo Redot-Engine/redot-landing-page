@@ -115,7 +115,7 @@ onMounted(() => {
             Contribute
             <Icon name="code" />
           </LinkButton>
-          <LinkButton aria-label="donate" href="https://ko-fi.com/redotengine">
+          <LinkButton aria-label="donate" :href="links.donation">
             Donate
             <Icon name="heart" />
           </LinkButton>
