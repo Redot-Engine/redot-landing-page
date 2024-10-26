@@ -1,5 +1,5 @@
 const flags = {
-  minimal: false,
+  minimal: true,
   macSupport: true,
   webEditorSupport: false,
 };

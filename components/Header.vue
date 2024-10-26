@@ -24,11 +24,7 @@ onMounted(() => {
 
   updateScrollPosition();
 
-  window.addEventListener(
-    "scroll",
-    updateScrollPosition,
-    { passive: true },
-  );
+  window.addEventListener("scroll", updateScrollPosition, { passive: true });
 
   return () => {
     window.removeEventListener("scroll", updateScrollPosition);
@@ -50,15 +46,23 @@ onMounted(() => {
       class="header-inner"
     >
       <NuxtLink aria-label="back to home" href="/">
-        <img alt="Redot logo" class="header-logo" src="~/assets/images/TopBarLogo.svg">
+        <img
+          alt="Redot logo"
+          class="header-logo"
+          src="~/assets/images/TopBarLogo.svg"
+        />
       </NuxtLink>
-      <button aria-label="mobile-menu" class="header-mobile-menu-btn" @click="toggleMenu">
+      <button
+        aria-label="mobile-menu"
+        class="header-mobile-menu-btn"
+        @click="toggleMenu"
+      >
         <Icon :name="menuOpen ? 'close' : 'menu'" />
       </button>
       <div
         :class="{
           'header-navigation--opened': menuOpen,
-          'header-navigation--minimal': featureFlags.minimal
+          'header-navigation--minimal': featureFlags.minimal,
         }"
         class="header-navigation"
       >
@@ -68,34 +72,42 @@ onMounted(() => {
             :href="links.documentation"
             aria-label="documentation-link"
             class="header-link"
-          >Documentation</NuxtLink>
+          >
+            Documentation
+          </NuxtLink>
           <NuxtLink
             key="news"
             :class="{
-              'header-menu-link--active': path === '/news'
+              'header-menu-link--active': path === '/news',
             }"
             aria-label="news-link"
             class="header-link"
             href="/news"
-          >News</NuxtLink>
+          >
+            News
+          </NuxtLink>
           <NuxtLink
             key="proposals"
             :href="links.proposals"
             aria-label="proposals-link"
             class="header-link"
-          >Proposals</NuxtLink>
+          >
+            Proposals
+          </NuxtLink>
           <NuxtLink
             v-if="!featureFlags.minimal"
             key="assets"
             aria-label="assets-link"
             class="header-link"
             href="#"
-          >Assets</NuxtLink>
+          >
+            Assets
+          </NuxtLink>
         </div>
 
         <div
           :class="{
-            'header-buttons--minimal': featureFlags.minimal
+            'header-buttons--minimal': featureFlags.minimal,
           }"
           class="header-buttons"
         >
@@ -103,7 +115,7 @@ onMounted(() => {
             Contribute
             <Icon name="code" />
           </LinkButton>
-          <LinkButton v-show="!featureFlags.minimal" aria-label="donate" href="#">
+          <LinkButton aria-label="donate" :href="links.donation">
             Donate
             <Icon name="heart" />
           </LinkButton>
@@ -132,7 +144,8 @@ onMounted(() => {
   right: 0;
   z-index: 100;
   background-color: #0000;
-  transition: background-color 0.3s, backdrop-filter 0.3s, border-bottom-color 0.3s;
+  transition: background-color 0.3s, backdrop-filter 0.3s,
+    border-bottom-color 0.3s;
   font-size: 13px;
   border-bottom: 1px solid #fff0;
   padding-bottom: -1px;
