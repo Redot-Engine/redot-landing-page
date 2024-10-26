@@ -114,6 +114,7 @@ onMounted(() => {
   position: absolute;
   right: 0;
   width: 100%;
+  max-width: 711px;
   border-radius: 20px;
   aspect-ratio: 16 / 9;
 
