@@ -46,6 +46,7 @@ const links = useLinks();
 
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">Assets</NuxtLink>
           <NuxtLink :href="links.pressKit" aria-label="press kit" class="footer-link">Press Kit</NuxtLink>
+          <NuxtLink aria-label="license" class="footer-link" href="/license">License</NuxtLink>
         </div>
       </div>
 
