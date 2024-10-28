@@ -11,35 +11,35 @@ const links = useLinks();
           alt="Redot logo"
           class="footer-logo"
           src="~/assets/images/TopBarLogo.svg"
-        />
+        >
         <div class="footer-spacer" />
         <NuxtLink :href="links.githubUrl" aria-label="github">
           <img
             alt="GitHub"
             class="footer-social"
             src="~/assets/images/social-github.svg"
-          />
+          >
         </NuxtLink>
         <NuxtLink :href="links.discordUrl" aria-label="discord">
           <img
             alt="Discord"
             class="footer-social"
             src="~/assets/images/social-discord.svg"
-          />
+          >
         </NuxtLink>
         <NuxtLink :href="links.twitterUrl" aria-label="twitter">
           <img
             alt="Twitter"
             class="footer-social"
             src="~/assets/images/social-twitter.svg"
-          />
+          >
         </NuxtLink>
         <NuxtLink :href="links.redditUrl" aria-label="reddit">
           <img
             alt="Reddit"
             class="footer-social"
             src="~/assets/images/social-reddit.svg"
-          />
+          >
         </NuxtLink>
       </div>
 
@@ -89,7 +89,7 @@ const links = useLinks();
           >
             Contribution Guidelines
           </NuxtLink>
-          <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">
+          <NuxtLink class="footer-link" href="/team">
             Teams
           </NuxtLink>
           <NuxtLink v-if="!featureFlags.minimal" class="footer-link" href="#">
