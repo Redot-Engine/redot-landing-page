@@ -8,6 +8,11 @@ export default defineNuxtConfig({
     name: "Redot Engine: Open source game engine for everyone.",
   },
   modules: ["@nuxt/content", "@nuxtjs/sitemap"],
+  content: {
+    markdown: {
+      anchorLinks: false,
+    },
+  },
   vite: {
     css: {
       preprocessorOptions: {
@@ -17,4 +22,5 @@ export default defineNuxtConfig({
       },
     },
   },
+
 });
