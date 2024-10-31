@@ -20,6 +20,7 @@ const links = useLinks();
         <DownloadPageThreeStepsItem
           :links="[
             { text: 'Download for Windows', url: getPlatformDownloadLink('windows') },
+            { text: 'Download for Mac', url: getPlatformDownloadLink('mac') },
             { text: 'Download for Linux', url: getPlatformDownloadLink('linux') },
             { text: 'Download for Android', url: getPlatformDownloadLink('android') },
           ]"
