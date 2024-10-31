@@ -1,0 +1,8 @@
+{
+  "mirrors": [
+    {
+      "name": "Official GitHub Releases mirror",
+      "url": "https://github.com/Redot-Engine/redot-engine/releases/download/redot-4.3-beta.2/4.3.beta.2_templates.zip"
+    }
+  ]
+}
