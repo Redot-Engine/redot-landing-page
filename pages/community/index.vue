@@ -27,6 +27,14 @@
   color: #fff;
   font-size: 16px;
 
+  :deep(img) {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    max-width: 700px;
+  }
+
   :deep(h1) {
     font-size: 32px;
     font-weight: 800;
