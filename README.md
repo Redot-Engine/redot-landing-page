@@ -46,7 +46,7 @@ npm run compress-image
 2. Run `npm run compress-image`. This will compress your png image into a `.avif` file (used for SEO).
 3. Create a new markdown file inside `content/news` folder. The file name must follow the guidelines for optimal SEO results:
    - File name must be kebab case.
-   - File name must start with lowercase
+   - File name must all be lowercase
 4. Paste the article template (see below) inside the file
 5. Write your content
 6. Create a pull request and get it merged
