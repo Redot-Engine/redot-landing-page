@@ -110,11 +110,18 @@ const links = useLinks();
           >
             Press Kit
           </NuxtLink>
-          <NuxtLink aria-label="license" class="footer-link" href="/license">
-            License
-          </NuxtLink>
           <NuxtLink aria-label="contact" class="footer-link" href="/contact">
             Contact
+          </NuxtLink>
+          <NuxtLink
+            aria-label="community"
+            class="footer-link"
+            href="/community"
+          >
+            Community
+          </NuxtLink>
+          <NuxtLink aria-label="license" class="footer-link" href="/license">
+            License
           </NuxtLink>
         </div>
       </div>

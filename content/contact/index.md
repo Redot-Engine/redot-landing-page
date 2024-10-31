@@ -1,12 +1,10 @@
-Connect with us on our various social platforms or reach out via email. We're here to support and engage with our community!
+Get in Touch with Redot Engine! We’d love to hear from you! Whether you have questions, feedback, or collaboration ideas, feel free to reach out through any of these platforms or send us an email.
 
 - **LinkedIn**: [Redot Engine](https://www.linkedin.com/company/redot-engine/)
-- **Discord**: [Join our community](https://discord.gg/redot)
 - **YouTube**: [Redot Engine Channel](https://www.youtube.com/@ReDotEngine)
-- **Reddit**: [Redot Game Engine Community](https://www.reddit.com/r/RedotGameEngineMain/?type=TEXT)
 - **X (formerly Twitter)**: [@RedotEngine](https://x.com/RedotEngine)
 - **Email**:
   - [redotengine@gmail.com](mailto:redotengine@gmail.com)
   - [redotengine@proton.me](mailto:redotengine@proton.me)
 
-Feel free to connect with us on any of these platforms or drop us an email!
+Let’s connect and bring your game development ideas to life with Redot Engine!
