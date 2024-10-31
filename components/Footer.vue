@@ -46,11 +46,7 @@ const links = useLinks();
       <div class="footer-columns">
         <div class="footer-column">
           <SectionTitle variant="h2" small>Redot Engine</SectionTitle>
-          <NuxtLink
-            :href="links.donation"
-            aria-label="donate"
-            class="footer-link"
-          >
+          <NuxtLink href="/donate" aria-label="donate" class="footer-link">
             Donate
           </NuxtLink>
           <NuxtLink
@@ -110,11 +106,18 @@ const links = useLinks();
           >
             Press Kit
           </NuxtLink>
-          <NuxtLink aria-label="license" class="footer-link" href="/license">
-            License
-          </NuxtLink>
           <NuxtLink aria-label="contact" class="footer-link" href="/contact">
             Contact
+          </NuxtLink>
+          <NuxtLink
+            aria-label="community"
+            class="footer-link"
+            href="/community"
+          >
+            Community
+          </NuxtLink>
+          <NuxtLink aria-label="license" class="footer-link" href="/license">
+            License
           </NuxtLink>
         </div>
       </div>

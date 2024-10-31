@@ -2,7 +2,7 @@
   <Header always-opaque />
   <MaxWidthContainer class="page-container">
     <div class="header">
-      <h1 class="section-title-text">Contact</h1>
+      <h1 class="section-title-text">Community</h1>
     </div>
     <ContentDoc />
   </MaxWidthContainer>
