@@ -18,7 +18,7 @@
           <Icon :name="platformIcons[platform] ?? 'windows'" />
         </LinkButton>
         <LinkButton :href="links.releasePage" type="ghost">
-          Other versions
+          More download options
           <Icon name="arrow" />
         </LinkButton>
       </div>
