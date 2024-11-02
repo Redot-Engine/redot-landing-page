@@ -1,13 +1,19 @@
 <script setup lang="ts">
 const { path } = useRoute();
 
-const { data } = await useAsyncData(`content-${path}`, () => (
+const { data } = await useAsyncData(`content-${path}`, () =>
   queryContent().where({ _path: path }).findOne()
-));
+);
 
-useHead(data.value?.title ? {
-  title: data.value?.title,
-} : {});
+if (!data.value) navigateTo("/404");
+
+useHead(
+  data.value?.title
+    ? {
+        title: data.value?.title,
+      }
+    : {}
+);
 </script>
 
 <template>
