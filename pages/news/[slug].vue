@@ -1,15 +1,47 @@
 <script setup lang="ts">
 const { path } = useRoute();
 
-const { data } = await useAsyncData(`content-${path}`, () => (
+const { data } = await useAsyncData(`content-${path}`, () =>
   queryContent().where({ _path: path }).findOne()
-));
+);
 
-useHead(data.value?.title ? {
-  title: data.value?.title,
-} : {});
+if (!data.value) navigateTo("/404");
+
+useHead(
+  data.value?.title
+    ? {
+        title: data.value?.title,
+        meta: [
+          {
+            name: "description",
+            content:
+              `Redot Engine Dowload Page for ${data.value?.description}` ||
+              "Read about Redot Engine News",
+          },
+        ],
+      }
+    : {
+        title: "Redot Engine News",
+        meta: [
+          {
+            name: "description",
+            content: "Read about Redot Engine News",
+          },
+        ],
+      }
+);
+
+useSeoMeta({
+  ogType: "website",
+  ogTitle: data.value?.title || "Redot Engine News",
+  ogImage: "https://www.redotengine.org/img/seo/banner.avif",
+  ogDescription: data.value?.description || "Read about Redot Engine News",
+  twitterCard: "summary_large_image",
+  twitterTitle: data.value?.title || "Redot Engine News",
+  twitterDescription: data.value?.description || "Read about Redot Engine News",
+  twitterImage: "https://www.redotengine.org/img/seo/banner.avif",
+});
 </script>
-
 <template>
   <Header always-opaque />
 
