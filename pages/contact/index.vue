@@ -1,3 +1,20 @@
+<script setup lang="ts">
+useHead({
+  title: "Redot Engine Contact",
+  meta: [{ name: "description", content: "Detail about Redot Engine Contact" }],
+});
+
+useSeoMeta({
+  ogType: "website",
+  ogTitle: "Redot Engine Contact",
+  ogImage: "https://www.redotengine.org/img/seo/banner.avif",
+  ogDescription: "Detail about Redot Engine Contact",
+  twitterCard: "summary_large_image",
+  twitterTitle: "Redot Engine Contact",
+  twitterDescription: "Detail about Redot Engine Contact",
+  twitterImage: "https://www.redotengine.org/img/seo/banner.avif",
+});
+</script>
 <template>
   <Header always-opaque />
   <MaxWidthContainer class="page-container">
