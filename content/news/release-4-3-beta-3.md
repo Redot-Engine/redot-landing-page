@@ -33,7 +33,7 @@ The Redot team is pleased to announce the release of **Redot 4.3 Beta 3**. This 
 - Resolved an issue where templates were treating official releases as development releases by [@Spartan322](https://github.com/Spartan322) in [#832](https://github.com/Redot-Engine/redot-engine/pull/832).
 - Improved import speed when the window is unfocused. ([godotengine/godot#93953](https://github.com/godotengine/godot/pull/93953))
 - **Android Editor Update**: Added support for launching the Play window in Picture-in-Picture (PiP) mode. ([godotengine/godot#95700](https://github.com/godotengine/godot/pull/95700))
-- Fixed `Viewport` texture settings to ensure correct usage. ([godotengine/godot#97029](https://github.com/godotengine/godot/pull/97029), fixing #827)
+- Fixed `Viewport` texture settings to ensure correct usage. ([godotengine/godot#97029](https://github.com/godotengine/godot/pull/97029), fixing [#827]( https://github.com/Redot-Engine/redot-engine/issues/827 ))
 - Resolved issues with the C# operator `*(Transform3D, Aabb)`. ([godotengine/godot#97208](https://github.com/godotengine/godot/pull/97208))
 - Corrected the visualization of untyped dictionaries in .NET debugging. ([#97951](https://github.com/godotengine/godot/pull/97951))
 - Fixed an unhandled GD0303 error for nested generic attribute types in .NET. ([godotengine/godot#98059](https://github.com/godotengine/godot/pull/98059))
