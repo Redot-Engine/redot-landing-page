@@ -19,111 +19,88 @@ onMounted(() => {
 
 <template>
   <div class="news-article-page-splash">
-    <img :src="image" alt="" class="banner">
+    <img :src="image" alt="" class="news-article-page-splash__banner">
 
-    <div class="info">
-      <div class="row">
-        <Chip v-for="tag in tags" :key="tag">{{ tag }}</Chip>
+    <div class="news-article-page-splash__info">
+      <div class="news-article-page-splash__tags">
+        <Chip
+          v-for="tag in tags"
+          :key="tag"
+          class="news-article-page-splash__tag"
+        >
+          {{ tag }}
+        </Chip>
       </div>
 
-      <h1 class="title">
+      <h1 class="news-article-page-splash__title">
         {{ title }}
       </h1>
 
-      <div class="row">
-        <img :alt="`${author} avatar`" :src="authorImage" class="avatar">
-        <div class="username">{{ author }}</div>
-        <div class="date">{{ dateString }}</div>
+      <div class="news-article-page-splash__author-info">
+        <img
+          :alt="`${author} avatar`"
+          :src="authorImage"
+          class="news-article-page-splash__avatar"
+        >
+        <div class="news-article-page-splash__username">{{ author }}</div>
+        <div class="news-article-page-splash__date">{{ dateString }}</div>
       </div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
-@use "@/assets/styles/mixins";
-
+<style scoped lang="scss">
 .news-article-page-splash {
-  height: 400px;
-  position: relative;
-  margin: 0 40px;
-
-  @include mixins.tablet-and-smaller {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin: 0;
-  }
-}
-
-.info {
-  position: absolute;
-  left: 0;
-  width: 53%;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-
-  justify-content: center;
-
-  filter: drop-shadow(0 0 20px rgba(#000, 25%));
-
-  @include mixins.tablet-and-smaller {
-    position: unset;
+  &__banner {
     width: 100%;
-  }
-}
-
-.title {
-  font-size: 36px;
-  font-weight: 800;
-  color: #fff;
-
-  @include mixins.mobile-and-smaller {
-    font-size: 32px;
-  }
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.avatar {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-}
-
-.username {
-  color: rgba(#fff, 60%);
-  font-size: 14px;
-}
-
-.date {
-  color: rgba(#fff, 40%);
-  font-size: 14px;
-}
-
-.banner {
-  position: absolute;
-  right: 0;
-  width: 100%;
-  max-width: 711px;
-  border-radius: 20px;
-  aspect-ratio: 16 / 9;
-
-  @include mixins.tablet-and-smaller {
-    position: unset;
+    border-radius: 20px;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
   }
 
-  @include mixins.mobile-and-smaller {
-    border-radius: 10px;
+  &__info {
+    padding: 1.5rem;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__tag {
+    background-color: rgb(34, 36, 38);
+    border-radius: 12px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    color: rgb(200, 195, 188);
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+
+  &__author-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #666;
+  }
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  &__username,
+  &__date {
+    color: rgb(174, 167, 156);
   }
 }
 </style>

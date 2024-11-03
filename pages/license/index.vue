@@ -1,11 +1,30 @@
 <script setup lang="ts">
-const { data } = await useAsyncData("license", () => (
-    queryContent("/license").where({ type: { $eq: "license" } }).findOne()
-));
+const { data } = await useAsyncData("license", () =>
+  queryContent("/license")
+    .where({ type: { $eq: "license" } })
+    .findOne()
+);
 
-useHead(data.value?.title ? {
-  title: data.value?.title,
-}: {});
+useHead(
+  data.value?.title
+    ? {
+        title: data.value?.title,
+      }
+    : {
+        title: "Redot Engine License",
+      }
+);
+
+useSeoMeta({
+  ogType: "website",
+  ogTitle: data.value?.title || "Redot Engine License",
+  ogImage: "https://www.redotengine.org/img/seo/banner.avif",
+  ogDescription: "Detail about Redot Engine License",
+  twitterCard: "summary_large_image",
+  twitterTitle: data.value?.title || "Redot Engine License",
+  twitterDescription: "Detail about Redot Engine License",
+  twitterImage: "https://www.redotengine.org/img/seo/banner.avif",
+});
 </script>
 
 <template>

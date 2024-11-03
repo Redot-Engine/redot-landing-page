@@ -1,0 +1,32 @@
+[
+  {
+    "name": "4.4",
+    "releases": [
+      {
+        "name": "alpha.1",
+        "release_date": "11 October 2024",
+        "release_notes": "https://www.redotengine.org/news/release-4-4-alpha-1"
+      }
+    ]
+  },
+  {
+    "name": "4.3",
+    "releases": [
+      {
+        "name": "beta.3",
+        "release_date": "3 November 2024",
+        "release_notes": "https://www.redotengine.org/news/release-4-3-beta-3"
+      },
+      {
+        "name": "beta.2",
+        "release_date": "31 October 2024",
+        "release_notes": "https://www.redotengine.org/news/release-4-3-beta-2"
+      },
+      {
+        "name": "beta.1",
+        "release_date": "24 October 2024",
+        "release_notes": "https://www.redotengine.org/news/release-4-3-beta-1"
+      }
+    ]
+  }
+]
