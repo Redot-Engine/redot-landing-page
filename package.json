@@ -8,7 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint --fix './**/*.{js,vue}'",
+    "lint": "eslint . --fix \"./**/*.{js,vue}\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json --composite false",
     "compress-image": "node image-compression ./public_images ./public/img 70"
   },
   "dependencies": {
