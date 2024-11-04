@@ -1,7 +1,17 @@
 export async function onRequest(context)
 {
+    if (!context.params.mirrorlist.includes(".json"))
+    {
+        return new Response(JSON.stringify({ error: "Bad request: Expected .json format" }), {
+            status: 400,
+            headers: { "Content-Type": "application/json" },
+        });
+    }
+
     const version = context.params.mirrorlist.replace('.json', '');
-    const downloadPathVersion = version.replace(/\./g, '-');
+
+    const downloadPathVersion = version.replace('.mono', '');
+
     const mirrorlist = {
         mirrors: [
             {
