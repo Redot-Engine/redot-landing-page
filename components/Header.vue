@@ -50,7 +50,7 @@ onMounted(() => {
           alt="Redot logo"
           class="header-logo"
           src="~/assets/images/TopBarLogo.svg"
-        />
+        >
       </NuxtLink>
       <button
         aria-label="mobile-menu"
@@ -115,7 +115,7 @@ onMounted(() => {
             Contribute
             <Icon name="code" />
           </LinkButton>
-          <LinkButton aria-label="donate" :href="links.donation">
+          <LinkButton :href="links.donation" aria-label="donate">
             Donate
             <Icon name="heart" />
           </LinkButton>

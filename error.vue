@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import type { NuxtError } from "#app";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({
+  // eslint-disable-next-line vue/require-default-prop
   error: Object as () => NuxtError,
 });
 </script>
@@ -9,12 +11,12 @@ const props = defineProps({
 <template>
   <div class="error-page">
     <h1>{{ error.statusCode }} - Page not found!</h1>
-    <img src="/img/mascott/Rune_Expression_2.avif" alt="404 mascot" />
+    <img alt="404 mascot" src="/img/mascott/Rune_Expression_2.avif">
     <p class="note">
       Oops! It seems like you’ve ventured off the path in the Redot Engine
       universe.
     </p>
-    <NuxtLink to="/" class="back-home">Go back home</NuxtLink>
+    <NuxtLink class="back-home" to="/">Go back home</NuxtLink>
   </div>
 </template>
 
