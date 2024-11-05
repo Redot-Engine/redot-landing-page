@@ -2,7 +2,7 @@
 const { path } = useRoute();
 
 const { data } = await useAsyncData(`content-${path}`, () =>
-  queryContent().where({ _path: path }).findOne()
+  queryContent().where({ _path: path }).findOne(),
 );
 
 if (!data.value) navigateTo("/404");
@@ -15,6 +15,7 @@ useHead(
           {
             name: "description",
             content:
+            // eslint-disable-next-line no-constant-binary-expression
               `Redot Engine Dowload Page for ${data.value?.description}` ||
               "Read about Redot Engine News",
           },
@@ -28,7 +29,7 @@ useHead(
             content: "Read about Redot Engine News",
           },
         ],
-      }
+      },
 );
 
 useSeoMeta({

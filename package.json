@@ -8,8 +8,11 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint --fix './**/*.{js,vue}'",
-    "compress-image": "node image-compression ./public_images ./public/img 70"
+    "lint": "eslint --fix \"./**/*.{js,vue}\"",
+    "format-check": "eslint \"./**/*.{js,vue}\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json --composite false",
+    "compress-image": "node image-compression ./public_images ./public/img 70",
+    "prepare": "husky"
   },
   "dependencies": {
     "@nuxt/content": "^2.13.2",
@@ -20,13 +23,17 @@
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@eslint/js": "^9.12.0",
     "eslint": "^9.12.0",
     "eslint-plugin-vue": "^9.28.0",
     "fs-extra": "^11.2.0",
     "globals": "^15.10.0",
+    "husky": "^9.1.6",
     "sass": "^1.79.4",
     "sharp": "^0.33.5",
+    "typescript": "^5.6.3",
     "typescript-eslint": "^8.8.1"
   }
 }

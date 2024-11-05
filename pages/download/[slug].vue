@@ -27,7 +27,7 @@ useHead(
             content: "Redot Engine Dowload Page",
           },
         ],
-      }
+      },
 );
 
 useSeoMeta(
@@ -51,9 +51,24 @@ useSeoMeta(
         twitterTitle: "Download Redot Engine",
         twitterDescription: "Redot Engine Dowload Page",
         twitterImage: "https://www.redotengine.org/img/seo/banner.avif",
-      }
+      },
 );
 </script>
+<template>
+  <Header always-opaque />
+
+  <MaxWidthContainer class="container">
+    <section class="download-section__container">
+      <DownloadPageHero :platform="platform" />
+      <DownloadPageThreeSteps />
+      <DownloadPageSupportedPlatforms />
+      <DownloadPageSection />
+    </section>
+  </MaxWidthContainer>
+
+  <Footer />
+</template>
+
 <style scoped lang="scss">
 @use "@/assets/styles/mixins";
 
@@ -71,18 +86,3 @@ useSeoMeta(
   }
 }
 </style>
-
-<template>
-  <Header always-opaque />
-
-  <MaxWidthContainer class="container">
-    <section class="download-section__container">
-      <DownloadPageHero :platform="platform" />
-      <DownloadPageThreeSteps />
-      <DownloadPageSupportedPlatforms />
-      <DownloadPageSection />
-    </section>
-  </MaxWidthContainer>
-
-  <Footer />
-</template>
