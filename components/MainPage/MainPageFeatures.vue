@@ -13,7 +13,7 @@ const featureFlags = useFeatureFlags();
     </template>
 
     <div class="features-grid">
-      <img alt="scene and nodes image" class="feature-image" src="~/assets/images/feature-scene.svg">
+      <img alt="scene and nodes" class="feature-image" src="~/assets/images/feature-scene.svg">
       <div>
         <SectionTitle :small="isMobile" variant="h3">Scene-driven design</SectionTitle>
         <SectionDescription big>
@@ -23,7 +23,7 @@ const featureFlags = useFeatureFlags();
         </SectionDescription>
       </div>
 
-      <img alt="cube and square image" class="feature-image" src="~/assets/images/feature-2d-3d.svg">
+      <img alt="cube and square" class="feature-image" src="~/assets/images/feature-2d-3d.svg">
       <div>
         <SectionTitle :small="isMobile" variant="h3">Dedicated 3D and 2D engines</SectionTitle>
         <SectionDescription big>
@@ -33,7 +33,7 @@ const featureFlags = useFeatureFlags();
         </SectionDescription>
       </div>
 
-      <img alt="cross platform image" class="feature-image" src="~/assets/images/feature-crossplatform.svg">
+      <img alt="cross platform feature" class="feature-image" src="~/assets/images/feature-crossplatform.svg">
       <div>
         <SectionTitle :small="isMobile" variant="h3">Cross platform</SectionTitle>
         <SectionDescription big>

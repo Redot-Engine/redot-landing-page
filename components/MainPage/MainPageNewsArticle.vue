@@ -27,7 +27,7 @@ const classes = computed(() => ({
   >
     <img
       :src="image"
-      alt="News article image"
+      alt="News article"
       class="main-page-news-article-image"
     >
     <SectionTitle :small="vertical" class="main-page-news-article-title" variant="h3">
