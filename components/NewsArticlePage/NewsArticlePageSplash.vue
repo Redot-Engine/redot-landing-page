@@ -54,7 +54,7 @@ onMounted(() => {
   &__banner {
     width: 100%;
     border-radius: 20px;
-    max-height: 400px;
+    max-height: 600px;
     object-fit: cover;
     margin-bottom: 1.5rem;
   }
