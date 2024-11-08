@@ -16,7 +16,7 @@ published: true
 The Redot team is pleased to announce the release of **Redot 4.3 Release Candidate 1**. This update introduces a variety of enhancements and bug fixes aimed at improving the functionality and user experience of the Redot engine.
 
 ### Bug Fixes
-* [4.3] Fix ignoring status_version for updating by [@Spartan322](https://github.com/Spartan322) in [#835](https://github.com/Redot-Engine/redot-engine/pull/835)
+- Fix ignoring status_version for updating by [@Spartan322](https://github.com/Spartan322) in [#835](https://github.com/Redot-Engine/redot-engine/pull/835)
 
 ### GitHub Release
 For more details, you can check the full release on GitHub: [Redot 4.3 Release Candidate 1](https://github.com/Redot-Engine/redot-engine/releases/tag/redot-4.3-rc.1).
