@@ -11,7 +11,7 @@ const { post } =
   <NuxtLink :href="post.url ?? '#'" class="news-article">
     <img
       :src="post.image"
-      alt="News article image"
+      alt="News article"
       class="news-article-image"
     >
     <div class="row">
