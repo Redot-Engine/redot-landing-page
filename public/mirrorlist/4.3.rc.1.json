@@ -1,0 +1,8 @@
+{
+  "mirrors": [
+    {
+      "name": "Official GitHub Releases mirror",
+      "url": "https://github.com/Redot-Engine/redot-engine/releases/download/redot-4.3-rc.1/Redot_v4.3-rc.1_export_templates.tpz"
+    }
+  ]
+}
