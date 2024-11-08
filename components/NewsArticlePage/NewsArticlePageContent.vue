@@ -7,10 +7,7 @@ const { body } = defineProps<{
 </script>
 
 <template>
-  <ContentRendererMarkdown
-    :value="body"
-    class="content-renderer"
-  />
+  <ContentRendererMarkdown :value="body" class="content-renderer" />
 </template>
 
 <style lang="scss">
@@ -22,8 +19,8 @@ const { body } = defineProps<{
   line-height: 1.5;
   word-wrap: break-word;
   scroll-behavior: auto !important;
-  max-width: 800px;
   margin: 40px auto;
+  word-break: break-word;
 }
 
 .content-renderer .octicon {
@@ -40,7 +37,7 @@ const { body } = defineProps<{
 .content-renderer h6:hover .anchor .octicon-link:before {
   width: 16px;
   height: 16px;
-  content: ' ';
+  content: " ";
   display: inline-block;
   background-color: currentColor;
   -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
@@ -82,9 +79,9 @@ const { body } = defineProps<{
 }
 
 .content-renderer h1 {
-  margin: .67em 0;
+  margin: 0.67em 0;
   font-weight: 600;
-  padding-bottom: .3em;
+  padding-bottom: 0.3em;
   font-size: 2em;
   border-bottom: 1px solid #3d444db3;
 }
@@ -137,7 +134,7 @@ const { body } = defineProps<{
   overflow: hidden;
   background: transparent;
   border-bottom: 1px solid #3d444db3;
-  height: .25em;
+  height: 0.25em;
   padding: 0;
   margin: 1.5rem 0;
   background-color: #3d444d;
@@ -153,33 +150,33 @@ const { body } = defineProps<{
   line-height: inherit;
 }
 
-.content-renderer [type=button],
-.content-renderer [type=reset],
-.content-renderer [type=submit] {
+.content-renderer [type="button"],
+.content-renderer [type="reset"],
+.content-renderer [type="submit"] {
   -webkit-appearance: button;
   appearance: button;
 }
 
-.content-renderer [type=checkbox],
-.content-renderer [type=radio] {
+.content-renderer [type="checkbox"],
+.content-renderer [type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-.content-renderer [type=number]::-webkit-inner-spin-button,
-.content-renderer [type=number]::-webkit-outer-spin-button {
+.content-renderer [type="number"]::-webkit-inner-spin-button,
+.content-renderer [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-.content-renderer [type=search]::-webkit-search-cancel-button,
-.content-renderer [type=search]::-webkit-search-decoration {
+.content-renderer [type="search"]::-webkit-search-cancel-button,
+.content-renderer [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
   appearance: none;
 }
 
 .content-renderer ::-webkit-input-placeholder {
   color: inherit;
-  opacity: .54;
+  opacity: 0.54;
 }
 
 .content-renderer ::-webkit-file-upload-button {
@@ -227,25 +224,25 @@ const { body } = defineProps<{
 }
 
 .content-renderer a:focus,
-.content-renderer [role=button]:focus,
-.content-renderer input[type=radio]:focus,
-.content-renderer input[type=checkbox]:focus {
+.content-renderer [role="button"]:focus,
+.content-renderer input[type="radio"]:focus,
+.content-renderer input[type="checkbox"]:focus {
   outline: 2px solid #1f6feb;
   outline-offset: -2px;
   box-shadow: none;
 }
 
 .content-renderer a:focus:not(:focus-visible),
-.content-renderer [role=button]:focus:not(:focus-visible),
-.content-renderer input[type=radio]:focus:not(:focus-visible),
-.content-renderer input[type=checkbox]:focus:not(:focus-visible) {
+.content-renderer [role="button"]:focus:not(:focus-visible),
+.content-renderer input[type="radio"]:focus:not(:focus-visible),
+.content-renderer input[type="checkbox"]:focus:not(:focus-visible) {
   outline: solid 1px transparent;
 }
 
 .content-renderer a:focus-visible,
-.content-renderer [role=button]:focus-visible,
-.content-renderer input[type=radio]:focus-visible,
-.content-renderer input[type=checkbox]:focus-visible {
+.content-renderer [role="button"]:focus-visible,
+.content-renderer input[type="radio"]:focus-visible,
+.content-renderer input[type="checkbox"]:focus-visible {
   outline: 2px solid #1f6feb;
   outline-offset: -2px;
   box-shadow: none;
@@ -253,17 +250,18 @@ const { body } = defineProps<{
 
 .content-renderer a:not([class]):focus,
 .content-renderer a:not([class]):focus-visible,
-.content-renderer input[type=radio]:focus,
-.content-renderer input[type=radio]:focus-visible,
-.content-renderer input[type=checkbox]:focus,
-.content-renderer input[type=checkbox]:focus-visible {
+.content-renderer input[type="radio"]:focus,
+.content-renderer input[type="radio"]:focus-visible,
+.content-renderer input[type="checkbox"]:focus,
+.content-renderer input[type="checkbox"]:focus-visible {
   outline-offset: 0;
 }
 
 .content-renderer kbd {
   display: inline-block;
   padding: 0.25rem;
-  font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+    Liberation Mono, monospace;
   line-height: 10px;
   color: #f0f6fc;
   vertical-align: middle;
@@ -288,7 +286,7 @@ const { body } = defineProps<{
 
 .content-renderer h2 {
   font-weight: 600;
-  padding-bottom: .3em;
+  padding-bottom: 0.3em;
   font-size: 1.5em;
   border-bottom: 1px solid #3d444db3;
 }
@@ -305,12 +303,12 @@ const { body } = defineProps<{
 
 .content-renderer h5 {
   font-weight: 600;
-  font-size: .875em;
+  font-size: 0.875em;
 }
 
 .content-renderer h6 {
   font-weight: 600;
-  font-size: .85em;
+  font-size: 0.85em;
   color: #9198a1;
 }
 
@@ -323,7 +321,7 @@ const { body } = defineProps<{
   margin: 0;
   padding: 0 1em;
   color: #9198a1;
-  border-left: .25em solid #3d444d;
+  border-left: 0.25em solid #3d444d;
 }
 
 .content-renderer ul,
@@ -352,14 +350,16 @@ const { body } = defineProps<{
 .content-renderer tt,
 .content-renderer code,
 .content-renderer samp {
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+    Liberation Mono, monospace;
   font-size: 12px;
 }
 
 .content-renderer pre {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+    Liberation Mono, monospace;
   font-size: 12px;
   word-wrap: normal;
 }
@@ -393,11 +393,11 @@ const { body } = defineProps<{
   content: "";
 }
 
-.content-renderer>*:first-child {
+.content-renderer > *:first-child {
   margin-top: 0 !important;
 }
 
-.content-renderer>*:last-child {
+.content-renderer > *:last-child {
   margin-bottom: 0 !important;
 }
 
@@ -433,11 +433,11 @@ const { body } = defineProps<{
   margin-bottom: 1rem;
 }
 
-.content-renderer blockquote>:first-child {
+.content-renderer blockquote > :first-child {
   margin-top: 0;
 }
 
-.content-renderer blockquote>:last-child {
+.content-renderer blockquote > :last-child {
   margin-bottom: 0;
 }
 
@@ -482,7 +482,7 @@ const { body } = defineProps<{
 .content-renderer h5 code,
 .content-renderer h6 tt,
 .content-renderer h6 code {
-  padding: 0 .2em;
+  padding: 0 0.2em;
   font-size: inherit;
 }
 
@@ -536,7 +536,7 @@ const { body } = defineProps<{
   list-style-type: decimal;
 }
 
-.content-renderer div>ol:not([type]) {
+.content-renderer div > ol:not([type]) {
   list-style-type: decimal;
 }
 
@@ -560,12 +560,12 @@ const { body } = defineProps<{
   margin-bottom: 0;
 }
 
-.content-renderer li>p {
+.content-renderer li > p {
   margin-top: 1rem;
 }
 
-.content-renderer li+li {
-  margin-top: .25em;
+.content-renderer li + li {
+  margin-top: 0.25em;
 }
 
 .content-renderer dl {
@@ -595,7 +595,7 @@ const { body } = defineProps<{
   border: 1px solid #3d444d;
 }
 
-.content-renderer table td>:last-child {
+.content-renderer table td > :last-child {
   margin-bottom: 0;
 }
 
@@ -612,11 +612,11 @@ const { body } = defineProps<{
   background-color: transparent;
 }
 
-.content-renderer img[align=right] {
+.content-renderer img[align="right"] {
   padding-left: 20px;
 }
 
-.content-renderer img[align=left] {
+.content-renderer img[align="left"] {
   padding-right: 20px;
 }
 
@@ -631,7 +631,7 @@ const { body } = defineProps<{
   overflow: hidden;
 }
 
-.content-renderer span.frame>span {
+.content-renderer span.frame > span {
   display: block;
   float: left;
   width: auto;
@@ -659,7 +659,7 @@ const { body } = defineProps<{
   clear: both;
 }
 
-.content-renderer span.align-center>span {
+.content-renderer span.align-center > span {
   display: block;
   margin: 13px auto 0;
   overflow: hidden;
@@ -677,7 +677,7 @@ const { body } = defineProps<{
   clear: both;
 }
 
-.content-renderer span.align-right>span {
+.content-renderer span.align-right > span {
   display: block;
   margin: 13px 0 0;
   overflow: hidden;
@@ -707,7 +707,7 @@ const { body } = defineProps<{
   overflow: hidden;
 }
 
-.content-renderer span.float-right>span {
+.content-renderer span.float-right > span {
   display: block;
   margin: 13px auto 0;
   overflow: hidden;
@@ -716,7 +716,7 @@ const { body } = defineProps<{
 
 .content-renderer code,
 .content-renderer tt {
-  padding: .2em .4em;
+  padding: 0.2em 0.4em;
   margin: 0;
   font-size: 85%;
   white-space: break-spaces;
@@ -741,7 +741,7 @@ const { body } = defineProps<{
   font-size: 100%;
 }
 
-.content-renderer pre>code {
+.content-renderer pre > code {
   padding: 0;
   margin: 0;
   word-break: normal;
@@ -840,10 +840,10 @@ const { body } = defineProps<{
 
 .content-renderer .footnotes li:target::before {
   position: absolute;
-  top: calc(0.5rem*-1);
-  right: calc(0.5rem*-1);
-  bottom: calc(0.5rem*-1);
-  left: calc(1.5rem*-1);
+  top: calc(0.5rem * -1);
+  right: calc(0.5rem * -1);
+  bottom: calc(0.5rem * -1);
+  left: calc(1.5rem * -1);
   pointer-events: none;
   content: "";
   border: 2px solid #1f6feb;
@@ -978,8 +978,8 @@ const { body } = defineProps<{
   color: #a5d6ff;
 }
 
-.content-renderer [role=button]:focus:not(:focus-visible),
-.content-renderer [role=tabpanel][tabindex="0"]:focus:not(:focus-visible),
+.content-renderer [role="button"]:focus:not(:focus-visible),
+.content-renderer [role="tabpanel"][tabindex="0"]:focus:not(:focus-visible),
 .content-renderer button:focus:not(:focus-visible),
 .content-renderer summary:focus:not(:focus-visible),
 .content-renderer a:focus:not(:focus-visible) {
@@ -995,7 +995,7 @@ const { body } = defineProps<{
 .content-renderer g-emoji {
   display: inline-block;
   min-width: 1ch;
-  font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1em;
   font-style: normal !important;
   font-weight: 400;
@@ -1020,7 +1020,7 @@ const { body } = defineProps<{
   cursor: pointer;
 }
 
-.content-renderer .task-list-item+.task-list-item {
+.content-renderer .task-list-item + .task-list-item {
   margin-top: 0.25rem;
 }
 
@@ -1029,20 +1029,22 @@ const { body } = defineProps<{
 }
 
 .content-renderer .task-list-item-checkbox {
-  margin: 0 .2em .25em -1.4em;
+  margin: 0 0.2em 0.25em -1.4em;
   vertical-align: middle;
 }
 
 .content-renderer ul:dir(rtl) .task-list-item-checkbox {
-  margin: 0 -1.6em .25em .2em;
+  margin: 0 -1.6em 0.25em 0.2em;
 }
 
 .content-renderer ol:dir(rtl) .task-list-item-checkbox {
-  margin: 0 -1.6em .25em .2em;
+  margin: 0 -1.6em 0.25em 0.2em;
 }
 
 .content-renderer .contains-task-list:hover .task-list-item-convert-container,
-.content-renderer .contains-task-list:focus-within .task-list-item-convert-container {
+.content-renderer
+  .contains-task-list:focus-within
+  .task-list-item-convert-container {
   display: block;
   width: auto;
   height: 24px;
@@ -1058,14 +1060,14 @@ const { body } = defineProps<{
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   color: inherit;
-  border-left: .25em solid #3d444d;
+  border-left: 0.25em solid #3d444d;
 }
 
-.content-renderer .markdown-alert>:first-child {
+.content-renderer .markdown-alert > :first-child {
   margin-top: 0;
 }
 
-.content-renderer .markdown-alert>:last-child {
+.content-renderer .markdown-alert > :last-child {
   margin-bottom: 0;
 }
 
@@ -1088,7 +1090,9 @@ const { body } = defineProps<{
   border-left-color: #8957e5;
 }
 
-.content-renderer .markdown-alert.markdown-alert-important .markdown-alert-title {
+.content-renderer
+  .markdown-alert.markdown-alert-important
+  .markdown-alert-title {
   color: #ab7df8;
 }
 
@@ -1116,8 +1120,7 @@ const { body } = defineProps<{
   color: #f85149;
 }
 
-.content-renderer>*:first-child>.heading-element:first-child {
+.content-renderer > *:first-child > .heading-element:first-child {
   margin-top: 0 !important;
 }
-
 </style>
