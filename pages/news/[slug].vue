@@ -2,7 +2,7 @@
 const { path } = useRoute();
 
 const { data } = await useAsyncData(`content-${path}`, () =>
-  queryContent().where({ _path: path }).findOne(),
+  queryContent().where({ _path: path }).findOne()
 );
 
 if (!data.value) navigateTo("/404");
@@ -15,7 +15,7 @@ useHead(
           {
             name: "description",
             content:
-            // eslint-disable-next-line no-constant-binary-expression
+              // eslint-disable-next-line no-constant-binary-expression
               `Redot Engine Dowload Page for ${data.value?.description}` ||
               "Read about Redot Engine News",
           },
@@ -29,7 +29,7 @@ useHead(
             content: "Read about Redot Engine News",
           },
         ],
-      },
+      }
 );
 
 useSeoMeta({
@@ -71,11 +71,14 @@ useSeoMeta({
 @use "@/assets/styles/mixins";
 
 .news-page-sections {
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   gap: 40px;
   padding-top: 40px;
   margin-top: 56px;
+  margin-left: auto;
+  margin-right: auto;
 
   @include mixins.mobile-and-smaller {
     gap: 20px;

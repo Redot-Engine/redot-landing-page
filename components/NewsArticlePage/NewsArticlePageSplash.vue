@@ -11,15 +11,13 @@ const { title, tags, author, authorImage, date, image } = defineProps<{
 const dateString = ref("");
 
 onMounted(() => {
-  // Doing it this way prevents a hydration mismatch.
-  // TODO: replace with a better way to handle this.
   dateString.value = new Date(date).toLocaleDateString();
 });
 </script>
 
 <template>
   <div class="news-article-page-splash">
-    <img :src="image" alt="" class="news-article-page-splash__banner">
+    <img :src="image" alt="" class="news-article-page-splash__banner" />
 
     <div class="news-article-page-splash__info">
       <div class="news-article-page-splash__tags">
@@ -41,7 +39,7 @@ onMounted(() => {
           :alt="`${author} avatar`"
           :src="authorImage"
           class="news-article-page-splash__avatar"
-        >
+        />
         <div class="news-article-page-splash__username">{{ author }}</div>
         <div class="news-article-page-splash__date">{{ dateString }}</div>
       </div>
@@ -51,16 +49,18 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .news-article-page-splash {
+  margin: 0px auto;
+
   &__banner {
     width: 100%;
     border-radius: 20px;
-    max-height: 400px;
+    max-height: 600px;
     object-fit: cover;
     margin-bottom: 1.5rem;
   }
 
   &__info {
-    padding: 1.5rem;
+    padding: 0rem;
   }
 
   &__tags {

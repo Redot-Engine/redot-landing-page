@@ -13,6 +13,11 @@
     "name": "4.3",
     "releases": [
       {
+        "name": "rc.1",
+        "release_date": "7 November 2024",
+        "release_notes": "https://www.redotengine.org/news/release-4-3-rc-1"
+      },
+      {
         "name": "beta.3",
         "release_date": "3 November 2024",
         "release_notes": "https://www.redotengine.org/news/release-4-3-beta-3"

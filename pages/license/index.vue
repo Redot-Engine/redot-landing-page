@@ -2,7 +2,7 @@
 const { data } = await useAsyncData("license", () =>
   queryContent("/license")
     .where({ type: { $eq: "license" } })
-    .findOne(),
+    .findOne()
 );
 
 useHead(
@@ -12,7 +12,7 @@ useHead(
       }
     : {
         title: "Redot Engine License",
-      },
+      }
 );
 
 useSeoMeta({
@@ -42,6 +42,7 @@ useSeoMeta({
 @use "@/assets/styles/mixins";
 
 .license-page-container {
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   gap: 20px;
