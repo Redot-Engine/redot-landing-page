@@ -4,9 +4,9 @@ date: 2024-11-11T08:01:50.863Z
 description:
   We're happy to announce our very first game jam, or, in the Redot world, a Gam Jam!
 
-image: /img/news/redot-gamejam.avif
+image: /img/news/redot-gam-jam.avif
 alt: Redot cover
-ogImage: /img/news/redot-gamejam.avif
+ogImage: /img/news/redot-gam-jam.avif
 tags: ["Releases"]
 type: "post"
 author: "Andevrs"
