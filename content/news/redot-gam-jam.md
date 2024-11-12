@@ -7,7 +7,7 @@ description:
 image: /img/news/redot-gamejam.avif
 alt: Redot cover
 ogImage: /img/news/redot-gamejam.avif
-tags: ["Releases"]
+tags: ["Community"]
 type: "post"
 author: "Andevrs"
 authorImage: /img/authors/andevrs.avif
