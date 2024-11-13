@@ -74,6 +74,10 @@ Your content here...
 
 Follow steps 1 - 2 in the instructions above but place your avatar inside the `public_images/authors` folder.
 
+### Mirrorlist Automation
+
+Currently we are automatically generate mirrorlist from website. Because the godot engine is poorly designed and changing things related to the version cause a problem from the engine. So we have to keep the json file name with many `.` like this: `4.3.rc.2.mono.json`.
+
 ## 🛠️ Technologies Used
 
 This project uses the following technologies:
