@@ -2,7 +2,7 @@
 const { data } = await useAsyncData("license", () =>
   queryContent("/license")
     .where({ type: { $eq: "license" } })
-    .findOne()
+    .findOne(),
 );
 
 useHead(
@@ -12,7 +12,7 @@ useHead(
       }
     : {
         title: "Redot Engine License",
-      }
+      },
 );
 
 useSeoMeta({
