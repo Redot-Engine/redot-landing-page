@@ -2,7 +2,7 @@
 const { path } = useRoute();
 
 const { data } = await useAsyncData(`content-${path}`, () =>
-  queryContent().where({ _path: path }).findOne()
+  queryContent().where({ _path: path }).findOne(),
 );
 
 if (!data.value) navigateTo("/404");
@@ -29,7 +29,7 @@ useHead(
             content: "Read about Redot Engine News",
           },
         ],
-      }
+      },
 );
 
 useSeoMeta({

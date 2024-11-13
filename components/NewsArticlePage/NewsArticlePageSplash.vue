@@ -17,7 +17,7 @@ onMounted(() => {
 
 <template>
   <div class="news-article-page-splash">
-    <img :src="image" alt="" class="news-article-page-splash__banner" />
+    <img :src="image" alt="" class="news-article-page-splash__banner">
 
     <div class="news-article-page-splash__info">
       <div class="news-article-page-splash__tags">
@@ -39,7 +39,7 @@ onMounted(() => {
           :alt="`${author} avatar`"
           :src="authorImage"
           class="news-article-page-splash__avatar"
-        />
+        >
         <div class="news-article-page-splash__username">{{ author }}</div>
         <div class="news-article-page-splash__date">{{ dateString }}</div>
       </div>
