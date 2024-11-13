@@ -1,11 +1,11 @@
 ---
 title: "Release Notes for Redot 4.3 Release Candidate 2"
-date: 2024-11-11T10:00:00Z
+date: 2024-11-11T23:58:00Z
 index: 1
 description: We're excited to announce the release of our latest version, featuring a host of enhancements and fixes
-image: /img/news/release-4-3-rc-2.avif
+image: /img/news/release-4-3-rc2.avif
 alt: Screenshot of new feature
-ogImage: /img/news/release-4-3-rc-2.avif
+ogImage: /img/news/release-4-3-rc2.avif
 tags: ["Releases"]
 type: "post"
 author: "Redot"
@@ -16,6 +16,7 @@ published: true
 The Redot team is pleased to announce the release of **Redot 4.3 Release Candidate 2**. This update introduces a variety of enhancements and bug fixes aimed at improving the functionality and user experience of the Redot engine.
 
 ### Enhancements & Features
+
 * Add support for redotengine.org template mirror automation by [@Spartan322](https://github.com/Spartan322) in [#847](https://github.com/Redot-Engine/redot-engine/pull/847)
 * Replace `versions.json` check with Github release check by [@Spartan322](https://github.com/Spartan322) in [#851](https://github.com/Redot-Engine/redot-engine/pull/851)
 * Merge commit [godotengine/godot@`33c02a5`](https://github.com/godotengine/godot/commit/33c02a5) ([#842](https://github.com/Redot-Engine/redot-engine/pull/842)):
@@ -23,6 +24,7 @@ The Redot team is pleased to announce the release of **Redot 4.3 Release Candida
    * Sync certs with Mozilla bundle as of Oct 19, 2024 ([`33c02a5`](https://github.com/Redot-Engine/redot-engine/commit/33c02a5c6bc2a050aad0e7356ebfcdb2592f54e0))
 
 ### Bug Fixes
+
 * Change Godot Linux appdata urls to Redot by [@HeartCoreStudios](https://github.com/HeartCoreStudios) in [#846](https://github.com/Redot-Engine/redot-engine/pull/846)
 * Fix `VERSION_FULL_CONFIG` excess dot on 0 by [@Spartan322](https://github.com/Spartan322) in [#848](https://github.com/Redot-Engine/redot-engine/pull/848)
 
