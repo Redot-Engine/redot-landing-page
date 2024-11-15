@@ -23,6 +23,10 @@ export default [
   },
   {
     rules: {
+      "@typescript-eslint/no-unused-expressions": [
+        "error",
+        { "allowShortCircuit": true, "allowTernary": true },
+      ],
       "vue/multi-word-component-names": "off", // Disable multi-word component name rule
       "vue/max-attributes-per-line": ["error", { singleline: 3 }],
       "vue/singleline-html-element-content-newline": "off",
