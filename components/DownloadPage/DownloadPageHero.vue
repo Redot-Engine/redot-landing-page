@@ -13,15 +13,15 @@
         experiences.
       </span>
       <div class="download-hero__buttons">
-        <LinkButton :href="downloadLink" type="white">
+        <LinkButton :href="sanitizeUrl(downloadLink)" type="white">
           Download latest
           <Icon :name="platformIcons[platform] ?? 'windows'" />
         </LinkButton>
-        <LinkButton v-if="!isMobile" :href="downloadMonoLink" type="outline">
+        <LinkButton v-if="!isMobile" :href="sanitizeUrl(downloadMonoLink)" type="outline">
           Download Mono
           <Icon :name="platformIcons[platform] ?? 'windows'" />
         </LinkButton>
-        <LinkButton :href="links.releasePage" type="ghost">
+        <LinkButton :href="sanitizeUrl(links.releasePage)" type="ghost">
           More download options
           <Icon name="arrow" />
         </LinkButton>
@@ -32,6 +32,7 @@
 
 <script setup lang="ts">
 import { getMonoPlatformDownloadLink, getPlatformDownloadLink } from "~/lib/platformDownloadLink";
+import { sanitizeUrl } from "@braintree/sanitize-url";
 
 const links = useLinks();
 
