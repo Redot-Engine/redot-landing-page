@@ -17,6 +17,10 @@
           Download latest
           <Icon :name="platformIcons[platform] ?? 'windows'" />
         </LinkButton>
+        <LinkButton v-if="!isMobile" :href="downloadMonoLink" type="outline">
+          Download Mono
+          <Icon :name="platformIcons[platform] ?? 'windows'" />
+        </LinkButton>
         <LinkButton :href="links.releasePage" type="ghost">
           More download options
           <Icon name="arrow" />
@@ -27,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-import { getPlatformDownloadLink } from "~/lib/platformDownloadLink";
+import { getMonoPlatformDownloadLink, getPlatformDownloadLink } from "~/lib/platformDownloadLink";
 
 const links = useLinks();
 
@@ -36,6 +40,8 @@ const { platform } = defineProps<{
 }>();
 
 const downloadLink = computed(() => getPlatformDownloadLink(platform));
+const downloadMonoLink = computed(() => getMonoPlatformDownloadLink(platform));
+const isMobile = useIsMobile();
 
 const platformIcons = {
   windows: "windows",
