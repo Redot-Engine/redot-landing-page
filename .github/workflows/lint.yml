@@ -18,8 +18,8 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      - name: Validate current commit (last commit) with commitlint
-        run: npx commitlint --last --verbose
+      - name: Validate the most recent commit with commitlint
+        run: npx commitlint --from=HEAD --verbose
 
       - name: Typecheck
         run: yarn typecheck
