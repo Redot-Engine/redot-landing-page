@@ -15,6 +15,7 @@ useHead({
       content: "Gsmu73HojIdCvaz-xl2dv8faF4tzOrti6gZMNqigOyM",
     },
   ],
+  link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   htmlAttrs: {
     lang: "en",
   },
