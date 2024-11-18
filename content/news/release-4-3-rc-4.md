@@ -1,6 +1,6 @@
 ---
 title: "Release Notes for Redot 4.3 Release Candidate 4"
-date: 2024-11-16T10:00:00Z
+date: 2024-11-18T10:00:00Z
 index: 1
 description: We're excited to announce the release of our latest version, featuring a host of enhancements and fixes
 image: /img/news/release-4-3-rc4.avif
