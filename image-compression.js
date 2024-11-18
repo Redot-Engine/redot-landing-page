@@ -24,21 +24,18 @@ if (fs.existsSync(targetDir))
   console.log(`Old directory removed: ${ targetDir }`);
 }
 
-const allowedFormats = [".png", ".jpg", ".jpeg", ".webp"];
+const allowedFormats = [".png", ".jpg", ".jpeg", ".webp", ".tiff", ".bmp"];
 
 async function convertAndCopyImage(imagePath, targetPath)
 {
   const ext = path.extname(imagePath).toLowerCase();
 
-  if (ext === ".avif")
+  if (ext === ".avif" || ext === ".svg" || ext === ".gif" || ext === ".ico")
   {
     await fs.copy(imagePath, targetPath);
     console.log(`Copied: ${ targetPath }`);
-  } else if (ext === ".svg")
-  {
-    await fs.copy(imagePath, targetPath);
-    console.log(`Copied: ${ targetPath }`);
-  } else if (allowedFormats.includes(ext))
+  }
+  else if (allowedFormats.includes(ext))
   {
     await sharp(imagePath)
       .toFormat("avif", { quality: ExpectedQuality })
