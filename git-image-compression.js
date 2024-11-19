@@ -62,7 +62,7 @@ async function processGitChanges()
     try
     {
         const changes = await getGitChanges();
-        console.log("Image to process:", changes);
+        console.log("Images to process:", changes);
 
         for (const file of changes)
         {
@@ -81,9 +81,57 @@ async function processGitChanges()
                 }
             }
         }
+
+        await new Promise((resolve, reject) =>
+        {
+            exec("git add .", (err, stdout, stderr) =>
+            {
+                if (err)
+                {
+                    return reject(`Error staging changes: ${ stderr }`);
+                }
+                console.log("Staged converted files.");
+                resolve(stdout);
+            });
+        });
+
+        const hasChanges = await new Promise((resolve) =>
+        {
+            exec("git diff --cached --quiet", (err) =>
+            {
+                if (err)
+                {
+                    resolve(true);
+                }
+                else
+                {
+                    resolve(false);
+                }
+            });
+        });
+
+        if (hasChanges)
+        {
+            await new Promise((resolve, reject) =>
+            {
+                exec("git commit -m \"Convert images to AVIF\"", (err, stdout, stderr) =>
+                {
+                    if (err)
+                    {
+                        return reject(`Error committing changes: ${ stderr }`);
+                    }
+                    console.log("Committed converted files.");
+                    resolve(stdout);
+                });
+            });
+        } else
+        {
+            console.log("No changes to commit.");
+        }
     } catch (err)
     {
         console.error("Error processing git changes:", err.message);
+        process.exit(1);
     }
 }
 
