@@ -9,13 +9,24 @@ function getGitChanges()
 {
     return new Promise((resolve, reject) =>
     {
-        exec("git diff --name-only --diff-filter=AM", (err, stdout, stderr) =>
+        exec("git status --porcelain", (err, stdout, stderr) =>
         {
             if (err)
             {
-                return reject(`Error getting git changes: ${ stderr }`);
+                return reject(`Error getting git status: ${ stderr }`);
             }
-            const files = stdout.split("\n").filter(file => file.trim() !== "");
+
+            const files = stdout.split("\n")
+                .filter(line =>
+                {
+                    const fileStatus = line.trim().split(" ")[0];
+                    const filePath = line.slice(3).trim().replace(/['"]/g, "");
+                    const ext = path.extname(filePath).toLowerCase();
+
+                    return (fileStatus === "M" || fileStatus === "A" || fileStatus === "??") && supportedFormats.includes(ext);
+                })
+                .map(line => line.slice(3).trim().replace(/['"]/g, ""));
+
             resolve(files);
         });
     });
@@ -51,7 +62,7 @@ async function processGitChanges()
     try
     {
         const changes = await getGitChanges();
-        console.log("Changed files:", changes);
+        console.log("Image to process:", changes);
 
         for (const file of changes)
         {

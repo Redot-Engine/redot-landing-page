@@ -12,6 +12,7 @@
     "format-check": "eslint \"./**/*.{js,vue}\"",
     "typecheck": "tsc --noEmit -p tsconfig.json --composite false",
     "image": "node image-compression.js",
+    "pre-commit-image": "node pre-commit-image-compression.js",
     "prepare": "husky"
   },
   "dependencies": {

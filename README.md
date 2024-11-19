@@ -28,28 +28,27 @@ npm install
 npm run dev
 ```
 
-### Public images and image compression
+### Image compression
 
-Place public images in `public_images` folder.
+There are 2 ways to compress image images
 
-For compressing image,
-
-```
-npm run compress-image
-```
-
-⚠️ Most of time you wouldn't need to run this. This is going to remove old images and create new compressed images.
+- Double click on `image-compression.bat` or `image-compression.sh` to run image compression app. You can drag and drop files to convert images.
+  You can also run image compression app with: `npm run image`
+- Commiting will compress image and delete origin source on pre-commit with husky. But this won't be converted until you commit. And it creates extra commit.
 
 ## Publishing Articles
 
-1. Add an image inside the `public_images/news` folder. Optimal dimensions are 1280x720.
-2. Run `npm run compress-image`. This will compress your png image into a `.avif` file (used for SEO).
-3. Create a new markdown file inside `content/news` folder. The file name must follow the guidelines for optimal SEO results:
+1. There are 2 ways to add an image and the added image will turn into a `.avif` file (used for SEO). Optimal dimensions are 1280x720.
+
+- Double click on image-compression.bat or image-compression.sh to run image compression app. You can drag and drop files to convert images. You can also run image compression app with: `npm run image`
+- Add an image inside the `public/img/news` folder. Commiting will compress image and delete origin source on pre-commit with husky. But this won't be converted until you commit. And it creates extra commit.
+
+2. Create a new markdown file inside `content/news` folder. The file name must follow the guidelines for optimal SEO results:
    - File name must be kebab case.
    - File name must all be lowercase
-4. Paste the article template (see below) inside the file
-5. Write your content
-6. Create a pull request and get it merged
+3. Paste the article template (see below) inside the file
+4. Write your content
+5. Create a pull request and get it merged
 
 ```shell
 ---
@@ -72,7 +71,7 @@ Your content here...
 
 ### Adding author images
 
-Follow steps 1 - 2 in the instructions above but place your avatar inside the `public_images/authors` folder.
+Follow steps 1 in the instructions above but place your avatar inside the `public_images/authors` folder.
 
 ### Mirrorlist Automation
 
