@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Converter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, #f7f9fc, #e3eaf0);
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      h1 {
+        color: #0056b3;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      form {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+      }
+
+      label {
+        font-weight: bold;
+        margin-top: 10px;
+        display: block;
+      }
+
+      input,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        background-color: #0056b3;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      button:hover {
+        background-color: #004494;
+      }
+
+      #drop-zone {
+        border: 2px dashed #007bff;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        color: #555;
+        margin: 10px 0;
+      }
+
+      #drop-zone.dragover {
+        border-color: #0056b3;
+        background: rgba(0, 123, 255, 0.1);
+        color: #0056b3;
+      }
+
+      .file-list {
+        margin: 10px 0;
+        padding: 10px;
+        background: #f1f1f1;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        list-style: none;
+      }
+
+      .file-list li {
+        margin: 5px 0;
+      }
+
+      .output {
+        margin-top: 20px;
+        padding: 10px;
+        background: #f7f9fc;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        max-width: 500px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-height: 300px;
+        overflow-y: auto;
+      }
+
+      @media (max-width: 600px) {
+        form {
+          padding: 15px;
+        }
+
+        button,
+        input {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Image Compressor</h1>
+    <form id="converter-form">
+      <label for="output-dir">Output Directory:</label>
+      <div style="display: flex; gap: 10px">
+        <input
+          type="text"
+          id="output-dir"
+          placeholder="/public/img/"
+          value="./public/img/"
+          required
+          style="flex-grow: 1"
+        />
+      </div>
+
+      <label for="quality">Quality (0-100):</label>
+      <div style="display: flex; gap: 10px">
+        <input
+          type="number"
+          id="quality"
+          min="0"
+          max="100"
+          value="70"
+          required
+        />
+      </div>
+      <div id="drop-zone">Drag and drop images here or click to upload</div>
+      <ul id="file-list" class="file-list"></ul>
+      <input
+        type="file"
+        id="file-input"
+        multiple
+        accept="image/*"
+        style="display: none"
+      />
+
+      <button type="submit">Convert Images</button>
+    </form>
+
+    <div class="output" id="output"></div>
+
+    <script>
+      const dropZone = document.getElementById("drop-zone");
+      const fileInput = document.getElementById("file-input");
+      const fileList = document.getElementById("file-list");
+      const outputDirInput = document.getElementById("output-dir");
+      const form = document.getElementById("converter-form");
+      const outputDiv = document.getElementById("output");
+
+      let files = [];
+
+      dropZone.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        dropZone.classList.add("dragover");
+      });
+
+      dropZone.addEventListener("dragleave", () => {
+        dropZone.classList.remove("dragover");
+      });
+
+      dropZone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        dropZone.classList.remove("dragover");
+        files = Array.from(e.dataTransfer.files);
+        displayFiles(files);
+      });
+
+      dropZone.addEventListener("click", () => fileInput.click());
+      fileInput.addEventListener("change", (e) => {
+        files = Array.from(e.target.files);
+        displayFiles(files);
+      });
+
+      function displayFiles(files) {
+        fileList.innerHTML = "";
+        files.forEach((file) => {
+          const li = document.createElement("li");
+          li.textContent = file.name;
+          fileList.appendChild(li);
+        });
+        dropZone.textContent = `${files.length} file(s) selected`;
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const outputDir = outputDirInput.value;
+        const quality = document.getElementById("quality").value;
+
+        if (!files.length) {
+          alert("Please select at least one image.");
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append("outputDir", outputDir);
+        formData.append("quality", quality);
+
+        files.forEach((file) => formData.append("images", file));
+
+        try {
+          const response = await fetch("/convert", {
+            method: "POST",
+            body: formData,
+          });
+
+          const result = await response.json();
+          if (response.ok) {
+            outputDiv.innerHTML = `<p>${
+              result.message
+            }</p><pre>${JSON.stringify(result.files, null, 2)}</pre>`;
+          } else {
+            outputDiv.innerHTML = `<p>Error: ${result.error}</p>`;
+          }
+        } catch (err) {
+          outputDiv.innerHTML = `<p>Unexpected error: ${err.message}</p>`;
+        }
+      });
+    </script>
+  </body>
+</html>
