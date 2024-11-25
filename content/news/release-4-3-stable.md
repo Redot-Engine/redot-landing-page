@@ -38,7 +38,7 @@ Keep in mind this is not a comprehensive list of the impactful changes, its just
 
 The link to our github release here: [Github Release](https://github.com/Redot-Engine/redot-engine/releases/tag/redot-4.3-stable)
 
-Finally, we'd like to thank the core devs on the project(in alphabetical order): ChocolateChipAussie, decryptedchaos, McDubh, trashguy, skogi, and Spartan322 for their tireless work in getting us to this point. Also, a special thanks to all the many contributors who helped along the way. We appreciate everything.
+Finally, we'd like to thank the core devs on the project(in alphabetical order): ChocolateChipAussie, decryptedchaos, McDubh, skogi, Spartan322 and trashguy for their tireless work in getting us to this point. Also, a special thanks to all the many contributors who helped along the way. We appreciate everything.
 
 ## The Future
 
@@ -62,7 +62,7 @@ One of the first major projects under Redot Experimental is the Redot Launcher, 
 Game development should be accessible to everyone.
 
 This simple statement became the idea behind the Redot Academy, one of the ways in which we wanted to support our community. Originally started by one of our community members, the Academy offered free live classes in Redot game development. 
-Unfortunately, due to scheduling problems, this part has been put on hold. T
+Unfortunately, due to scheduling problems, this part has been put on hold.
 
 However, the idea of our Academy lives on. 
 
