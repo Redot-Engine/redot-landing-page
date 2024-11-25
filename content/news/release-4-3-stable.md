@@ -1,6 +1,6 @@
 ---
 title: "Stability And The Future"
-date: 2024-11-24T08:00:00Z
+date: 2024-11-25T11:00:00Z
 index: 1
 description: We have reached Stable! A lot has changed with more to come.
 image: /img/news/redot-engine-4.3-stable.avif
@@ -38,7 +38,7 @@ Keep in mind this is not a comprehensive list of the impactful changes, its just
 
 The link to our github release here: [Github Release](https://github.com/Redot-Engine/redot-engine/releases/tag/redot-4.3-stable)
 
-Finally, we'd like to thank the core devs on the project(in alphabetical): ChocolateChipAussie, decryptedchaos, McDubh, trashguy, skogi, and Spartan322 for their tireless work in getting us to this point. Also, a special thanks to all the many contributors who helped along the way. We appreciate everything.
+Finally, we'd like to thank the core devs on the project(in alphabetical order): ChocolateChipAussie, decryptedchaos, McDubh, trashguy, skogi, and Spartan322 for their tireless work in getting us to this point. Also, a special thanks to all the many contributors who helped along the way. We appreciate everything.
 
 ## The Future
 
@@ -48,11 +48,11 @@ lessons.
 
 This achievement belongs to everyone who has been part of the Redot story. While a small group of us planted the seed of forking Godot, the project’s success has been powered by countless contributors who turned that vision into reality. Doing anything on this scale is a huge undertaking, and there’s a lot of moving pieces involved. From those who joined us in the early stages, to Heroes In A Pinch, the unsung champions who stepped in during critical moments, to the current team tirelessly maintaining the project and keeping operations running smoothly — your contributions have been invaluable. Redot wouldn’t be what it is without you (and, in fact, it wouldn't be at all). Thank you for making all of this work.
 
- At its core, Redot was never about reinventing the wheel — it was not meant to be a huge departure from Godot. By maintaining close parity with Godot, we can provide something extra — the community, the quality-of-life improvements, new features, additional bug fixes — without barring people from benefitting from things coming down from Godot and its developers. We want you to benefit from Godot's core updates and features: each of the features introduced in Godot's 4.3 version is fully available in Redot 4.3 (you can check the feature list here: https://godotengine.org/releases/4.3/), as will be the case with features of the upcoming 4.4 version. That being said, we also try to include meaningful changes. Which brings us to…
+ At its core, Redot was never about reinventing the wheel — it was not meant to be a huge departure from Godot. By maintaining close parity with Godot, we can provide something extra — the community, the quality-of-life improvements, new features, additional bug fixes — without barring people from benefiting from things coming down from Godot and its developers. We want you to benefit from Godot's core updates and features: each of the features introduced in Godot's 4.3 version is fully available in Redot 4.3 (you can check the feature list here: https://godotengine.org/releases/4.3/), as will be the case with features of the upcoming 4.4 version. That being said, we also try to include meaningful changes. Which brings us to…
 
 ## Redot Experimental 
 
-Over the last few weeks we’ve been building up a very special project called Redot Experimental. This initiative serves as a testing ground for bigger changes and bolder ideas — features that might break compatibility with Godot, or ones that simply wouldn’t fit within the constraints of the original Redot project. Rest assured, Redot Experimental will not detract from our primary development efforts. Instead, we've set it up in a way that allows us to poke, and prod, and experiment, paving way for future innovations that could one day enhance Redot or serve as standalone solutions. The idea is to develop tools and features that will assist our community members in doing what matters the most: developing their games without a hassle.
+Over the last few weeks we’ve been building up a very special project called Redot Experimental. This initiative serves as a testing ground for bigger changes and bolder ideas — features that might break compatibility with Godot, or ones that simply wouldn’t fit within the constraints of the original Redot project. Rest assured, Redot Experimental will not detract from our primary development efforts. Instead, we've set it up in a way that allows us to poke, prod, and experiment, paving the way for future innovations that could one day enhance Redot or serve as standalone solutions. The idea is to develop tools and features that will assist our community members in doing what matters the most: developing their games without a hassle.
 
 One of the first major projects under Redot Experimental is the Redot Launcher, a tool simplifying engine and project management, providing a centralized hub through which developers can easily switch engine versions, manage projects, and jumpstart new game ideas with ready-made templates. Here’s a work-in-progress screenshot showing the current version of the Launcher in action: 
 
