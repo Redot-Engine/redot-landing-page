@@ -1,75 +1,85 @@
+import express from "express";
+import multer from "multer";
 import sharp from "sharp";
-import fs from "fs-extra";
 import path from "path";
+import fs from "fs";
+import { exec } from "child_process";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
-const sourceDir = process.argv[2];
-const targetDir = process.argv[3];
-const ExpectedQuality = Number(process.argv[4]);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const app = express();
+const port = 3100;
 
-if (isNaN(ExpectedQuality))
+app.use(express.json());
+
+app.get("/", (req, res) =>
 {
-  console.error("Please provide a valid quality for the image.");
-  process.exit(1);
-}
+  res.sendFile(path.join(__dirname, "image-compression.html"));
+});
 
-if (!sourceDir || !targetDir)
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
+
+app.post("/convert", upload.array("images"), async (req, res) =>
 {
-  console.error("Please provide both source and target directories as arguments.");
-  process.exit(1);
-}
+  let { outputDir, quality } = req.body;
 
-if (fs.existsSync(targetDir))
-{
-  fs.removeSync(targetDir);
-  console.log(`Old directory removed: ${ targetDir }`);
-}
-
-const allowedFormats = [".png", ".jpg", ".jpeg", ".webp"];
-
-async function convertAndCopyImage(imagePath, targetPath)
-{
-  const ext = path.extname(imagePath).toLowerCase();
-
-  if (ext === ".avif")
+  if (!outputDir)
   {
-    await fs.copy(imagePath, targetPath);
-    console.log(`Copied: ${ targetPath }`);
-  } else if (ext === ".svg")
-  {
-    await fs.copy(imagePath, targetPath);
-    console.log(`Copied: ${ targetPath }`);
-  } else if (allowedFormats.includes(ext))
-  {
-    await sharp(imagePath)
-      .toFormat("avif", { quality: ExpectedQuality })
-      .toFile(targetPath.replace(path.extname(targetPath), ".avif"));
-    console.log(`Converted and copied: ${ targetPath.replace(path.extname(targetPath), ".avif") }`);
+    return res.status(400).json({ error: "Output directory is required." });
   }
-}
 
-async function processDirectory(dir)
-{
-  const files = fs.readdirSync(dir);
-
-  for (const file of files)
+  const isRelative = !path.isAbsolute(outputDir);
+  if (isRelative)
   {
-    const fullPath = path.join(dir, file);
-    const targetPath = path.join(targetDir, path.relative(sourceDir, fullPath));
+    outputDir = path.resolve(__dirname, outputDir);
+  }
 
-    if (fs.lstatSync(fullPath).isDirectory())
-    {
-      await processDirectory(fullPath);
-    } else
-    {
-      const targetDirName = path.dirname(targetPath);
-      if (!fs.existsSync(targetDirName))
-      {
-        fs.mkdirSync(targetDirName, { recursive: true });
-      }
+  if (!fs.existsSync(outputDir))
+  {
+    return res.status(400).json({ error: "Invalid output directory." });
+  }
 
-      await convertAndCopyImage(fullPath, targetPath);
+  const qualityInt = parseInt(quality, 10);
+  if (isNaN(qualityInt) || qualityInt < 0 || qualityInt > 100)
+  {
+    return res.status(400).json({ error: "Quality must be an integer between 0 and 100." });
+  }
+
+  try
+  {
+    const convertedFiles = [];
+    for (const file of req.files)
+    {
+      const avifTargetPath = path.join(outputDir, `${ path.parse(file.originalname).name }.avif`);
+
+      await sharp(file.buffer)
+        .toFormat("avif", { quality: qualityInt })
+        .toFile(avifTargetPath);
+
+      convertedFiles.push(avifTargetPath);
     }
+
+    res.status(200).json({ message: "Images converted successfully.", files: convertedFiles });
+  } catch (err)
+  {
+    res.status(500).json({ error: "Image conversion failed.", details: err.message });
   }
+});
+
+app.listen(port, () =>
+{
+  console.log(`Server running on http://localhost:${ port }`);
+  console.log("Turn off this window if you are done");
+});
+
+function openBrowser(url)
+{
+  if (process.platform === "darwin") exec(`open ${ url }`);
+  else if (process.platform === "win32") exec(`start ${ url }`);
+  else exec(`xdg-open ${ url }`);
 }
 
-processDirectory(sourceDir).catch(console.error);
+openBrowser(`http://localhost:${ port }`);
