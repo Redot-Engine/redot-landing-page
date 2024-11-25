@@ -1,6 +1,6 @@
 ---
 title: "November Monthly Update"
-date: 2024-12-12T01:14:00Z
+date: 2024-11-12T09:14:00Z
 index: 1
 description: A month has gone by, and a lot of things have happened! Let's take a look.
 image: /img/news/redot-engine-grid.avif
