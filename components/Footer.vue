@@ -110,6 +110,13 @@ const links = useLinks();
             Contact
           </NuxtLink>
           <NuxtLink
+            aria-label="forum"
+            class="footer-link"
+            href="https://forum.redotengine.org/"
+          >
+            Forum
+          </NuxtLink>
+          <NuxtLink
             aria-label="community"
             class="footer-link"
             href="/community"
