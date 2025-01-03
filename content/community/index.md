@@ -4,5 +4,6 @@ Join the Redot Engine Community! Connect with fellow developers, artists, and en
 
 - **Discord**: [Join our community](https://discord.gg/redot)
 - **Reddit**: [Redot Game Engine Community](https://www.reddit.com/r/RedotGameEngineMain/?type=TEXT)
+- **Forum Website**: [Redot Game Engine Official Forum](https://forum.redotengine.org/)
 
 Let’s build something amazing together! 🎮
