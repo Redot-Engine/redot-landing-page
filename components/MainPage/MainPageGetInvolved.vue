@@ -25,9 +25,9 @@ const links = useLinks();
 
       <MainPageGetInvolvedItem
         :image="ForumLogo"
-        :link="links.redditUrl"
+        :link="links.forumUrl"
         description="A place for the Redot community to meet, ask questions, share their work, and provide help to other users."
-        title="Reddit forum"
+        title="Forum"
       />
     </div>
   </MainPageSection>
