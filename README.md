@@ -1,8 +1,10 @@
 <div style="text-align: center;">
 
-<h1># Redot Game Engine Website</h1>
+# Redot Game Engine Website (Archived)
 
-Welcome to the Redot Game Engine Website project! This repository is the front-end platform for our community-driven website, providing documentation, resources, and community features for the Redot game engine.
+> **Notice**: This repository is now archived and will no longer be updated. The new, active repository can be found here: https://github.com/Redot-Engine/redot-website.
+
+Welcome to the archived Redot Engine Website project! This repository is the front-end platform for our community-driven website, providing documentation, resources, and community features for the Redot game engine.
 
 <br>
   <img src="./assets/images/readme/screenshot.png" width="80%">
